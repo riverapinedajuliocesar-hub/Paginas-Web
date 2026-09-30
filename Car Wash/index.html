@@ -1,0 +1,966 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoClean | Car Wash</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🚗
+        </div>
+
+        Auto<span>Clean</span>
+
+    </div>
+
+
+    <div class="menu">
+
+        <button class="menu-button">
+            ☰ MENÚ
+        </button>
+
+
+        <div class="dropdown">
+
+            <a href="#inicio">🏠 Inicio</a>
+
+            <a href="#servicios">🚿 Servicios</a>
+
+            <a href="#precios">💰 Precios</a>
+
+            <a href="#cita">📅 Haz tu cita hoy</a>
+
+            <a href="#clientes">👥 Lista de compradores</a>
+
+            <a href="#facturas">🧾 Facturas</a>
+
+            <a href="#contacto">📞 Contacto</a>
+
+            <a href="#creador">👨‍💻 Creador de la página</a>
+
+            <a href="#datos">📋 Mis datos</a>
+
+        </div>
+
+    </div>
+</nav>
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <h1>
+            Tu auto merece
+            <span>brillar.</span>
+        </h1>
+
+        <p>
+            Bienvenido a AutoClean Car Wash.
+            Lavamos, limpiamos y cuidamos tu vehículo
+            para que siempre luzca espectacular.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#cita" class="btn btn-primary">
+                📅 Haz tu cita
+            </a>
+
+            <a href="#servicios" class="btn btn-secondary">
+                🚗 Ver servicios
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<section id="servicios">
+
+    <div class="section-title">
+
+        <h2>Nuestros servicios</h2>
+
+        <p>
+            Todo lo que tu vehículo necesita.
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+        <div class="service-card">
+
+            <div class="service-icon">🚿</div>
+
+            <h3>Lavado básico</h3>
+
+            <p>
+                Lavado exterior y limpieza general.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">✨</div>
+
+            <h3>Lavado premium</h3>
+
+            <p>
+                Limpieza exterior e interior completa.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">🧽</div>
+
+            <h3>Limpieza interior</h3>
+
+            <p>
+                Aspirado, tablero, puertas y alfombras.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">💎</div>
+
+            <h3>Detailing</h3>
+
+            <p>
+                Limpieza profunda y cuidado especial.
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<section id="precios">
+
+    <div class="section-title">
+
+        <h2>Lista de precios</h2>
+
+        <p>Selecciona el servicio que prefieras.</p>
+
+    </div>
+
+
+    <div class="prices">
+
+        <div class="price-card">
+
+            <h3>Básico</h3>
+
+            <div class="price">
+                L. 150
+            </div>
+
+            <ul>
+                <li>✓ Lavado exterior</li>
+                <li>✓ Secado</li>
+                <li>✓ Limpieza de vidrios</li>
+            </ul>
+
+        </div>
+
+
+        <div class="price-card featured">
+
+            <h3>Premium</h3>
+
+            <div class="price">
+                L. 250
+            </div>
+
+            <ul>
+                <li>✓ Lavado exterior</li>
+                <li>✓ Limpieza interior</li>
+                <li>✓ Aspirado</li>
+                <li>✓ Limpieza de vidrios</li>
+            </ul>
+
+        </div>
+
+
+        <div class="price-card">
+
+            <h3>Detailing</h3>
+
+            <div class="price">
+                L. 500
+            </div>
+
+            <ul>
+                <li>✓ Limpieza profunda</li>
+                <li>✓ Interior completo</li>
+                <li>✓ Exterior completo</li>
+                <li>✓ Acabado premium</li>
+            </ul>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="cita">
+
+    <div class="section-title">
+
+        <h2>📅 Haz tu cita hoy</h2>
+
+        <p>
+            Completa el formulario para registrar tu cita.
+        </p>
+
+    </div>
+
+
+    <div class="form-container">
+
+        <form id="citaForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>Nombre completo</label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        required
+                        placeholder="Ej. Juan Pérez"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Teléfono</label>
+
+                    <input
+                        type="tel"
+                        id="telefono"
+                        required
+                        placeholder="+504 0000-0000"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Vehículo</label>
+
+                    <input
+                        type="text"
+                        id="vehiculo"
+                        required
+                        placeholder="Ej. Toyota Corolla"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Servicio</label>
+
+                    <select id="servicio">
+
+                        <option>Lavado básico</option>
+
+                        <option>Lavado premium</option>
+
+                        <option>Limpieza interior</option>
+
+                        <option>Detailing</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Fecha</label>
+
+                    <input
+                        type="date"
+                        id="fecha"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Hora</label>
+
+                    <input
+                        type="time"
+                        id="hora"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>Comentario</label>
+
+                    <textarea
+                        id="comentario"
+                        rows="4"
+                        placeholder="Información adicional..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <button
+                        class="btn btn-primary"
+                        type="submit"
+                    >
+                        Registrar cita
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</section>
+
+<section id="clientes">
+
+    <div class="section-title">
+
+        <h2>👥 Lista de compradores</h2>
+
+        <p>
+            Clientes registrados en AutoClean.
+        </p>
+
+    </div>
+
+
+    <div class="dashboard">
+
+        <div class="stat">
+
+            <div class="stat-number" id="totalClientes">
+                0
+            </div>
+
+            <p>Clientes registrados</p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number" id="totalFacturas">
+                0
+            </div>
+
+            <p>Facturas creadas</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Vehículo</th>
+                    <th>Servicio</th>
+                    <th>Fecha</th>
+                    <th>Acción</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="tablaClientes">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<section id="facturas">
+
+    <div class="section-title">
+
+        <h2>🧾 Facturas</h2>
+
+        <p>
+            Genera una factura para tus clientes.
+        </p>
+
+    </div>
+
+
+    <div class="form-container">
+
+        <form id="facturaForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>Cliente</label>
+
+                    <input
+                        type="text"
+                        id="clienteFactura"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Vehículo</label>
+
+                    <input
+                        type="text"
+                        id="vehiculoFactura"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Servicio</label>
+
+                    <select id="servicioFactura">
+
+                        <option value="150">
+                            Lavado básico - L. 150
+                        </option>
+
+                        <option value="250">
+                            Lavado premium - L. 250
+                        </option>
+
+                        <option value="500">
+                            Detailing - L. 500
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Fecha</label>
+
+                    <input
+                        type="date"
+                        id="fechaFactura"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <button
+                        class="btn btn-primary"
+                        type="submit"
+                    >
+                        🧾 Crear factura
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div id="listaFacturas"></div>
+
+</section>
+
+<section id="contacto">
+
+    <div class="section-title">
+
+        <h2>📞 Contáctanos</h2>
+
+        <p>
+            Estamos listos para atenderte.
+        </p>
+
+    </div>
+
+
+    <div class="contact">
+
+        <div class="contact-card">
+
+            <h3>📱 Teléfono</h3>
+
+            <p>
+                +504 0000-0000
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <h3>📧 Correo</h3>
+
+            <p>
+                autoclean@gmail.com
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <h3>📍 Ubicación</h3>
+
+            <p>
+                Honduras
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="creador">
+
+    <div class="section-title">
+
+        <h2>👨‍💻 Creador de la página</h2>
+
+        <p>
+            Información del desarrollador.
+        </p>
+
+    </div>
+
+
+    <div class="form-container">
+
+        <h2 style="text-align:center;">
+            AutoClean Web
+        </h2>
+
+        <br>
+
+        <p style="text-align:center; line-height:2;">
+
+            Página web desarrollada para
+            <strong>AutoClean Car Wash</strong>.
+
+            <br>
+
+            Diseñador y desarrollador:
+            <strong>Julio Cesar Rivera </strong>
+
+            <br>
+
+            Proyecto académico / empresarial
+
+        </p>
+
+    </div>
+
+</section>
+
+<section id="datos">
+
+    <div class="section-title">
+
+        <h2>📋 Mis datos</h2>
+
+    </div>
+
+
+    <div class="form-container">
+
+        <p style="line-height:2.2;">
+
+            <strong>Nombre:</strong>
+            Julio Cesar Rivera
+
+            <br>
+
+            <strong>Teléfono:</strong>
+            +504 686-986
+
+            <br>
+
+            <strong>Correo:</strong>
+            autoclean@gmail.com
+
+            <br>
+
+            <strong>Ciudad:</strong>
+            Honduras
+
+        </p>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <h2>
+        Auto<span>Clean</span> 🚗
+    </h2>
+
+    <br>
+
+    <p>
+        © 2026 AutoClean Car Wash.
+        Todos los derechos reservados.
+    </p>
+
+</footer>
+
+<script>
+
+    let clientes =
+        JSON.parse(localStorage.getItem("clientesAutoClean")) || [];
+
+
+    function mostrarClientes() {
+
+        const tabla =
+            document.getElementById("tablaClientes");
+
+        tabla.innerHTML = "";
+
+        clientes.forEach((cliente, index) => {
+
+            const fila = document.createElement("tr");
+
+            fila.innerHTML = `
+
+                <td>${cliente.nombre}</td>
+
+                <td>${cliente.telefono}</td>
+
+                <td>${cliente.vehiculo}</td>
+
+                <td>${cliente.servicio}</td>
+
+                <td>${cliente.fecha}</td>
+
+                <td>
+
+                    <button
+                        class="delete-btn"
+                        onclick="eliminarCliente(${index})"
+                    >
+                        Eliminar
+                    </button>
+
+                </td>
+
+            `;
+
+            tabla.appendChild(fila);
+
+        });
+
+
+        document.getElementById("totalClientes").textContent =
+            clientes.length;
+
+    }
+
+
+    function eliminarCliente(index) {
+
+        if(confirm("¿Deseas eliminar este cliente?")) {
+
+            clientes.splice(index,1);
+
+            localStorage.setItem(
+                "clientesAutoClean",
+                JSON.stringify(clientes)
+            );
+
+            mostrarClientes();
+
+        }
+
+    }
+
+
+    document
+    .getElementById("citaForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const cliente = {
+
+            nombre:
+                document.getElementById("nombre").value,
+
+            telefono:
+                document.getElementById("telefono").value,
+
+            vehiculo:
+                document.getElementById("vehiculo").value,
+
+            servicio:
+                document.getElementById("servicio").value,
+
+            fecha:
+                document.getElementById("fecha").value
+
+        };
+
+
+        clientes.push(cliente);
+
+
+        localStorage.setItem(
+            "clientesAutoClean",
+            JSON.stringify(clientes)
+        );
+
+
+        mostrarClientes();
+
+
+        alert(
+            "✅ Cita registrada correctamente."
+        );
+
+
+        this.reset();
+
+    });
+
+    let facturas =
+        JSON.parse(localStorage.getItem("facturasAutoClean")) || [];
+
+
+    function mostrarFacturas() {
+
+        const lista =
+            document.getElementById("listaFacturas");
+
+        lista.innerHTML = "";
+
+
+        facturas.forEach((factura) => {
+
+            const div =
+                document.createElement("div");
+
+            div.className = "invoice";
+
+
+            div.innerHTML = `
+
+                <div class="invoice-header">
+
+                    <div>
+
+                        <h2>AutoClean</h2>
+
+                        <p>Car Wash</p>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            FACTURA
+                        </strong>
+
+                        <br>
+
+                        #${factura.numero}
+
+                    </div>
+
+                </div>
+
+
+                <p>
+
+                    <strong>Cliente:</strong>
+                    ${factura.cliente}
+
+                </p>
+
+
+                <p>
+
+                    <strong>Vehículo:</strong>
+                    ${factura.vehiculo}
+
+                </p>
+
+
+                <p>
+
+                    <strong>Servicio:</strong>
+                    ${factura.servicio}
+
+                </p>
+
+
+                <p>
+
+                    <strong>Fecha:</strong>
+                    ${factura.fecha}
+
+                </p>
+
+
+                <div class="invoice-total">
+
+                    Total:
+                    L. ${factura.total}
+
+                </div>
+
+            `;
+
+
+            lista.appendChild(div);
+
+        });
+
+
+        document.getElementById("totalFacturas").textContent =
+            facturas.length;
+
+    }
+
+
+    document
+    .getElementById("facturaForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const select =
+            document.getElementById("servicioFactura");
+
+
+        const textoServicio =
+            select.options[select.selectedIndex].text;
+
+
+        const precio =
+            select.value;
+
+
+        const factura = {
+
+            numero:
+                Date.now(),
+
+            cliente:
+                document.getElementById("clienteFactura").value,
+
+            vehiculo:
+                document.getElementById("vehiculoFactura").value,
+
+            servicio:
+                textoServicio,
+
+            fecha:
+                document.getElementById("fechaFactura").value,
+
+            total:
+                precio
+
+        };
+
+
+        facturas.push(factura);
+
+
+        localStorage.setItem(
+            "facturasAutoClean",
+            JSON.stringify(facturas)
+        );
+
+
+        mostrarFacturas();
+
+
+        alert(
+            "🧾 Factura creada correctamente."
+        );
+
+
+        this.reset();
+
+    });
+
+    mostrarClientes();
+
+    mostrarFacturas();
+
+</script>
+
+</body>
+</html>
+```
