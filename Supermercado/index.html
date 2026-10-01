@@ -1,0 +1,2280 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> OmniMarket | Supermercado</title>
+
+    <!-- ==================================================
+        FUENTES
+    ================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- ==================================================
+        ICONOS
+    ================================================== -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+    PANTALLA DE CARGA
+========================================================= -->
+
+<div id="loader">
+
+    <div class="loader-content">
+
+        <div class="loader-logo">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+        </div>
+
+        <h1>
+            OmniMarket
+        </h1>
+
+        <p>
+            Preparando tu supermercado...
+        </p>
+
+        <div class="loader-bar">
+
+            <div class="loader-progress"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+    BARRA SUPERIOR
+========================================================= -->
+
+<div class="topbar">
+
+    <div>
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        Compra local, recibe en casa
+
+    </div>
+
+    <div class="topbar-right">
+
+        <span>
+            <i class="fa-solid fa-phone"></i>
+            +504 2222-7890
+        </span>
+
+        <span>
+            <i class="fa-solid fa-clock"></i>
+            Atención 7:00 AM - 9:00 PM
+        </span>
+
+        <span>
+            <i class="fa-solid fa-truck"></i>
+            Entregas
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+    NAVBAR
+========================================================= -->
+
+<header>
+
+<nav class="navbar">
+
+
+    <a href="#inicio" class="logo">
+
+        <div class="logo-icon">
+
+            <i class="fa-solid fa-basket-shopping"></i>
+
+        </div>
+
+        <div>
+
+            Onmi<span>Market</span>
+
+        </div>
+
+    </a>
+
+
+    <ul class="nav-menu">
+
+
+        <li>
+
+            <a href="#inicio">
+                Inicio
+            </a>
+
+        </li>
+
+
+        <!-- PRODUCTOS -->
+
+        <li class="dropdown">
+
+            <a href="#productos">
+
+                Productos
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+
+            <div class="dropdown-menu">
+
+                <a href="#categorias">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                    Todas las categorías
+
+                </a>
+
+                <a href="#productos">
+
+                    <i class="fa-solid fa-apple-whole"></i>
+
+                    Frutas y verduras
+
+                </a>
+
+                <a href="#productos">
+
+                    <i class="fa-solid fa-drumstick-bite"></i>
+
+                    Carnes
+
+                </a>
+
+                <a href="#productos">
+
+                    <i class="fa-solid fa-cheese"></i>
+
+                    Lácteos
+
+                </a>
+
+                <a href="#productos">
+
+                    <i class="fa-solid fa-bread-slice"></i>
+
+                    Panadería
+
+                </a>
+
+                <a href="#productos">
+
+                    <i class="fa-solid fa-soap"></i>
+
+                    Limpieza
+
+                </a>
+
+            </div>
+
+        </li>
+
+
+        <!-- OFERTAS -->
+
+        <li class="dropdown">
+
+            <a href="#ofertas">
+
+                Ofertas
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+
+            <div class="dropdown-menu">
+
+                <a href="#ofertas">
+
+                    <i class="fa-solid fa-percent"></i>
+
+                    Descuentos del día
+
+                </a>
+
+                <a href="#ofertas">
+
+                    <i class="fa-solid fa-fire"></i>
+
+                    Ofertas especiales
+
+                </a>
+
+                <a href="#ofertas">
+
+                    <i class="fa-solid fa-star"></i>
+
+                    Productos destacados
+
+                </a>
+
+            </div>
+
+        </li>
+
+
+        <!-- PRECIOS -->
+
+        <li>
+
+            <a href="#precios">
+                Precios regionales
+            </a>
+
+        </li>
+
+
+        <!-- PLANES -->
+
+        <li>
+
+            <a href="#planes">
+                Planes alimenticios
+            </a>
+
+        </li>
+
+
+        <!-- FACTURAS -->
+
+        <li>
+
+            <a href="#facturas">
+                Facturas
+            </a>
+
+        </li>
+
+
+        <!-- CARRITO -->
+
+        <li>
+
+            <a href="#carrito"
+            class="cart-button">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Carrito
+
+                <span id="cartCount">
+                    0
+                </span>
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</nav>
+
+</header>
+
+
+<!-- =========================================================
+    HERO
+========================================================= -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+
+
+            <div class="hero-label">
+
+                <i class="fa-solid fa-star"></i>
+
+                Calidad, ahorro y comodidad
+
+            </div>
+
+
+            <h1>
+
+                Todo tu súper,
+
+                <br>
+
+                <span>en un solo lugar.</span>
+
+            </h1>
+
+
+            <p>
+
+                Descubre productos frescos, promociones,
+                precios regionales y opciones para organizar
+                tus compras de una manera rápida y sencilla.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#productos"
+                class="btn btn-primary">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    Comprar ahora
+
+                </a>
+
+
+                <a href="#ofertas"
+                class="btn btn-light">
+
+                    <i class="fa-solid fa-tag"></i>
+
+                    Ver ofertas
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+    ACCIONES RÁPIDAS
+========================================================= -->
+
+<div class="quick-actions">
+
+
+    <a href="#productos"
+    class="quick-card">
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <h3>
+            Comprar en línea
+        </h3>
+
+        <p>
+            Agrega productos a tu carrito
+        </p>
+
+    </a>
+
+
+    <a href="#ofertas"
+    class="quick-card">
+
+        <i class="fa-solid fa-percent"></i>
+
+        <h3>
+            Ofertas
+        </h3>
+
+        <p>
+            Descubre descuentos especiales
+        </p>
+
+    </a>
+
+
+    <a href="#precios"
+    class="quick-card">
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        <h3>
+            Precios regionales
+        </h3>
+
+        <p>
+            Selecciona tu ciudad
+        </p>
+
+    </a>
+
+
+    <a href="#facturas"
+       class="quick-card">
+
+        <i class="fa-solid fa-file-invoice"></i>
+
+        <h3>
+            Mi factura
+        </h3>
+
+        <p>
+            Consulta tus comprobantes
+        </p>
+
+    </a>
+
+
+</div>
+
+
+<!-- =========================================================
+    CATEGORÍAS
+========================================================= -->
+
+<section class="section categories"
+        id="categorias">
+
+
+    <div class="section-title">
+
+        <small>
+            Explora
+        </small>
+
+        <h2>
+            Categorías populares
+        </h2>
+
+        <p>
+            Encuentra rápidamente lo que necesitas para
+            tu hogar y tus compras semanales.
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+
+        <div class="category">
+
+            <div class="category-icon">
+
+                <i class="fa-solid fa-apple-whole"></i>
+
+            </div>
+
+            <h3>
+                Frutas y verduras
+            </h3>
+
+        </div>
+
+
+        <div class="category">
+
+            <div class="category-icon">
+
+                <i class="fa-solid fa-drumstick-bite"></i>
+
+            </div>
+
+            <h3>
+                Carnes
+            </h3>
+
+        </div>
+
+
+        <div class="category">
+
+            <div class="category-icon">
+
+                <i class="fa-solid fa-cheese"></i>
+
+            </div>
+
+            <h3>
+                Lácteos
+            </h3>
+
+        </div>
+
+
+        <div class="category">
+
+            <div class="category-icon">
+
+                <i class="fa-solid fa-bread-slice"></i>
+
+            </div>
+
+            <h3>
+                Panadería
+            </h3>
+
+        </div>
+
+
+        <div class="category">
+
+            <div class="category-icon">
+
+                <i class="fa-solid fa-bottle-water"></i>
+
+            </div>
+
+            <h3>
+                Bebidas
+            </h3>
+
+        </div>
+
+
+        <div class="category">
+
+            <div class="category-icon">
+
+                <i class="fa-solid fa-soap"></i>
+
+            </div>
+
+            <h3>
+                Limpieza
+            </h3>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+    PRODUCTOS
+========================================================= -->
+
+<section class="section products"
+        id="productos">
+
+
+    <div class="section-title">
+
+        <small>
+            Compra inteligente
+        </small>
+
+        <h2>
+            Productos destacados
+        </h2>
+
+        <p>
+            Selecciona tus productos favoritos y agrégalos
+            al carrito de compras.
+        </p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <!-- PRODUCTO 1 -->
+
+        <div class="product-card">
+
+            <span class="discount">
+                -20%
+            </span>
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=700&q=80"
+                alt="Arroz">
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    Abarrotes
+                </span>
+
+                <h3>
+                    Arroz Premium
+                </h3>
+
+                <p>
+                    Presentación familiar.
+                </p>
+
+                <div class="product-price">
+
+                    <div>
+
+                        <span class="price">
+                            L 42.00
+                        </span>
+
+                        <span class="old-price">
+                            L 52.00
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="add-button"
+                        onclick="agregarCarrito('Arroz Premium',42)">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTO 2 -->
+
+        <div class="product-card">
+
+            <span class="discount">
+                -15%
+            </span>
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=700&q=80"
+                alt="Verduras">
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    Frescos
+                </span>
+
+                <h3>
+                    Canasta de verduras
+                </h3>
+
+                <p>
+                    Selección de vegetales frescos.
+                </p>
+
+                <div class="product-price">
+
+                    <div>
+
+                        <span class="price">
+                            L 89.00
+                        </span>
+
+                        <span class="old-price">
+                            L 105.00
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="add-button"
+                        onclick="agregarCarrito('Canasta de verduras',89)">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTO 3 -->
+
+        <div class="product-card">
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=700&q=80"
+                alt="Leche">
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    Lácteos
+                </span>
+
+                <h3>
+                    Leche Familiar
+                </h3>
+
+                <p>
+                    Producto de consumo familiar.
+                </p>
+
+                <div class="product-price">
+
+                    <div>
+
+                        <span class="price">
+                            L 38.00
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="add-button"
+                        onclick="agregarCarrito('Leche Familiar',38)">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTO 4 -->
+
+        <div class="product-card">
+
+            <span class="discount">
+                -10%
+            </span>
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80"
+                alt="Pan">
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    Panadería
+                </span>
+
+                <h3>
+                    Pan Familiar
+                </h3>
+
+                <p>
+                    Pan fresco para compartir.
+                </p>
+
+                <div class="product-price">
+
+                    <div>
+
+                        <span class="price">
+                            L 55.00
+                        </span>
+
+                        <span class="old-price">
+                            L 61.00
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="add-button"
+                        onclick="agregarCarrito('Pan Familiar',55)">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+    OFERTAS
+========================================================= -->
+
+<section class="section offers"
+        id="ofertas">
+
+
+    <div class="section-title">
+
+        <small>
+            Ahorra más
+        </small>
+
+        <h2>
+            Ofertas y descuentos
+        </h2>
+
+        <p>
+            Promociones demostrativas para organizar una
+            sección de ofertas en tu supermercado.
+        </p>
+
+    </div>
+
+
+    <div class="offer-grid">
+
+
+        <div class="offer-card"
+            style="
+            background-image:
+            url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80');
+            ">
+
+            <div class="offer-content">
+
+                <span>
+                    OFERTA
+                </span>
+
+                <h3>
+                    Frescos de la semana
+                </h3>
+
+                <p>
+                    Selección de frutas y verduras.
+                </p>
+
+                <button
+                    class="btn btn-orange"
+                    onclick="mostrarMensaje('Oferta de frescos seleccionada')">
+
+                    Ver productos
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="offer-card"
+            style="
+            background-image:
+            url('https://images.unsplash.com/photo-1556761223-4c4282c73f77?auto=format&fit=crop&w=900&q=80');
+            ">
+
+            <div class="offer-content">
+
+                <span>
+                    AHORRO
+                </span>
+
+                <h3>
+                    Compra familiar
+                </h3>
+
+                <p>
+                    Combos para compras del hogar.
+                </p>
+
+                <button
+                    class="btn btn-orange"
+                    onclick="mostrarMensaje('Combo familiar seleccionado')">
+
+                    Ver combo
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="offer-card"
+            style="
+            background-image:
+            url('https://images.unsplash.com/photo-1601598851547-4302969d99d1?auto=format&fit=crop&w=900&q=80');
+            ">
+
+            <div class="offer-content">
+
+                <span>
+                    ESPECIAL
+                </span>
+
+                <h3>
+                    Ahorro del día
+                </h3>
+
+                <p>
+                    Productos seleccionados con descuento.
+                </p>
+
+                <button
+                    class="btn btn-orange"
+                    onclick="mostrarMensaje('Oferta del día seleccionada')">
+
+                    Aprovechar
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+    PRECIOS REGIONALES
+========================================================= -->
+
+<section class="section regional"
+        id="precios">
+
+
+    <div class="regional-content">
+
+
+        <div>
+
+            <small>
+                PRECIOS REGIONALES
+            </small>
+
+            <h2>
+                Compra según tu región
+            </h2>
+
+            <p>
+                Selecciona una ciudad para consultar precios
+                demostrativos y disponibilidad regional.
+                En una tienda real, los precios y existencias
+                pueden variar según la ubicación.
+            </p>
+
+            <button
+                class="btn btn-light"
+                onclick="actualizarRegion()">
+
+                <i class="fa-solid fa-location-crosshairs"></i>
+
+                Actualizar región
+
+            </button>
+
+        </div>
+
+
+        <div class="region-box">
+
+            <h3>
+                Selecciona tu ciudad
+            </h3>
+
+            <select id="region"
+                    onchange="cambiarRegion()">
+
+                <option value="tegucigalpa">
+                    Tegucigalpa
+                </option>
+
+                <option value="sps">
+                    San Pedro Sula
+                </option>
+
+                <option value="laCeiba">
+                    La Ceiba
+                </option>
+
+                <option value="choluteca">
+                    Choluteca
+                </option>
+
+            </select>
+
+
+            <div class="region-price">
+
+                <span>
+                    Arroz Premium
+                </span>
+
+                <strong id="precioArroz">
+                    L 42.00
+                </strong>
+
+            </div>
+
+
+            <div class="region-price">
+
+                <span>
+                    Leche Familiar
+                </span>
+
+                <strong id="precioLeche">
+                    L 38.00
+                </strong>
+
+            </div>
+
+
+            <div class="region-price">
+
+                <span>
+                    Canasta de verduras
+                </span>
+
+                <strong id="precioVerduras">
+                    L 89.00
+                </strong>
+
+            </div>
+
+
+            <div class="region-price">
+
+                <span>
+                    Pan Familiar
+                </span>
+
+                <strong id="precioPan">
+                    L 55.00
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+    PLANES ALIMENTICIOS
+========================================================= -->
+
+<section class="section plans"
+        id="planes">
+
+
+    <div class="section-title">
+
+        <small>
+            Organización familiar
+        </small>
+
+        <h2>
+            Planes alimenticios
+        </h2>
+
+        <p>
+            Ideas de planificación de compras. No sustituyen
+            la orientación personalizada de un profesional.
+        </p>
+
+    </div>
+
+
+    <div class="plan-grid">
+
+
+        <div class="plan-card">
+
+            <div class="plan-icon">
+
+                <i class="fa-solid fa-seedling"></i>
+
+            </div>
+
+            <h3>
+                Plan Familiar
+            </h3>
+
+            <p>
+                Una lista general para organizar compras
+                de alimentos básicos del hogar.
+            </p>
+
+            <ul>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Frutas y verduras
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Granos y cereales
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Lácteos
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Productos básicos
+                </li>
+
+            </ul>
+
+            <button
+                class="btn btn-primary"
+                onclick="mostrarMensaje('Plan Familiar seleccionado')">
+
+                Ver lista
+
+            </button>
+
+        </div>
+
+
+        <div class="plan-card">
+
+            <div class="plan-icon">
+
+                <i class="fa-solid fa-carrot"></i>
+
+            </div>
+
+            <h3>
+                Plan Frescos
+            </h3>
+
+            <p>
+                Orientado a organizar una compra variada
+                de productos frescos.
+            </p>
+
+            <ul>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Frutas
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Vegetales
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Hierbas
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Productos de temporada
+                </li>
+
+            </ul>
+
+            <button
+                class="btn btn-primary"
+                onclick="mostrarMensaje('Plan Frescos seleccionado')">
+
+                Ver lista
+
+            </button>
+
+        </div>
+
+
+        <div class="plan-card">
+
+            <div class="plan-icon">
+
+                <i class="fa-solid fa-basket-shopping"></i>
+
+            </div>
+
+            <h3>
+                Plan Ahorro
+            </h3>
+
+            <p>
+                Ayuda a organizar una lista de compras
+                buscando promociones y productos básicos.
+            </p>
+
+            <ul>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Productos en oferta
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Abarrotes
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Productos familiares
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Comparación regional
+                </li>
+
+            </ul>
+
+            <button
+                class="btn btn-primary"
+                onclick="mostrarMensaje('Plan Ahorro seleccionado')">
+
+                Ver lista
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+    FACTURAS
+========================================================= -->
+
+<section class="section invoices"
+        id="facturas">
+
+
+    <div class="section-title">
+
+        <small>
+            Compras
+        </small>
+
+        <h2>
+            Consulta tus facturas
+        </h2>
+
+        <p>
+            Introduce los datos de una compra para consultar
+            una factura demostrativa.
+        </p>
+
+    </div>
+
+
+    <div class="invoice-box">
+
+
+        <div class="invoice-info">
+
+            <h2>
+                Tus compras organizadas
+            </h2>
+
+            <p>
+                Esta sección puede conectarse posteriormente
+                a una base de datos para generar y consultar
+                facturas reales.
+            </p>
+
+            <ul class="invoice-list">
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Historial de compras
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Número de factura
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Fecha de compra
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Total pagado
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="invoice-form">
+
+
+            <div class="form-group">
+
+                <label>
+                    Número de factura
+                </label>
+
+                <input
+                    id="numeroFactura"
+                    type="text"
+                    placeholder="Ej. NC-2026-000125">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Correo electrónico
+                </label>
+
+                <input
+                    id="correoFactura"
+                    type="email"
+                    placeholder="cliente@correo.com">
+
+            </div>
+
+
+            <button
+                class="btn btn-primary"
+                style="width:100%;"
+                onclick="consultarFactura()">
+
+                <i class="fa-solid fa-file-invoice"></i>
+
+                Consultar factura
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+    CARRITO
+========================================================= -->
+
+<section class="section cart-section"
+        id="carrito">
+
+
+    <div class="section-title">
+
+        <small>
+            Tu compra
+        </small>
+
+        <h2>
+            Carrito de compras
+        </h2>
+
+        <p>
+            Los productos agregados aparecerán aquí.
+        </p>
+
+    </div>
+
+
+    <div class="cart-box">
+
+
+        <div id="cartItems">
+
+            <p style="
+                text-align:center;
+                color:#89938e;
+                padding:30px;
+            ">
+
+                Tu carrito está vacío.
+
+            </p>
+
+        </div>
+
+
+        <div class="cart-total">
+
+            <span>
+                Total:
+            </span>
+
+            <span id="cartTotal">
+                L 0.00
+            </span>
+
+        </div>
+
+
+        <button
+            class="btn btn-primary"
+            style="
+                width:100%;
+                margin-top:20px;
+            "
+            onclick="finalizarCompra()">
+
+            <i class="fa-solid fa-credit-card"></i>
+
+            Continuar al pago
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+    ENTREGA
+========================================================= -->
+
+<section class="section delivery">
+
+
+    <div class="section-title">
+
+        <small>
+            Compra flexible
+        </small>
+
+        <h2>
+            Recibe tu pedido como prefieras
+        </h2>
+
+        <p>
+            Una estructura inspirada en opciones habituales
+            de supermercados digitales.
+        </p>
+
+    </div>
+
+
+    <div class="delivery-grid">
+
+
+        <div class="delivery-card">
+
+            <i class="fa-solid fa-truck-fast"></i>
+
+            <h3>
+                Delivery
+            </h3>
+
+            <p>
+                Recibe tus productos en la dirección indicada.
+            </p>
+
+        </div>
+
+
+        <div class="delivery-card">
+
+            <i class="fa-solid fa-store"></i>
+
+            <h3>
+                Pick-up
+            </h3>
+
+            <p>
+                Realiza tu pedido y recógelo en tienda.
+            </p>
+
+        </div>
+
+
+        <div class="delivery-card">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            <h3>
+                Entrega programada
+            </h3>
+
+            <p>
+                Selecciona un horario disponible.
+            </p>
+
+        </div>
+
+
+        <div class="delivery-card">
+
+            <i class="fa-solid fa-headset"></i>
+
+            <h3>
+                Atención
+            </h3>
+
+            <p>
+                Nuestro equipo puede ayudarte con tu pedido.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+    NEWSLETTER
+========================================================= -->
+
+<div class="newsletter">
+
+
+    <div>
+
+        <h2>
+            Recibe nuestras ofertas
+        </h2>
+
+        <p>
+            Suscríbete para conocer promociones y novedades.
+        </p>
+
+    </div>
+
+
+    <form
+        class="newsletter-form"
+        onsubmit="suscribirse(event)">
+
+        <input
+            id="email"
+            type="email"
+            placeholder="Tu correo electrónico"
+            required>
+
+        <button class="btn btn-light">
+
+            Suscribirme
+
+        </button>
+
+    </form>
+
+
+</div>
+
+
+<!-- =========================================================
+    FOOTER
+========================================================= -->
+
+<footer>
+
+
+<div class="footer-grid">
+
+
+    <div class="footer-brand">
+
+
+        <a href="#inicio"
+        class="logo"
+        style="color:white;">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-basket-shopping"></i>
+
+            </div>
+
+            <div>
+
+                Onmi<span>Market</span>
+
+            </div>
+
+        </a>
+
+
+        <p>
+
+            Supermercado OmniMarket es un proyecto web
+            educativo y demostrativo creado para practicar
+            HTML, CSS en Visual Studio Code.
+
+        </p>
+
+
+        <div class="socials">
+
+            <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Categorías
+        </h3>
+
+        <ul>
+
+            <li>
+                <a href="#productos">
+                    Abarrotes
+                </a>
+            </li>
+
+            <li>
+                <a href="#productos">
+                    Frutas y verduras
+                </a>
+            </li>
+
+            <li>
+                <a href="#productos">
+                    Lácteos
+                </a>
+            </li>
+
+            <li>
+                <a href="#productos">
+                    Panadería
+                </a>
+            </li>
+
+            <li>
+                <a href="#productos">
+                    Limpieza
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Servicios
+        </h3>
+
+        <ul>
+
+            <li>
+                <a href="#ofertas">
+                    Ofertas
+                </a>
+            </li>
+
+            <li>
+                <a href="#precios">
+                    Precios regionales
+                </a>
+            </li>
+
+            <li>
+                <a href="#planes">
+                    Planes alimenticios
+                </a>
+            </li>
+
+            <li>
+                <a href="#facturas">
+                    Facturas
+                </a>
+            </li>
+
+            <li>
+                <a href="#carrito">
+                    Carrito
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Contacto
+        </h3>
+
+        <ul>
+
+            <li>
+                <i class="fa-solid fa-phone"></i>
+                +504 2222-7890
+            </li>
+
+            <li>
+                <i class="fa-solid fa-envelope"></i>
+                contacto@OmniMarket.demo
+            </li>
+
+            <li>
+                <i class="fa-solid fa-location-dot"></i>
+                Honduras
+            </li>
+
+            <li>
+                <i class="fa-solid fa-clock"></i>
+                7:00 AM - 9:00 PM
+            </li>
+
+        </ul>
+
+    </div>
+
+
+</div>
+
+
+<div class="copyright">
+
+    <p>
+        © 2026 Supermercado OmniMarket.
+        Proyecto académico y demostrativo.
+    </p>
+
+    <p>
+
+        <strong>
+            Creador: Davi Alexander Munguia Rodriguez
+        </strong>
+
+        <br>
+
+        HTML + CSS + |
+        Visual Studio Code
+
+    </p>
+
+    <p style="margin-top:8px;">
+
+        Teléfono ficticio:
+        +504 2222-7890 |
+        Correo:
+        contacto@OmniMarket.demo
+
+    </p>
+
+</div>
+
+
+</footer>
+
+
+<!-- =========================================================
+    BOTÓN VOLVER ARRIBA
+========================================================= -->
+
+<button id="topButton"
+        onclick="window.scrollTo(0,0)">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+<!-- =========================================================
+    JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+PANTALLA DE CARGA
+========================================================= */
+
+window.addEventListener("load", function() {
+
+    setTimeout(function() {
+
+        document
+            .getElementById("loader")
+            .classList
+            .add("hidden");
+
+    }, 2200);
+
+});
+
+
+/* =========================================================
+CARRITO
+========================================================= */
+
+let carrito = [];
+
+let total = 0;
+
+
+function agregarCarrito(nombre, precio) {
+
+    carrito.push({
+        nombre: nombre,
+        precio: precio
+    });
+
+    total += precio;
+
+    actualizarCarrito();
+
+    alert(
+        nombre +
+        " fue agregado al carrito."
+    );
+}
+
+
+function actualizarCarrito() {
+
+    const container =
+        document.getElementById("cartItems");
+
+    const contador =
+        document.getElementById("cartCount");
+
+    const totalElement =
+        document.getElementById("cartTotal");
+
+
+    contador.textContent =
+        carrito.length;
+
+
+    if (carrito.length === 0) {
+
+        container.innerHTML = `
+
+            <p style="
+                text-align:center;
+                color:#89938e;
+                padding:30px;
+            ">
+
+                Tu carrito está vacío.
+
+            </p>
+
+        `;
+
+    } else {
+
+        container.innerHTML = "";
+
+        carrito.forEach(function(producto, index) {
+
+            const item =
+                document.createElement("div");
+
+            item.className =
+                "cart-item";
+
+            item.innerHTML = `
+
+                <div>
+
+                    <strong>
+                        ${producto.nombre}
+                    </strong>
+
+                    <br>
+
+                    <small>
+                        Producto ${index + 1}
+                    </small>
+
+                </div>
+
+                <strong>
+                    L ${producto.precio.toFixed(2)}
+                </strong>
+
+            `;
+
+            container.appendChild(item);
+
+        });
+
+    }
+
+
+    totalElement.textContent =
+        "L " + total.toFixed(2);
+}
+
+
+/* =========================================================
+FINALIZAR COMPRA
+========================================================= */
+
+function finalizarCompra() {
+
+    if (carrito.length === 0) {
+
+        alert(
+            "Tu carrito está vacío."
+        );
+
+        return;
+    }
+
+
+    alert(
+        "Compra preparada.\n\n" +
+        "Total: L " +
+        total.toFixed(2) +
+        "\n\n" +
+        "Esta página es una demostración."
+    );
+
+}
+
+
+/* =========================================================
+CAMBIAR REGIÓN
+========================================================= */
+
+function cambiarRegion() {
+
+    const region =
+        document.getElementById("region").value;
+
+
+    let arroz;
+    let leche;
+    let verduras;
+    let pan;
+
+
+    if (region === "tegucigalpa") {
+
+        arroz = 42;
+        leche = 38;
+        verduras = 89;
+        pan = 55;
+
+    }
+
+
+    else if (region === "sps") {
+
+        arroz = 44;
+        leche = 39;
+        verduras = 92;
+        pan = 56;
+
+    }
+
+
+    else if (region === "laCeiba") {
+
+        arroz = 45;
+        leche = 40;
+        verduras = 95;
+        pan = 57;
+
+    }
+
+
+    else {
+
+        arroz = 43;
+        leche = 38;
+        verduras = 90;
+        pan = 55;
+
+    }
+
+
+    document.getElementById("precioArroz")
+        .textContent =
+        "L " + arroz.toFixed(2);
+
+
+    document.getElementById("precioLeche")
+        .textContent =
+        "L " + leche.toFixed(2);
+
+
+    document.getElementById("precioVerduras")
+        .textContent =
+        "L " + verduras.toFixed(2);
+
+
+    document.getElementById("precioPan")
+        .textContent =
+        "L " + pan.toFixed(2);
+
+}
+
+
+function actualizarRegion() {
+
+    cambiarRegion();
+
+    alert(
+        "Región actualizada correctamente."
+    );
+
+}
+
+
+/* =========================================================
+FACTURAS
+========================================================= */
+
+function consultarFactura() {
+
+    const numero =
+        document
+        .getElementById("numeroFactura")
+        .value;
+
+    const correo =
+        document
+        .getElementById("correoFactura")
+        .value;
+
+
+    if (
+        numero === "" ||
+        correo === ""
+    ) {
+
+        alert(
+            "Completa todos los campos."
+        );
+
+        return;
+    }
+
+
+    alert(
+        "Factura consultada.\n\n" +
+        "Número: " +
+        numero +
+        "\n" +
+        "Correo: " +
+        correo +
+        "\n\n" +
+        "Esta es una demostración."
+    );
+
+}
+
+
+/* =========================================================
+NEWSLETTER
+========================================================= */
+
+function suscribirse(event) {
+
+    event.preventDefault();
+
+
+    const email =
+        document
+        .getElementById("email")
+        .value;
+
+
+    alert(
+        "¡Suscripción realizada!\n\n" +
+        email +
+        "\n\n" +
+        "Esta función es demostrativa."
+    );
+
+
+    document
+        .getElementById("email")
+        .value = "";
+
+}
+
+
+/* =========================================================
+MENSAJES GENERALES
+========================================================= */
+
+function mostrarMensaje(mensaje) {
+
+    alert(
+        "NovaCompra\n\n" +
+        mensaje +
+        "\n\n" +
+        "Función demostrativa."
+    );
+
+}
+
+
+/* =========================================================
+BOTÓN VOLVER ARRIBA
+========================================================= */
+
+window.addEventListener(
+    "scroll",
+    function() {
+
+        const button =
+            document.getElementById(
+                "topButton"
+            );
+
+
+        if (
+            window.scrollY > 400
+        ) {
+
+            button.style.display =
+                "block";
+
+        } else {
+
+            button.style.display =
+                "none";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+ANIMACIONES
+========================================================= */
+
+const observer =
+    new IntersectionObserver(
+        function(entries) {
+
+            entries.forEach(
+                function(entry) {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.style.opacity =
+                            "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: .12
+        }
+    );
+
+
+document
+.querySelectorAll(
+    ".product-card, " +
+    ".category, " +
+    ".offer-card, " +
+    ".plan-card, " +
+    ".delivery-card"
+)
+.forEach(
+    function(element) {
+
+        element.style.opacity =
+            "0";
+
+        element.style.transform =
+            "translateY(30px)";
+
+        element.style.transition =
+            "opacity .6s ease, transform .6s ease";
+
+        observer.observe(element);
+
+    }
+);
+
+
+</script>
+
+
+</body>
+</html>
+```
