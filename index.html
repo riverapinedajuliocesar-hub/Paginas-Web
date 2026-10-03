@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ISABEL | Tienda de Moda</title>
+<title>Farmacia Salud y Bienestar</title>
 
 <style>
+/* =====================================================
+   FARMACIA SALUD Y BIENESTAR
+   CSS - Diseño general
+===================================================== */
 
 *{
     box-sizing:border-box;
@@ -14,46 +17,29 @@
     padding:0;
 }
 
-:root{
-    --rosa:#b76e79;
-    --rosa-claro:#f7e7e9;
-    --vino:#6d2737;
-    --crema:#faf7f2;
-    --negro:#242124;
-    --gris:#777;
-    --blanco:#fff;
-    --verde:#198754;
-    --rojo:#dc3545;
-    --azul:#3567a8;
-    --amarillo:#d99a00;
-}
-
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--crema);
-    color:var(--negro);
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f1f7f6;
+    color:#263238;
 }
 
-/* =========================
-   HEADER
-========================= */
-
+/* ENCABEZADO */
 header{
-    background:linear-gradient(135deg,#6d2737,#b76e79);
+    background:linear-gradient(135deg,#087f5b,#1261a0);
     color:white;
-    padding:16px 25px;
+    padding:18px 25px;
     position:sticky;
     top:0;
     z-index:1000;
-    box-shadow:0 5px 20px rgba(0,0,0,.18);
+    box-shadow:0 5px 15px rgba(0,0,0,.18);
 }
 
 .header-content{
-    max-width:1400px;
+    max-width:1300px;
     margin:auto;
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
     gap:20px;
 }
 
@@ -64,29 +50,28 @@ header{
 }
 
 .logo-icon{
-    width:52px;
-    height:52px;
     background:white;
-    color:var(--vino);
+    color:#087f5b;
+    width:50px;
+    height:50px;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-family:Georgia,serif;
-    font-size:27px;
+    font-size:28px;
     font-weight:bold;
 }
 
 .logo h1{
-    font-family:Georgia,serif;
-    letter-spacing:2px;
+    font-size:22px;
 }
 
 .logo p{
-    font-size:11px;
+    font-size:12px;
     opacity:.9;
 }
 
+/* MENÚ */
 nav{
     display:flex;
     flex-wrap:wrap;
@@ -95,27 +80,26 @@ nav{
 }
 
 nav button{
-    border:0;
-    background:rgba(255,255,255,.13);
+    border:none;
+    background:rgba(255,255,255,.12);
     color:white;
-    padding:10px 12px;
-    border-radius:9px;
+    padding:10px 13px;
+    border-radius:10px;
     cursor:pointer;
     font-weight:bold;
+    transition:.3s;
 }
 
 nav button:hover,
 nav button.active{
     background:white;
-    color:var(--vino);
+    color:#087f5b;
+    transform:translateY(-2px);
 }
 
-/* =========================
-   GENERAL
-========================= */
-
+/* CONTENEDOR */
 .container{
-    max-width:1400px;
+    max-width:1300px;
     margin:auto;
     padding:25px;
 }
@@ -128,61 +112,61 @@ nav button.active{
     display:block;
 }
 
-.section-title{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:12px;
+/* INICIO */
+.hero{
+    background:linear-gradient(135deg,#dff8ef,#e5f2ff);
+    padding:45px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:10px 10px 20px rgba(0,0,0,.12);
+}
+
+.hero h2{
+    color:#087f5b;
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:750px;
+    line-height:1.6;
     margin-bottom:20px;
 }
 
-.section-title h2{
-    color:var(--vino);
-    font-family:Georgia,serif;
-}
-
+/* BOTONES */
 .btn{
-    border:0;
-    padding:10px 15px;
-    border-radius:9px;
+    border:none;
+    padding:11px 17px;
+    border-radius:10px;
     cursor:pointer;
     font-weight:bold;
+    transition:.3s;
     margin:3px;
-    transition:.2s;
 }
 
 .btn:hover{
     transform:translateY(-2px);
+    box-shadow:5px 5px 12px rgba(0,0,0,.18);
 }
 
 .btn-primary{
-    background:var(--vino);
-    color:white;
-}
-
-.btn-rosa{
-    background:var(--rosa);
+    background:#087f5b;
     color:white;
 }
 
 .btn-blue{
-    background:var(--azul);
+    background:#1261a0;
     color:white;
 }
 
 .btn-danger{
-    background:var(--rojo);
+    background:#dc3545;
     color:white;
 }
 
 .btn-warning{
-    background:var(--amarillo);
-    color:white;
-}
-
-.btn-success{
-    background:var(--verde);
+    background:#f59f00;
     color:white;
 }
 
@@ -193,55 +177,14 @@ nav button.active{
 
 .btn-light{
     background:white;
-    color:var(--vino);
+    color:#087f5b;
     border:1px solid #ddd;
 }
 
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    min-height:430px;
-    border-radius:22px;
-    padding:55px;
-    margin-bottom:25px;
-    background:
-      linear-gradient(rgba(40,20,25,.55),rgba(40,20,25,.55)),
-      url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600&q=85")
-      center/cover;
-    color:white;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    box-shadow:0 12px 30px rgba(0,0,0,.18);
-}
-
-.hero h2{
-    font-family:Georgia,serif;
-    font-size:48px;
-    margin-bottom:15px;
-}
-
-.hero p{
-    max-width:650px;
-    font-size:19px;
-    line-height:1.6;
-    margin-bottom:20px;
-}
-
-.hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-}
-
-/* =========================
-   STATS
-========================= */
-
+/* TARJETAS */
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
     gap:18px;
     margin:20px 0;
 }
@@ -250,120 +193,42 @@ nav button.active{
     background:white;
     border-radius:15px;
     padding:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    box-shadow:10px 10px 20px rgba(0,0,0,.12);
 }
 
 .stat-card{
     text-align:center;
-    border-top:4px solid var(--rosa);
+    border-left:5px solid #087f5b;
 }
 
-.stat-number{
-    color:var(--vino);
-    font-size:30px;
+.stat-card .number{
+    font-size:32px;
     font-weight:bold;
+    color:#1261a0;
     margin:8px;
 }
 
-/* =========================
-   CATALOGO
-========================= */
-
-.search-box{
-    background:white;
-    padding:15px;
-    border-radius:14px;
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
+/* TÍTULOS */
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
     gap:10px;
     margin-bottom:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,.07);
 }
 
-input,
-select,
-textarea{
-    width:100%;
-    padding:11px;
-    border:1px solid #d8d0d0;
-    border-radius:8px;
-    outline:none;
-    background:white;
+.section-title h2{
+    color:#087f5b;
 }
 
-input:focus,
-select:focus,
-textarea:focus{
-    border-color:var(--rosa);
-}
-
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
-    gap:22px;
-}
-
-.product-card{
-    background:white;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 8px 22px rgba(0,0,0,.09);
-    transition:.3s;
-}
-
-.product-card:hover{
-    transform:translateY(-5px);
-}
-
-.product-image{
-    width:100%;
-    height:290px;
-    object-fit:cover;
-    display:block;
-}
-
-.product-info{
-    padding:16px;
-}
-
-.product-info h3{
-    color:var(--vino);
-    margin-bottom:7px;
-}
-
-.product-meta{
-    color:var(--gris);
-    font-size:13px;
-    line-height:1.7;
-}
-
-.price{
-    color:var(--vino);
-    font-size:22px;
-    font-weight:bold;
-    margin:8px 0;
-}
-
-.stock-ok{
-    color:var(--verde);
-    font-weight:bold;
-}
-
-.stock-low{
-    color:var(--rojo);
-    font-weight:bold;
-}
-
-/* =========================
-   FORMULARIOS
-========================= */
-
+/* FORMULARIOS */
 .form-card{
     background:white;
-    border-radius:15px;
     padding:22px;
+    border-radius:15px;
     margin-bottom:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    box-shadow:10px 10px 20px rgba(0,0,0,.10);
 }
 
 .form-grid{
@@ -383,25 +248,41 @@ textarea:focus{
     font-size:14px;
 }
 
-/* =========================
-   TABLAS
-========================= */
+input,
+select,
+textarea{
+    width:100%;
+    padding:11px;
+    border:1px solid #ccd5d8;
+    border-radius:10px;
+    outline:none;
+    background:white;
+    transition:.2s;
+}
 
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#087f5b;
+    box-shadow:0 0 0 3px rgba(8,127,91,.1);
+}
+
+/* TABLAS */
 .table-container{
     overflow-x:auto;
     background:white;
     border-radius:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    box-shadow:10px 10px 20px rgba(0,0,0,.10);
 }
 
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:800px;
+    min-width:750px;
 }
 
 th{
-    background:var(--vino);
+    background:#087f5b;
     color:white;
     padding:12px;
     text-align:left;
@@ -409,27 +290,87 @@ th{
 
 td{
     padding:11px;
-    border-bottom:1px solid #eee;
+    border-bottom:1px solid #e5e5e5;
 }
 
 tr:hover{
-    background:#fff7f8;
+    background:#f1faf7;
 }
 
-/* =========================
-   ALERTAS
-========================= */
+/* PRODUCTOS */
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
 
-.alert{
-    padding:13px;
-    border-radius:9px;
-    margin:10px 0;
+.product-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:10px 10px 20px rgba(0,0,0,.12);
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-5px);
+}
+
+.product-image{
+    height:130px;
+    background:linear-gradient(135deg,#dff8ef,#e5f2ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+}
+
+.product-info{
+    padding:16px;
+}
+
+.product-info h3{
+    color:#087f5b;
+    margin-bottom:8px;
+}
+
+.price{
+    color:#1261a0;
+    font-size:21px;
+    font-weight:bold;
+    margin:8px 0;
+}
+
+.stock{
+    font-size:13px;
     font-weight:bold;
 }
 
-.alert-warning{
-    background:#fff3cd;
-    color:#664d03;
+.stock-low{
+    color:#dc3545;
+}
+
+.stock-ok{
+    color:#087f5b;
+}
+
+/* BARRA DE BÚSQUEDA */
+.search-box{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.search-box input{
+    flex:1;
+}
+
+/* ALERTAS */
+.alert{
+    padding:13px;
+    border-radius:10px;
+    margin:10px 0;
+    font-weight:bold;
 }
 
 .alert-success{
@@ -442,43 +383,18 @@ tr:hover{
     color:#842029;
 }
 
-/* =========================
-   CARRITO
-========================= */
-
-.cart-summary{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    max-width:400px;
-    margin:20px 0 20px auto;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+.alert-warning{
+    background:#fff3cd;
+    color:#664d03;
 }
 
-.total-line{
-    display:flex;
-    justify-content:space-between;
-    padding:7px 0;
-}
-
-.grand-total{
-    border-top:2px solid var(--vino);
-    padding-top:12px;
-    color:var(--vino);
-    font-size:22px;
-    font-weight:bold;
-}
-
-/* =========================
-   MODAL
-========================= */
-
+/* MODAL */
 .modal{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.6);
-    z-index:3000;
+    background:rgba(0,0,0,.55);
+    z-index:2000;
     align-items:center;
     justify-content:center;
     padding:20px;
@@ -491,57 +407,65 @@ tr:hover{
 .modal-content{
     background:white;
     width:100%;
-    max-width:700px;
+    max-width:600px;
     max-height:90vh;
     overflow:auto;
     border-radius:18px;
     padding:25px;
+    box-shadow:10px 10px 30px rgba(0,0,0,.3);
 }
 
 .modal-header{
     display:flex;
     justify-content:space-between;
+    align-items:center;
     margin-bottom:20px;
 }
 
 .close{
-    border:0;
+    border:none;
+    background:#eee;
     width:35px;
     height:35px;
     border-radius:50%;
     cursor:pointer;
+    font-size:20px;
 }
 
-/* =========================
-   FACTURA
-========================= */
-
+/* FACTURA */
 .invoice{
     background:white;
-    max-width:900px;
-    margin:auto;
     padding:30px;
-    border-radius:12px;
+    max-width:850px;
+    margin:auto;
+    border-radius:10px;
 }
 
 .invoice-header{
     display:flex;
     justify-content:space-between;
     gap:20px;
-    border-bottom:3px solid var(--vino);
+    border-bottom:3px solid #087f5b;
     padding-bottom:15px;
     margin-bottom:20px;
 }
 
 .invoice-title{
-    font-family:Georgia,serif;
-    font-size:30px;
-    color:var(--vino);
+    color:#087f5b;
+    font-size:28px;
+}
+
+.invoice table{
+    min-width:0;
+}
+
+.invoice th{
+    background:#087f5b;
 }
 
 .invoice-total{
-    max-width:320px;
     margin-left:auto;
+    max-width:300px;
     margin-top:20px;
 }
 
@@ -552,36 +476,27 @@ tr:hover{
 }
 
 .invoice-total .total{
-    border-top:2px solid var(--vino);
-    color:var(--vino);
     font-size:22px;
     font-weight:bold;
+    border-top:2px solid #087f5b;
+    color:#087f5b;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
+/* FOOTER */
 footer{
-    background:#241b1e;
+    background:#263238;
     color:white;
-    text-align:center;
     padding:30px;
     margin-top:40px;
+    text-align:center;
 }
 
-footer h3{
-    font-family:Georgia,serif;
-    color:#f4c6cd;
-    font-size:25px;
+footer p{
+    margin:5px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:900px){
-
+/* RESPONSIVE */
+@media(max-width:800px){
     .header-content{
         flex-direction:column;
     }
@@ -590,1081 +505,719 @@ footer h3{
         width:100%;
     }
 
-    .hero{
-        padding:35px 25px;
-    }
-
-    .hero h2{
-        font-size:34px;
-    }
-
-    .search-box{
-        grid-template-columns:1fr;
-    }
-
-}
-
-@media(max-width:600px){
-
-    .container{
-        padding:15px;
+    nav button{
+        font-size:12px;
     }
 
     .hero{
-        min-height:400px;
+        padding:25px;
     }
 
     .hero h2{
-        font-size:29px;
+        font-size:27px;
     }
 
-    .product-image{
-        height:350px;
+    .invoice-header{
+        flex-direction:column;
     }
-
 }
 
-/* =========================
-   PRINT
-========================= */
-
+/* IMPRESIÓN */
 @media print{
-
     body{
         background:white;
     }
 
     header,
     footer,
-    nav,
     .no-print,
-    .btn{
-        display:none!important;
+    nav,
+    .btn,
+    .section-title{
+        display:none !important;
     }
 
     .section{
-        display:none!important;
+        display:none !important;
     }
 
     #facturaVista{
-        display:block!important;
+        display:block !important;
     }
 
     .invoice{
         box-shadow:none;
+        width:100%;
         max-width:none;
     }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<header>
+<!-- =====================================================
+     ENCABEZADO
+===================================================== -->
 
+<header>
 <div class="header-content">
 
-<div class="logo">
+    <div class="logo">
+        <div class="logo-icon">✚</div>
+        <div>
+            <h1>Farmacia Salud y Bienestar</h1>
+            <p>Sistema de Administración y Facturación</p>
+        </div>
+    </div>
 
-<div class="logo-icon">
-I
-</div>
-
-<div>
-<h1>ISABEL</h1>
-<p>TIENDA DE MODA & ESTILO</p>
-</div>
-
-</div>
-
-<nav>
-
-<button class="active"
-onclick="mostrarSeccion('inicio',this)">
-Inicio
-</button>
-
-<button onclick="mostrarSeccion('catalogo',this)">
-Catálogo
-</button>
-
-<button onclick="mostrarSeccion('productos',this)">
-Prendas
-</button>
-
-<button onclick="mostrarSeccion('clientes',this)">
-Clientes
-</button>
-
-<button onclick="mostrarSeccion('proveedores',this)">
-Proveedores
-</button>
-
-<button onclick="mostrarSeccion('empleados',this)">
-Empleados
-</button>
-
-<button onclick="mostrarSeccion('facturacion',this)">
-Facturación
-</button>
-
-<button onclick="mostrarSeccion('historial',this)">
-Facturas
-</button>
-
-<button onclick="mostrarSeccion('reportes',this)">
-Reportes
-</button>
-
-</nav>
+    <nav>
+        <button class="active" onclick="mostrarSeccion('inicio',this)">Inicio</button>
+        <button onclick="mostrarSeccion('productos',this)">Productos</button>
+        <button onclick="mostrarSeccion('clientes',this)">Clientes</button>
+        <button onclick="mostrarSeccion('proveedores',this)">Proveedores</button>
+        <button onclick="mostrarSeccion('empleados',this)">Empleados</button>
+        <button onclick="mostrarSeccion('facturacion',this)">Facturación</button>
+        <button onclick="mostrarSeccion('historial',this)">Facturas</button>
+        <button onclick="mostrarSeccion('reportes',this)">Reportes</button>
+    </nav>
 
 </div>
-
 </header>
 
 
 <main class="container">
 
-<!-- =========================
-INICIO
-========================= -->
+<!-- =====================================================
+     INICIO
+===================================================== -->
 
 <section id="inicio" class="section active">
 
-<div class="hero">
+    <div class="hero">
+        <h2>Bienvenido a Farmacia Salud y Bienestar 💚</h2>
 
-<h2>Elegancia que habla por ti.</h2>
+        <p>
+            Sistema web para administrar productos, clientes,
+            proveedores, empleados, inventario y facturación.
+        </p>
 
-<p>
-Descubre nuestra colección de moda para mujer y hombre.
-Prendas seleccionadas para crear un estilo moderno,
-elegante y auténticamente tuyo.
-</p>
+        <button class="btn btn-primary"
+                onclick="mostrarSeccionPorNombre('productos')">
+            🛒 Ver productos
+        </button>
 
-<div class="hero-buttons">
+        <button class="btn btn-blue"
+                onclick="mostrarSeccionPorNombre('facturacion')">
+            🧾 Nueva factura
+        </button>
 
-<button class="btn btn-rosa"
-onclick="mostrarSeccionPorNombre('catalogo')">
-Ver colección
-</button>
+        <button class="btn btn-light"
+                onclick="mostrarSeccionPorNombre('clientes')">
+            👥 Administrar clientes
+        </button>
+    </div>
 
-<button class="btn btn-light"
-onclick="mostrarSeccionPorNombre('facturacion')">
-Nueva venta
-</button>
+    <div class="cards">
 
-</div>
+        <div class="card stat-card">
+            <h3>Productos</h3>
+            <div class="number" id="statProductos">0</div>
+            <p>Registrados</p>
+        </div>
 
-</div>
+        <div class="card stat-card">
+            <h3>Clientes</h3>
+            <div class="number" id="statClientes">0</div>
+            <p>Registrados</p>
+        </div>
 
+        <div class="card stat-card">
+            <h3>Facturas</h3>
+            <div class="number" id="statFacturas">0</div>
+            <p>Realizadas</p>
+        </div>
 
-<div class="cards">
+        <div class="card stat-card">
+            <h3>Ventas</h3>
+            <div class="number" id="statVentas">$0.00</div>
+            <p>Acumuladas</p>
+        </div>
 
-<div class="card stat-card">
-<h3>Prendas</h3>
-<div class="stat-number" id="statProductos">0</div>
-<p>Registradas</p>
-</div>
+    </div>
 
-<div class="card stat-card">
-<h3>Clientes</h3>
-<div class="stat-number" id="statClientes">0</div>
-<p>Registrados</p>
-</div>
+    <div class="card">
+        <h2 style="color:#087f5b;margin-bottom:15px;">
+            💊 Productos destacados
+        </h2>
 
-<div class="card stat-card">
-<h3>Facturas</h3>
-<div class="stat-number" id="statFacturas">0</div>
-<p>Realizadas</p>
-</div>
-
-<div class="card stat-card">
-<h3>Ventas</h3>
-<div class="stat-number" id="statVentas">
-L 0.00
-</div>
-<p>Acumuladas</p>
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h2 style="color:#6d2737;margin-bottom:15px;">
-✨ Colección destacada
-</h2>
-
-<div id="destacados"
-class="product-grid">
-</div>
-
-</div>
+        <div id="productosDestacados" class="product-grid"></div>
+    </div>
 
 </section>
 
 
-<!-- =========================
-CATALOGO
-========================= -->
-
-<section id="catalogo" class="section">
-
-<div class="section-title">
-
-<h2>✨ Catálogo Isabel</h2>
-
-<button class="btn btn-primary"
-onclick="mostrarSeccionPorNombre('facturacion')">
-
-🛍️ Ir a facturación
-
-</button>
-
-</div>
-
-
-<div class="search-box">
-
-<input
-id="buscarCatalogo"
-placeholder="🔎 Buscar vestido, blusa, jeans..."
-oninput="renderCatalogo()">
-
-<select id="filtroCategoria"
-onchange="renderCatalogo()">
-
-<option value="">Todas las categorías</option>
-<option>Vestidos</option>
-<option>Blusas</option>
-<option>Jeans</option>
-<option>Pantalones</option>
-<option>Camisas</option>
-<option>Conjuntos</option>
-<option>Chaquetas</option>
-<option>Accesorios</option>
-
-</select>
-
-<select id="filtroGenero"
-onchange="renderCatalogo()">
-
-<option value="">Todos</option>
-<option>Mujer</option>
-<option>Hombre</option>
-<option>Unisex</option>
-
-</select>
-
-</div>
-
-
-<div id="catalogoGrid"
-class="product-grid">
-</div>
-
-</section>
-
-
-<!-- =========================
-PRODUCTOS
-========================= -->
+<!-- =====================================================
+     PRODUCTOS
+===================================================== -->
 
 <section id="productos" class="section">
 
-<div class="section-title">
+    <div class="section-title">
+        <h2>💊 Gestión de Productos</h2>
 
-<h2>👗 Gestión de Prendas</h2>
+        <button class="btn btn-primary"
+                onclick="abrirModalProducto()">
+            + Agregar producto
+        </button>
+    </div>
 
-<button class="btn btn-primary"
-onclick="abrirModalProducto()">
+    <div class="search-box">
+        <input type="text"
+               id="buscarProducto"
+               placeholder="🔎 Buscar producto..."
+               oninput="renderProductos()">
 
-+ Agregar prenda
+        <select id="filtroCategoria"
+                onchange="renderProductos()">
+            <option value="">Todas las categorías</option>
+            <option>Analgésicos</option>
+            <option>Antigripales</option>
+            <option>Antibióticos</option>
+            <option>Vitaminas</option>
+            <option>Higiene personal</option>
+            <option>Cuidado de la piel</option>
+            <option>Primeros auxilios</option>
+            <option>Otros</option>
+        </select>
+    </div>
 
-</button>
-
-</div>
-
-
-<div class="table-container">
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>ID</th>
-<th>Prenda</th>
-<th>Categoría</th>
-<th>Género</th>
-<th>Talla</th>
-<th>Color</th>
-<th>Precio</th>
-<th>Stock</th>
-<th>Proveedor</th>
-<th>Acciones</th>
-
-</tr>
-
-</thead>
-
-<tbody id="tablaProductos">
-</tbody>
-
-</table>
-
-</div>
+    <div id="productosGrid" class="product-grid"></div>
 
 </section>
 
 
-<!-- =========================
-CLIENTES
-========================= -->
+<!-- =====================================================
+     CLIENTES
+===================================================== -->
 
 <section id="clientes" class="section">
 
-<div class="section-title">
+    <div class="section-title">
+        <h2>👥 Clientes</h2>
 
-<h2>👥 Clientes</h2>
+        <button class="btn btn-primary"
+                onclick="abrirModalCliente()">
+            + Agregar cliente
+        </button>
+    </div>
 
-<button class="btn btn-primary"
-onclick="abrirModalCliente()">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>DNI</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Dirección</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
 
-+ Agregar cliente
-
-</button>
-
-</div>
-
-
-<div class="table-container">
-
-<table>
-
-<thead>
-
-<tr>
-<th>ID</th>
-<th>Nombre</th>
-<th>DNI</th>
-<th>Teléfono</th>
-<th>Correo</th>
-<th>Dirección</th>
-<th>Acciones</th>
-</tr>
-
-</thead>
-
-<tbody id="tablaClientes">
-</tbody>
-
-</table>
-
-</div>
+            <tbody id="tablaClientes"></tbody>
+        </table>
+    </div>
 
 </section>
 
 
-<!-- =========================
-PROVEEDORES
-========================= -->
+<!-- =====================================================
+     PROVEEDORES
+===================================================== -->
 
 <section id="proveedores" class="section">
 
-<div class="section-title">
+    <div class="section-title">
+        <h2>🚚 Proveedores</h2>
 
-<h2>🚚 Proveedores</h2>
+        <button class="btn btn-primary"
+                onclick="abrirModalProveedor()">
+            + Agregar proveedor
+        </button>
+    </div>
 
-<button class="btn btn-primary"
-onclick="abrirModalProveedor()">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Empresa</th>
+                    <th>Contacto</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
 
-+ Agregar proveedor
-
-</button>
-
-</div>
-
-
-<div class="table-container">
-
-<table>
-
-<thead>
-
-<tr>
-<th>ID</th>
-<th>Empresa</th>
-<th>Contacto</th>
-<th>Teléfono</th>
-<th>Correo</th>
-<th>Producto suministrado</th>
-<th>Acciones</th>
-</tr>
-
-</thead>
-
-<tbody id="tablaProveedores">
-</tbody>
-
-</table>
-
-</div>
+            <tbody id="tablaProveedores"></tbody>
+        </table>
+    </div>
 
 </section>
 
 
-<!-- =========================
-EMPLEADOS
-========================= -->
+<!-- =====================================================
+     EMPLEADOS
+===================================================== -->
 
 <section id="empleados" class="section">
 
-<div class="section-title">
+    <div class="section-title">
+        <h2>👨‍💼 Empleados</h2>
 
-<h2>👩‍💼 Empleados</h2>
+        <button class="btn btn-primary"
+                onclick="abrirModalEmpleado()">
+            + Agregar empleado
+        </button>
+    </div>
 
-<button class="btn btn-primary"
-onclick="abrirModalEmpleado()">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Cargo</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
 
-+ Agregar empleado
-
-</button>
-
-</div>
-
-
-<div class="table-container">
-
-<table>
-
-<thead>
-
-<tr>
-<th>ID</th>
-<th>Nombre</th>
-<th>Cargo</th>
-<th>Teléfono</th>
-<th>Correo</th>
-<th>Estado</th>
-<th>Acciones</th>
-</tr>
-
-</thead>
-
-<tbody id="tablaEmpleados">
-</tbody>
-
-</table>
-
-</div>
+            <tbody id="tablaEmpleados"></tbody>
+        </table>
+    </div>
 
 </section>
 
 
-<!-- =========================
-FACTURACION
-========================= -->
+<!-- =====================================================
+     FACTURACIÓN
+===================================================== -->
 
 <section id="facturacion" class="section">
 
-<div class="section-title">
+    <div class="section-title">
+        <h2>🧾 Facturación de Clientes</h2>
 
-<h2>🧾 Facturación</h2>
+        <button class="btn btn-secondary"
+                onclick="nuevaFactura()">
+            Nueva factura
+        </button>
+    </div>
 
-<button class="btn btn-secondary"
-onclick="nuevaFactura()">
+    <div class="form-card">
 
-Nueva factura
+        <h3 style="color:#087f5b;margin-bottom:15px;">
+            Datos del cliente
+        </h3>
 
-</button>
+        <div class="form-grid">
 
-</div>
+            <div class="form-group">
+                <label>Cliente</label>
 
+                <select id="factCliente"
+                        onchange="mostrarDatosCliente()">
+                </select>
+            </div>
 
-<div class="form-card">
+            <div class="form-group">
+                <label>DNI</label>
+                <input id="factDni" readonly>
+            </div>
 
-<h3 style="color:#6d2737;margin-bottom:15px;">
-Datos de la venta
-</h3>
+            <div class="form-group">
+                <label>Fecha</label>
+                <input type="date" id="factFecha">
+            </div>
 
-<div class="form-grid">
+            <div class="form-group">
+                <label>Número de factura</label>
+                <input id="factNumero" readonly>
+            </div>
 
-<div class="form-group">
+        </div>
 
-<label>Cliente</label>
+    </div>
 
-<select id="factCliente"
-onchange="mostrarDatosCliente()">
-</select>
 
-</div>
+    <div class="form-card">
 
+        <div class="section-title">
+            <h3 style="color:#087f5b;">
+                Productos de la factura
+            </h3>
 
-<div class="form-group">
+            <button class="btn btn-primary"
+                    onclick="agregarProductoFactura()">
+                + Agregar producto
+            </button>
+        </div>
 
-<label>DNI</label>
+        <div class="table-container">
 
-<input id="factDni" readonly>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Subtotal</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
 
-</div>
+                <tbody id="detalleFactura"></tbody>
 
+            </table>
 
-<div class="form-group">
+        </div>
 
-<label>Fecha</label>
 
-<input type="date"
-id="factFecha">
+        <div class="invoice-total">
 
-</div>
+            <div>
+                <span>Subtotal:</span>
+                <strong id="factSubtotal">$0.00</strong>
+            </div>
 
+            <div>
+                <span>Descuento:</span>
+                <strong id="factDescuento">$0.00</strong>
+            </div>
 
-<div class="form-group">
+            <div>
+                <span>ISV (15%):</span>
+                <strong id="factISV">$0.00</strong>
+            </div>
 
-<label>Número de factura</label>
+            <div class="total">
+                <span>Total:</span>
+                <strong id="factTotal">$0.00</strong>
+            </div>
 
-<input id="factNumero" readonly>
+        </div>
 
-</div>
+        <br>
 
-</div>
+        <button class="btn btn-primary"
+                onclick="guardarFactura()">
+            💾 Guardar factura
+        </button>
 
-</div>
+        <button class="btn btn-blue"
+                onclick="prepararImpresion()">
+            🖨️ Imprimir factura
+        </button>
 
-
-<div class="form-card">
-
-<div class="section-title">
-
-<h3 style="color:#6d2737;">
-Prendas de la venta
-</h3>
-
-<button class="btn btn-primary"
-onclick="agregarProductoFactura()">
-
-+ Agregar prenda
-
-</button>
-
-</div>
-
-
-<div class="table-container">
-
-<table>
-
-<thead>
-
-<tr>
-<th>Prenda</th>
-<th>Talla</th>
-<th>Cantidad</th>
-<th>Precio</th>
-<th>Subtotal</th>
-<th>Acción</th>
-</tr>
-
-</thead>
-
-<tbody id="detalleFactura">
-</tbody>
-
-</table>
-
-</div>
-
-
-<div class="cart-summary">
-
-<div class="total-line">
-
-<span>Subtotal</span>
-
-<strong id="factSubtotal">
-L 0.00
-</strong>
-
-</div>
-
-
-<div class="total-line">
-
-<span>Descuento</span>
-
-<strong id="factDescuento">
-L 0.00
-</strong>
-
-</div>
-
-
-<div class="form-group">
-
-<label>Descuento (%)</label>
-
-<input
-type="number"
-id="descuentoPorcentaje"
-value="0"
-min="0"
-max="100"
-oninput="calcularFactura()">
-
-</div>
-
-
-<div class="total-line">
-
-<span>ISV (15%)</span>
-
-<strong id="factISV">
-L 0.00
-</strong>
-
-</div>
-
-
-<div class="total-line grand-total">
-
-<span>TOTAL</span>
-
-<strong id="factTotal">
-L 0.00
-</strong>
-
-</div>
-
-</div>
-
-
-<button class="btn btn-success"
-onclick="guardarFactura()">
-
-💾 Guardar factura
-
-</button>
-
-
-<button class="btn btn-blue"
-onclick="prepararImpresion()">
-
-🖨️ Imprimir
-
-</button>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- =========================
-HISTORIAL
-========================= -->
+<!-- =====================================================
+     HISTORIAL
+===================================================== -->
 
 <section id="historial" class="section">
 
-<div class="section-title">
+    <div class="section-title">
+        <h2>📋 Historial de Facturas</h2>
+    </div>
 
-<h2>📋 Historial de Facturas</h2>
+    <div class="table-container">
 
-</div>
+        <table>
 
+            <thead>
+                <tr>
+                    <th>Factura</th>
+                    <th>Fecha</th>
+                    <th>Cliente</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
 
-<div class="table-container">
+            <tbody id="tablaFacturas"></tbody>
 
-<table>
+        </table>
 
-<thead>
-
-<tr>
-<th>Factura</th>
-<th>Fecha</th>
-<th>Cliente</th>
-<th>Total</th>
-<th>Acciones</th>
-</tr>
-
-</thead>
-
-<tbody id="tablaFacturas">
-</tbody>
-
-</table>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- =========================
-REPORTES
-========================= -->
+<!-- =====================================================
+     REPORTES
+===================================================== -->
 
 <section id="reportes" class="section">
 
-<div class="section-title">
+    <div class="section-title">
+        <h2>📊 Reportes del sistema</h2>
+    </div>
 
-<h2>📊 Reportes</h2>
+    <div class="cards">
 
-</div>
+        <div class="card stat-card">
+            <h3>Productos</h3>
+            <div class="number" id="repProductos">0</div>
+        </div>
 
+        <div class="card stat-card">
+            <h3>Clientes</h3>
+            <div class="number" id="repClientes">0</div>
+        </div>
 
-<div class="cards">
+        <div class="card stat-card">
+            <h3>Proveedores</h3>
+            <div class="number" id="repProveedores">0</div>
+        </div>
 
-<div class="card stat-card">
-<h3>Prendas</h3>
-<div class="stat-number"
-id="repProductos">0</div>
-</div>
+        <div class="card stat-card">
+            <h3>Empleados</h3>
+            <div class="number" id="repEmpleados">0</div>
+        </div>
 
-<div class="card stat-card">
-<h3>Clientes</h3>
-<div class="stat-number"
-id="repClientes">0</div>
-</div>
+        <div class="card stat-card">
+            <h3>Facturas</h3>
+            <div class="number" id="repFacturas">0</div>
+        </div>
 
-<div class="card stat-card">
-<h3>Proveedores</h3>
-<div class="stat-number"
-id="repProveedores">0</div>
-</div>
+        <div class="card stat-card">
+            <h3>Ventas</h3>
+            <div class="number" id="repVentas">$0.00</div>
+        </div>
 
-<div class="card stat-card">
-<h3>Empleados</h3>
-<div class="stat-number"
-id="repEmpleados">0</div>
-</div>
-
-<div class="card stat-card">
-<h3>Facturas</h3>
-<div class="stat-number"
-id="repFacturas">0</div>
-</div>
-
-<div class="card stat-card">
-<h3>Ventas</h3>
-<div class="stat-number"
-id="repVentas">L 0.00</div>
-</div>
-
-</div>
+    </div>
 
 
-<div class="form-card">
+    <div class="form-card">
 
-<h3 style="color:#6d2737;">
-⚠️ Prendas con poco inventario
-</h3>
+        <h3 style="color:#087f5b;margin-bottom:15px;">
+            ⚠️ Productos con poco inventario
+        </h3>
 
-<div id="bajoStock"></div>
+        <div id="productosBajoStock"></div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- =========================
-VISTA FACTURA
-========================= -->
+<!-- =====================================================
+     VISTA DE FACTURA PARA IMPRESIÓN
+===================================================== -->
 
 <section id="facturaVista" class="section">
 
-<div class="invoice"
-id="contenidoFactura">
+    <div class="invoice" id="contenidoFactura">
 
-<div class="invoice-header">
+        <div class="invoice-header">
 
-<div>
+            <div>
+                <div class="invoice-title">
+                    FARMACIA SALUD Y BIENESTAR
+                </div>
 
-<div class="invoice-title">
-ISABEL
-</div>
+                <p>💚 Cuidando tu salud</p>
+                <p>Teléfono: 9999-9999</p>
+                <p>Correo: farmacia@email.com</p>
+            </div>
 
-<p>TIENDA DE MODA & ESTILO</p>
-<p>📞 9999-8888</p>
-<p>📧 ventas@isabelmoda.com</p>
+            <div>
+                <h2>FACTURA</h2>
+                <p id="vistaNumero"></p>
+                <p id="vistaFecha"></p>
+            </div>
 
-</div>
-
-
-<div>
-
-<h2>FACTURA</h2>
-
-<p id="vistaNumero"></p>
-
-<p id="vistaFecha"></p>
-
-</div>
-
-</div>
+        </div>
 
 
-<p>
+        <div style="margin-bottom:20px;">
 
-<strong>Cliente:</strong>
+            <strong>Cliente:</strong>
+            <span id="vistaCliente"></span>
 
-<span id="vistaCliente"></span>
+            <br>
 
-</p>
+            <strong>DNI:</strong>
+            <span id="vistaDni"></span>
 
-<p>
-
-<strong>DNI:</strong>
-
-<span id="vistaDni"></span>
-
-</p>
+        </div>
 
 
-<table style="margin-top:20px;">
+        <table>
 
-<thead>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
 
-<tr>
+            <tbody id="vistaDetalle"></tbody>
 
-<th>Prenda</th>
-<th>Cantidad</th>
-<th>Precio</th>
-<th>Subtotal</th>
-
-</tr>
-
-</thead>
-
-<tbody id="vistaDetalle">
-</tbody>
-
-</table>
+        </table>
 
 
-<div class="invoice-total">
+        <div class="invoice-total">
 
-<div>
+            <div>
+                <span>Subtotal:</span>
+                <strong id="vistaSubtotal"></strong>
+            </div>
 
-<span>Subtotal</span>
+            <div>
+                <span>ISV 15%:</span>
+                <strong id="vistaISV"></strong>
+            </div>
 
-<strong id="vistaSubtotal"></strong>
+            <div class="total">
+                <span>TOTAL:</span>
+                <strong id="vistaTotal"></strong>
+            </div>
 
-</div>
-
-<div>
-
-<span>Descuento</span>
-
-<strong id="vistaDescuento"></strong>
-
-</div>
-
-<div>
-
-<span>ISV 15%</span>
-
-<strong id="vistaISV"></strong>
-
-</div>
-
-<div class="total">
-
-<span>TOTAL</span>
-
-<strong id="vistaTotal"></strong>
-
-</div>
-
-</div>
+        </div>
 
 
-<p style="text-align:center;margin-top:40px;">
+        <p style="text-align:center;margin-top:40px;">
+            Gracias por preferir Farmacia Salud y Bienestar.
+        </p>
 
-Gracias por comprar en <strong>ISABEL</strong>.
-
-</p>
-
-</div>
+    </div>
 
 </section>
 
 </main>
 
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
 
-<h3>ISABEL</h3>
+    <h3>💚 Farmacia Salud y Bienestar</h3>
 
-<p>
-Tienda de Moda & Estilo
-</p>
+    <p>
+        Sistema de administración y facturación
+    </p>
 
-<p>
-📞 9999-8888 |
-📧 ventas@isabelmoda.com
-</p>
+    <p>
+        📞 9999-9999 |
+        📧 farmacia@email.com
+    </p>
 
-<p>
-© 2026 Isabel — Sistema de gestión de tienda
-</p>
+    <p>
+        © 2026 Todos los derechos reservados
+    </p>
 
 </footer>
 
 
 <!-- =====================================================
-MODAL PRODUCTO
+     MODAL PRODUCTO
 ===================================================== -->
 
 <div id="modalProducto" class="modal">
 
 <div class="modal-content">
 
-<div class="modal-header">
-
-<h2 id="tituloProducto">
-Agregar prenda
-</h2>
-
-<button class="close"
-onclick="cerrarModal('modalProducto')">
-×
-</button>
-
-</div>
-
-
-<input type="hidden"
-id="productoId">
-
-
-<div class="form-grid">
-
-
-<div class="form-group">
-
-<label>Nombre</label>
-
-<input id="productoNombre">
-
-</div>
-
-
-<div class="form-group">
-
-<label>Categoría</label>
-
-<select id="productoCategoria">
-
-<option>Vestidos</option>
-<option>Blusas</option>
-<option>Jeans</option>
-<option>Pantalones</option>
-<option>Camisas</option>
-<option>Conjuntos</option>
-<option>Chaquetas</option>
-<option>Accesorios</option>
-
-</select>
-
-</div>
-
-
-<div class="form-group">
-
-<label>Género</label>
-
-<select id="productoGenero">
-
-<option>Mujer</option>
-<option>Hombre</option>
-<option>Unisex</option>
-
-</select>
-
-</div>
-
-
-<div class="form-group">
-
-<label>Talla</label>
-
-<select id="productoTalla">
-
-<option>XS</option>
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-<option>XXL</option>
-<option>Única</option>
-
-</select>
-
-</div>
-
-
-<div class="form-group">
-
-<label>Color</label>
-
-<input id="productoColor">
-
-</div>
-
-
-<div class="form-group">
-
-<label>Precio</label>
-
-<input type="number"
-id="productoPrecio"
-min="0"
-step=".01">
-
-</div>
-
-
-<div class="form-group">
-
-<label>Stock</label>
-
-<input type="number"
-id="productoStock"
-min="0">
-
-</div>
-
-
-<div class="form-group">
-
-<label>Proveedor</label>
-
-<input id="productoProveedor">
-
-</div>
-
-
-<div class="form-group">
-
-<label>Imagen URL</label>
-
-<input id="productoImagen">
-
-</div>
-
-</div>
-
-
-<br>
-
-<button class="btn btn-primary"
-onclick="guardarProducto()">
-
-💾 Guardar
-
-</button>
+    <div class="modal-header">
+
+        <h2 id="tituloModalProducto">
+            Agregar producto
+        </h2>
+
+        <button class="close"
+                onclick="cerrarModal('modalProducto')">
+            ×
+        </button>
+
+    </div>
+
+    <input type="hidden" id="productoId">
+
+    <div class="form-grid">
+
+        <div class="form-group">
+            <label>Nombre</label>
+            <input id="productoNombre">
+        </div>
+
+        <div class="form-group">
+            <label>Categoría</label>
+
+            <select id="productoCategoria">
+                <option>Analgésicos</option>
+                <option>Antigripales</option>
+                <option>Antibióticos</option>
+                <option>Vitaminas</option>
+                <option>Higiene personal</option>
+                <option>Cuidado de la piel</option>
+                <option>Primeros auxilios</option>
+                <option>Otros</option>
+            </select>
+
+        </div>
+
+        <div class="form-group">
+            <label>Precio</label>
+            <input type="number"
+                   id="productoPrecio"
+                   min="0"
+                   step="0.01">
+        </div>
+
+        <div class="form-group">
+            <label>Stock</label>
+            <input type="number"
+                   id="productoStock"
+                   min="0">
+        </div>
+
+        <div class="form-group">
+            <label>Proveedor</label>
+            <input id="productoProveedor">
+        </div>
+
+        <div class="form-group">
+            <label>Vencimiento</label>
+            <input type="date"
+                   id="productoVencimiento">
+        </div>
+
+    </div>
+
+    <br>
+
+    <button class="btn btn-primary"
+            onclick="guardarProducto()">
+        💾 Guardar
+    </button>
+
+    <button class="btn btn-secondary"
+            onclick="cerrarModal('modalProducto')">
+        Cancelar
+    </button>
 
 </div>
 
@@ -1672,67 +1225,62 @@ onclick="guardarProducto()">
 
 
 <!-- =====================================================
-MODAL CLIENTE
+     MODAL CLIENTE
 ===================================================== -->
 
 <div id="modalCliente" class="modal">
 
 <div class="modal-content">
 
-<div class="modal-header">
+    <div class="modal-header">
 
-<h2>Agregar cliente</h2>
+        <h2>Agregar cliente</h2>
 
-<button class="close"
-onclick="cerrarModal('modalCliente')">
-×
-</button>
+        <button class="close"
+                onclick="cerrarModal('modalCliente')">
+            ×
+        </button>
 
-</div>
+    </div>
 
+    <input type="hidden" id="clienteId">
 
-<input type="hidden"
-id="clienteId">
+    <div class="form-grid">
 
+        <div class="form-group">
+            <label>Nombre completo</label>
+            <input id="clienteNombre">
+        </div>
 
-<div class="form-grid">
+        <div class="form-group">
+            <label>DNI</label>
+            <input id="clienteDni">
+        </div>
 
-<div class="form-group">
-<label>Nombre completo</label>
-<input id="clienteNombre">
-</div>
+        <div class="form-group">
+            <label>Teléfono</label>
+            <input id="clienteTelefono">
+        </div>
 
-<div class="form-group">
-<label>DNI</label>
-<input id="clienteDni">
-</div>
+        <div class="form-group">
+            <label>Correo</label>
+            <input type="email"
+                   id="clienteCorreo">
+        </div>
 
-<div class="form-group">
-<label>Teléfono</label>
-<input id="clienteTelefono">
-</div>
+        <div class="form-group">
+            <label>Dirección</label>
+            <input id="clienteDireccion">
+        </div>
 
-<div class="form-group">
-<label>Correo</label>
-<input id="clienteCorreo">
-</div>
+    </div>
 
-<div class="form-group">
-<label>Dirección</label>
-<input id="clienteDireccion">
-</div>
+    <br>
 
-</div>
-
-
-<br>
-
-<button class="btn btn-primary"
-onclick="guardarCliente()">
-
-💾 Guardar
-
-</button>
+    <button class="btn btn-primary"
+            onclick="guardarCliente()">
+        💾 Guardar
+    </button>
 
 </div>
 
@@ -1740,67 +1288,56 @@ onclick="guardarCliente()">
 
 
 <!-- =====================================================
-MODAL PROVEEDOR
+     MODAL PROVEEDOR
 ===================================================== -->
 
 <div id="modalProveedor" class="modal">
 
 <div class="modal-content">
 
-<div class="modal-header">
+    <div class="modal-header">
 
-<h2>Agregar proveedor</h2>
+        <h2>Agregar proveedor</h2>
 
-<button class="close"
-onclick="cerrarModal('modalProveedor')">
-×
-</button>
+        <button class="close"
+                onclick="cerrarModal('modalProveedor')">
+            ×
+        </button>
 
-</div>
+    </div>
 
+    <input type="hidden" id="proveedorId">
 
-<input type="hidden"
-id="proveedorId">
+    <div class="form-grid">
 
+        <div class="form-group">
+            <label>Empresa</label>
+            <input id="proveedorEmpresa">
+        </div>
 
-<div class="form-grid">
+        <div class="form-group">
+            <label>Contacto</label>
+            <input id="proveedorContacto">
+        </div>
 
-<div class="form-group">
-<label>Empresa</label>
-<input id="proveedorEmpresa">
-</div>
+        <div class="form-group">
+            <label>Teléfono</label>
+            <input id="proveedorTelefono">
+        </div>
 
-<div class="form-group">
-<label>Contacto</label>
-<input id="proveedorContacto">
-</div>
+        <div class="form-group">
+            <label>Correo</label>
+            <input id="proveedorCorreo">
+        </div>
 
-<div class="form-group">
-<label>Teléfono</label>
-<input id="proveedorTelefono">
-</div>
+    </div>
 
-<div class="form-group">
-<label>Correo</label>
-<input id="proveedorCorreo">
-</div>
+    <br>
 
-<div class="form-group">
-<label>Producto suministrado</label>
-<input id="proveedorProducto">
-</div>
-
-</div>
-
-
-<br>
-
-<button class="btn btn-primary"
-onclick="guardarProveedor()">
-
-💾 Guardar
-
-</button>
+    <button class="btn btn-primary"
+            onclick="guardarProveedor()">
+        💾 Guardar
+    </button>
 
 </div>
 
@@ -1808,75 +1345,66 @@ onclick="guardarProveedor()">
 
 
 <!-- =====================================================
-MODAL EMPLEADO
+     MODAL EMPLEADO
 ===================================================== -->
 
 <div id="modalEmpleado" class="modal">
 
 <div class="modal-content">
 
-<div class="modal-header">
+    <div class="modal-header">
 
-<h2>Agregar empleado</h2>
+        <h2>Agregar empleado</h2>
 
-<button class="close"
-onclick="cerrarModal('modalEmpleado')">
-×
-</button>
+        <button class="close"
+                onclick="cerrarModal('modalEmpleado')">
+            ×
+        </button>
 
-</div>
+    </div>
 
+    <input type="hidden" id="empleadoId">
 
-<input type="hidden"
-id="empleadoId">
+    <div class="form-grid">
 
+        <div class="form-group">
+            <label>Nombre</label>
+            <input id="empleadoNombre">
+        </div>
 
-<div class="form-grid">
+        <div class="form-group">
+            <label>Cargo</label>
+            <input id="empleadoCargo">
+        </div>
 
-<div class="form-group">
-<label>Nombre</label>
-<input id="empleadoNombre">
-</div>
+        <div class="form-group">
+            <label>Teléfono</label>
+            <input id="empleadoTelefono">
+        </div>
 
-<div class="form-group">
-<label>Cargo</label>
-<input id="empleadoCargo">
-</div>
+        <div class="form-group">
+            <label>Correo</label>
+            <input id="empleadoCorreo">
+        </div>
 
-<div class="form-group">
-<label>Teléfono</label>
-<input id="empleadoTelefono">
-</div>
+        <div class="form-group">
+            <label>Estado</label>
 
-<div class="form-group">
-<label>Correo</label>
-<input id="empleadoCorreo">
-</div>
+            <select id="empleadoEstado">
+                <option>Activo</option>
+                <option>Inactivo</option>
+            </select>
 
-<div class="form-group">
+        </div>
 
-<label>Estado</label>
+    </div>
 
-<select id="empleadoEstado">
+    <br>
 
-<option>Activo</option>
-<option>Inactivo</option>
-
-</select>
-
-</div>
-
-</div>
-
-
-<br>
-
-<button class="btn btn-primary"
-onclick="guardarEmpleado()">
-
-💾 Guardar
-
-</button>
+    <button class="btn btn-primary"
+            onclick="guardarEmpleado()">
+        💾 Guardar
+    </button>
 
 </div>
 
@@ -1886,2062 +1414,1885 @@ onclick="guardarEmpleado()">
 <script>
 
 /* =====================================================
-BASE DE DATOS
+   BASE DE DATOS LOCAL
 ===================================================== */
 
-let productos =
-JSON.parse(localStorage.getItem("isabel_productos")) || [];
+let productos = JSON.parse(
+    localStorage.getItem("farmacia_productos")
+) || [];
 
-let clientes =
-JSON.parse(localStorage.getItem("isabel_clientes")) || [];
+let clientes = JSON.parse(
+    localStorage.getItem("farmacia_clientes")
+) || [];
 
-let proveedores =
-JSON.parse(localStorage.getItem("isabel_proveedores")) || [];
+let proveedores = JSON.parse(
+    localStorage.getItem("farmacia_proveedores")
+) || [];
 
-let empleados =
-JSON.parse(localStorage.getItem("isabel_empleados")) || [];
+let empleados = JSON.parse(
+    localStorage.getItem("farmacia_empleados")
+) || [];
 
-let facturas =
-JSON.parse(localStorage.getItem("isabel_facturas")) || [];
+let facturas = JSON.parse(
+    localStorage.getItem("farmacia_facturas")
+) || [];
 
-let detalleActual=[];
+let detalleActual = [];
 
 
 /* =====================================================
-IMÁGENES REALES
-===================================================== */
-
-const imagenesModa=[
-
-"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=85",
-
-"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=85",
-
-"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=85",
-
-"https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=700&q=85",
-
-"https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=700&q=85",
-
-"https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=700&q=85",
-
-"https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=85",
-
-"https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=700&q=85"
-
-];
-
-
-/* =====================================================
-DATOS FICTICIOS
+   DATOS DE PRUEBA
 ===================================================== */
 
 function cargarDatosIniciales(){
 
-if(localStorage.getItem("isabel_inicializada"))
-return;
+    if(localStorage.getItem("farmacia_inicializada")){
+        return;
+    }
 
+    productos = [
+        {
+            id:1,
+            nombre:"Paracetamol 500 mg",
+            categoria:"Analgésicos",
+            precio:45,
+            stock:30,
+            proveedor:"Distribuidora Salud",
+            vencimiento:"2027-05-20",
+            icono:"💊"
+        },
+        {
+            id:2,
+            nombre:"Ibuprofeno 400 mg",
+            categoria:"Analgésicos",
+            precio:60,
+            stock:25,
+            proveedor:"Distribuidora Salud",
+            vencimiento:"2027-03-15",
+            icono:"💊"
+        },
+        {
+            id:3,
+            nombre:"Vitamina C",
+            categoria:"Vitaminas",
+            precio:85,
+            stock:20,
+            proveedor:"Farmacéutica Central",
+            vencimiento:"2027-09-10",
+            icono:"🍊"
+        },
+        {
+            id:4,
+            nombre:"Loratadina",
+            categoria:"Antigripales",
+            precio:55,
+            stock:18,
+            proveedor:"Farmacéutica Central",
+            vencimiento:"2027-01-25",
+            icono:"💊"
+        },
+        {
+            id:5,
+            nombre:"Alcohol Antiséptico",
+            categoria:"Primeros auxilios",
+            precio:40,
+            stock:40,
+            proveedor:"Medical Supply",
+            vencimiento:"2028-02-10",
+            icono:"🧴"
+        },
+        {
+            id:6,
+            nombre:"Gel Antibacterial",
+            categoria:"Higiene personal",
+            precio:35,
+            stock:50,
+            proveedor:"Medical Supply",
+            vencimiento:"2028-04-12",
+            icono:"🧴"
+        },
+        {
+            id:7,
+            nombre:"Crema Hidratante",
+            categoria:"Cuidado de la piel",
+            precio:120,
+            stock:12,
+            proveedor:"Dermosalud",
+            vencimiento:"2027-11-05",
+            icono:"🧴"
+        },
+        {
+            id:8,
+            nombre:"Multivitamínico",
+            categoria:"Vitaminas",
+            precio:150,
+            stock:8,
+            proveedor:"Farmacéutica Central",
+            vencimiento:"2027-08-18",
+            icono:"💊"
+        }
+    ];
 
-productos=[
+    clientes = [
+        {
+            id:1,
+            nombre:"Ana López",
+            dni:"0801-1990-12345",
+            telefono:"9999-1111",
+            correo:"ana@email.com",
+            direccion:"La Lima"
+        },
+        {
+            id:2,
+            nombre:"Carlos Martínez",
+            dni:"0501-1988-23456",
+            telefono:"9999-2222",
+            correo:"carlos@email.com",
+            direccion:"San Pedro Sula"
+        },
+        {
+            id:3,
+            nombre:"María Hernández",
+            dni:"0801-1995-34567",
+            telefono:"9999-3333",
+            correo:"maria@email.com",
+            direccion:"El Progreso"
+        },
+        {
+            id:4,
+            nombre:"José Rivera",
+            dni:"0601-1987-45678",
+            telefono:"9999-4444",
+            correo:"jose@email.com",
+            direccion:"La Lima"
+        },
+        {
+            id:5,
+            nombre:"Sofía Gómez",
+            dni:"0501-2000-56789",
+            telefono:"9999-5555",
+            correo:"sofia@email.com",
+            direccion:"San Pedro Sula"
+        }
+    ];
 
-{
-id:1,
-nombre:"Vestido Elegance",
-categoria:"Vestidos",
-genero:"Mujer",
-talla:"M",
-color:"Beige",
-precio:1250,
-stock:8,
-proveedor:"Moda Internacional",
-imagen:imagenesModa[0]
-},
+    proveedores = [
+        {
+            id:1,
+            empresa:"Distribuidora Salud",
+            contacto:"Roberto Díaz",
+            telefono:"2222-1111",
+            correo:"salud@email.com"
+        },
+        {
+            id:2,
+            empresa:"Farmacéutica Central",
+            contacto:"Laura Pérez",
+            telefono:"2222-2222",
+            correo:"central@email.com"
+        },
+        {
+            id:3,
+            empresa:"Medical Supply",
+            contacto:"Pedro López",
+            telefono:"2222-3333",
+            correo:"medical@email.com"
+        }
+    ];
 
-{
-id:2,
-nombre:"Blusa Satinada",
-categoria:"Blusas",
-genero:"Mujer",
-talla:"L",
-color:"Rosa",
-precio:650,
-stock:12,
-proveedor:"Textiles Centroamericanos",
-imagen:imagenesModa[1]
-},
+    empleados = [
+        {
+            id:1,
+            nombre:"Laura Pérez",
+            cargo:"Farmacéutica",
+            telefono:"9888-1111",
+            correo:"laura@farmacia.com",
+            estado:"Activo"
+        },
+        {
+            id:2,
+            nombre:"Pedro López",
+            cargo:"Administrador",
+            telefono:"9888-2222",
+            correo:"pedro@farmacia.com",
+            estado:"Activo"
+        },
+        {
+            id:3,
+            nombre:"Sofía Martínez",
+            cargo:"Auxiliar",
+            telefono:"9888-3333",
+            correo:"sofia@farmacia.com",
+            estado:"Activo"
+        }
+    ];
 
-{
-id:3,
-nombre:"Jeans Classic",
-categoria:"Jeans",
-genero:"Mujer",
-talla:"M",
-color:"Azul",
-precio:950,
-stock:15,
-proveedor:"Distribuidora Fashion",
-imagen:imagenesModa[2]
-},
+    guardarTodo();
 
-{
-id:4,
-nombre:"Camisa Premium",
-categoria:"Camisas",
-genero:"Hombre",
-talla:"L",
-color:"Blanco",
-precio:780,
-stock:10,
-proveedor:"Importadora Isabel",
-imagen:imagenesModa[3]
-},
-
-{
-id:5,
-nombre:"Conjunto Casual",
-categoria:"Conjuntos",
-genero:"Mujer",
-talla:"S",
-color:"Negro",
-precio:1450,
-stock:7,
-proveedor:"Moda Internacional",
-imagen:imagenesModa[4]
-},
-
-{
-id:6,
-nombre:"Chaqueta Urbana",
-categoria:"Chaquetas",
-genero:"Unisex",
-talla:"L",
-color:"Negro",
-precio:1750,
-stock:5,
-proveedor:"Distribuidora Fashion",
-imagen:imagenesModa[5]
-},
-
-{
-id:7,
-nombre:"Pantalón Ejecutivo",
-categoria:"Pantalones",
-genero:"Hombre",
-talla:"M",
-color:"Gris",
-precio:990,
-stock:9,
-proveedor:"Importadora Isabel",
-imagen:imagenesModa[6]
-},
-
-{
-id:8,
-nombre:"Look Boutique",
-categoria:"Vestidos",
-genero:"Mujer",
-talla:"S",
-color:"Rojo",
-precio:1350,
-stock:6,
-proveedor:"Moda Internacional",
-imagen:imagenesModa[7]
-}
-
-];
-
-
-clientes=[
-
-{
-id:1,
-nombre:"María Hernández",
-dni:"0801-1992-12345",
-telefono:"9999-1111",
-correo:"maria@email.com",
-direccion:"El Progreso"
-},
-
-{
-id:2,
-nombre:"Ana López",
-dni:"0501-1990-23456",
-telefono:"9999-2222",
-correo:"ana@email.com",
-direccion:"San Pedro Sula"
-},
-
-{
-id:3,
-nombre:"Carlos Martínez",
-dni:"0801-1988-34567",
-telefono:"9999-3333",
-correo:"carlos@email.com",
-direccion:"La Lima"
-},
-
-{
-id:4,
-nombre:"Sofía Gómez",
-dni:"0501-1998-45678",
-telefono:"9999-4444",
-correo:"sofia@email.com",
-direccion:"El Progreso"
-}
-
-];
-
-
-proveedores=[
-
-{
-id:1,
-empresa:"Moda Internacional",
-contacto:"Laura Pérez",
-telefono:"2222-1111",
-correo:"modaint@email.com",
-producto:"Vestidos y conjuntos"
-},
-
-{
-id:2,
-empresa:"Textiles Centroamericanos",
-contacto:"Roberto Díaz",
-telefono:"2222-2222",
-correo:"textiles@email.com",
-producto:"Blusas y camisas"
-},
-
-{
-id:3,
-empresa:"Distribuidora Fashion",
-contacto:"Pedro López",
-telefono:"2222-3333",
-correo:"fashion@email.com",
-producto:"Jeans y chaquetas"
-},
-
-{
-id:4,
-empresa:"Importadora Isabel",
-contacto:"Daniela Rivera",
-telefono:"2222-4444",
-correo:"importadora@email.com",
-producto:"Ropa y accesorios"
-}
-
-];
-
-
-empleados=[
-
-{
-id:1,
-nombre:"Isabel Martínez",
-cargo:"Administradora",
-telefono:"9888-1111",
-correo:"isabel@isabelmoda.com",
-estado:"Activo"
-},
-
-{
-id:2,
-nombre:"Laura Pérez",
-cargo:"Vendedora",
-telefono:"9888-2222",
-correo:"laura@isabelmoda.com",
-estado:"Activo"
-},
-
-{
-id:3,
-nombre:"Sofía López",
-cargo:"Cajera",
-telefono:"9888-3333",
-correo:"sofia@isabelmoda.com",
-estado:"Activo"
-},
-
-{
-id:4,
-nombre:"Daniela Hernández",
-cargo:"Encargada de inventario",
-telefono:"9888-4444",
-correo:"daniela@isabelmoda.com",
-estado:"Activo"
-}
-
-];
-
-
-guardarTodo();
-
-localStorage.setItem(
-"isabel_inicializada",
-"true"
-);
-
+    localStorage.setItem(
+        "farmacia_inicializada",
+        "true"
+    );
 }
 
 
 /* =====================================================
-GUARDAR
+   GUARDAR BASE DE DATOS
 ===================================================== */
 
 function guardarTodo(){
 
-localStorage.setItem(
-"isabel_productos",
-JSON.stringify(productos)
-);
+    localStorage.setItem(
+        "farmacia_productos",
+        JSON.stringify(productos)
+    );
 
-localStorage.setItem(
-"isabel_clientes",
-JSON.stringify(clientes)
-);
+    localStorage.setItem(
+        "farmacia_clientes",
+        JSON.stringify(clientes)
+    );
 
-localStorage.setItem(
-"isabel_proveedores",
-JSON.stringify(proveedores)
-);
+    localStorage.setItem(
+        "farmacia_proveedores",
+        JSON.stringify(proveedores)
+    );
 
-localStorage.setItem(
-"isabel_empleados",
-JSON.stringify(empleados)
-);
+    localStorage.setItem(
+        "farmacia_empleados",
+        JSON.stringify(empleados)
+    );
 
-localStorage.setItem(
-"isabel_facturas",
-JSON.stringify(facturas)
-);
-
+    localStorage.setItem(
+        "farmacia_facturas",
+        JSON.stringify(facturas)
+    );
 }
 
 
 /* =====================================================
-NAVEGACION
+   NAVEGACIÓN
 ===================================================== */
 
-function mostrarSeccion(nombre,boton){
+function mostrarSeccion(nombre, boton){
 
-document.querySelectorAll(".section")
-.forEach(s=>s.classList.remove("active"));
+    document.querySelectorAll(".section")
+        .forEach(s => s.classList.remove("active"));
 
-const sec=document.getElementById(nombre);
+    const seccion = document.getElementById(nombre);
 
-if(sec)
-sec.classList.add("active");
+    if(seccion){
+        seccion.classList.add("active");
+    }
 
+    document.querySelectorAll("nav button")
+        .forEach(b => b.classList.remove("active"));
 
-document.querySelectorAll("nav button")
-.forEach(b=>b.classList.remove("active"));
+    if(boton){
+        boton.classList.add("active");
+    }
 
-if(boton)
-boton.classList.add("active");
-
-actualizarTodo();
-
+    actualizarTodo();
 }
 
 
 function mostrarSeccionPorNombre(nombre){
 
-const mapa={
-inicio:"Inicio",
-catalogo:"Catálogo",
-productos:"Prendas",
-clientes:"Clientes",
-proveedores:"Proveedores",
-empleados:"Empleados",
-facturacion:"Facturación",
-historial:"Facturas",
-reportes:"Reportes"
-};
+    const boton = [...document.querySelectorAll("nav button")]
+        .find(b => b.textContent.toLowerCase().includes(
+            nombre === "facturacion"
+            ? "facturación"
+            : nombre
+        ));
 
-const boton=
-[...document.querySelectorAll("nav button")]
-.find(b=>b.textContent.includes(mapa[nombre]));
-
-mostrarSeccion(nombre,boton);
-
+    mostrarSeccion(nombre, boton);
 }
 
 
 /* =====================================================
-CATALOGO
-===================================================== */
-
-function renderCatalogo(){
-
-const grid=
-document.getElementById("catalogoGrid");
-
-const busqueda=
-document.getElementById("buscarCatalogo")
-.value.toLowerCase();
-
-const categoria=
-document.getElementById("filtroCategoria").value;
-
-const genero=
-document.getElementById("filtroGenero").value;
-
-
-const lista=productos.filter(p=>
-
-p.nombre.toLowerCase().includes(busqueda)
-&&
-(!categoria||p.categoria===categoria)
-&&
-(!genero||p.genero===genero)
-
-);
-
-
-grid.innerHTML=lista.map(p=>`
-
-<div class="product-card">
-
-<img
-class="product-image"
-src="${p.imagen}"
-alt="${p.nombre}">
-
-<div class="product-info">
-
-<h3>${p.nombre}</h3>
-
-<div class="product-meta">
-
-Categoría: ${p.categoria}<br>
-
-Género: ${p.genero}<br>
-
-Talla: ${p.talla}<br>
-
-Color: ${p.color}
-
-</div>
-
-<div class="price">
-L ${Number(p.precio).toFixed(2)}
-</div>
-
-<p class="${p.stock<=5?'stock-low':'stock-ok'}">
-
-Stock: ${p.stock}
-
-</p>
-
-<button
-class="btn btn-primary"
-onclick="agregarAlCarrito(${p.id})">
-
-🛍️ Agregar
-
-</button>
-
-</div>
-
-</div>
-
-`).join("");
-
-}
-
-
-/* =====================================================
-TABLA PRODUCTOS
+   PRODUCTOS
 ===================================================== */
 
 function renderProductos(){
 
-document.getElementById("tablaProductos").innerHTML=
+    const grid =
+        document.getElementById("productosGrid");
 
-productos.map(p=>`
+    const busqueda =
+        document.getElementById("buscarProducto")
+        .value
+        .toLowerCase();
 
-<tr>
+    const categoria =
+        document.getElementById("filtroCategoria")
+        .value;
 
-<td>${p.id}</td>
+    const filtrados = productos.filter(p => {
 
-<td>${p.nombre}</td>
+        const coincideNombre =
+            p.nombre.toLowerCase()
+            .includes(busqueda);
 
-<td>${p.categoria}</td>
+        const coincideCategoria =
+            !categoria || p.categoria === categoria;
 
-<td>${p.genero}</td>
+        return coincideNombre && coincideCategoria;
+    });
 
-<td>${p.talla}</td>
+    if(filtrados.length === 0){
 
-<td>${p.color}</td>
+        grid.innerHTML =
+            `<div class="alert alert-warning">
+                No se encontraron productos.
+             </div>`;
 
-<td>L ${Number(p.precio).toFixed(2)}</td>
+        return;
+    }
 
-<td>${p.stock}</td>
+    grid.innerHTML = filtrados.map(p => {
 
-<td>${p.proveedor}</td>
+        const bajo = p.stock <= 10;
 
-<td>
+        return `
+        <div class="product-card">
 
-<button class="btn btn-warning"
-onclick="editarProducto(${p.id})">
-✏️
-</button>
+            <div class="product-image">
+                ${p.icono || "💊"}
+            </div>
 
-<button class="btn btn-danger"
-onclick="eliminarProducto(${p.id})">
-🗑️
-</button>
+            <div class="product-info">
 
-</td>
+                <h3>${p.nombre}</h3>
 
-</tr>
+                <p>
+                    <strong>Categoría:</strong>
+                    ${p.categoria}
+                </p>
 
-`).join("");
+                <div class="price">
+                    L ${Number(p.precio).toFixed(2)}
+                </div>
 
+                <p class="stock ${bajo ? "stock-low" : "stock-ok"}">
+                    Stock: ${p.stock} unidades
+                </p>
+
+                <button class="btn btn-primary"
+                    onclick="agregarAlCarrito(${p.id})">
+                    🛒 Agregar
+                </button>
+
+                <button class="btn btn-warning"
+                    onclick="editarProducto(${p.id})">
+                    ✏️ Editar
+                </button>
+
+                <button class="btn btn-danger"
+                    onclick="eliminarProducto(${p.id})">
+                    🗑️ Eliminar
+                </button>
+
+            </div>
+        </div>`;
+    });
 }
 
 
-/* =====================================================
-PRODUCTOS CRUD
-===================================================== */
-
 function abrirModalProducto(){
 
-document.getElementById("productoId").value="";
-document.getElementById("productoNombre").value="";
-document.getElementById("productoPrecio").value="";
-document.getElementById("productoStock").value="";
-document.getElementById("productoColor").value="";
-document.getElementById("productoProveedor").value="";
-document.getElementById("productoImagen").value="";
+    document.getElementById("productoId").value = "";
+    document.getElementById("productoNombre").value = "";
+    document.getElementById("productoPrecio").value = "";
+    document.getElementById("productoStock").value = "";
+    document.getElementById("productoProveedor").value = "";
+    document.getElementById("productoVencimiento").value = "";
 
-document.getElementById("tituloProducto")
-.textContent="Agregar prenda";
+    document.getElementById("tituloModalProducto")
+        .textContent = "Agregar producto";
 
-document.getElementById("modalProducto")
-.classList.add("show");
-
+    document.getElementById("modalProducto")
+        .classList.add("show");
 }
 
 
 function guardarProducto(){
 
-const id=
-document.getElementById("productoId").value;
+    const id =
+        document.getElementById("productoId").value;
 
-const nombre=
-document.getElementById("productoNombre")
-.value.trim();
+    const nombre =
+        document.getElementById("productoNombre").value.trim();
 
-const categoria=
-document.getElementById("productoCategoria").value;
+    const categoria =
+        document.getElementById("productoCategoria").value;
 
-const genero=
-document.getElementById("productoGenero").value;
+    const precio =
+        Number(document.getElementById("productoPrecio").value);
 
-const talla=
-document.getElementById("productoTalla").value;
+    const stock =
+        Number(document.getElementById("productoStock").value);
 
-const color=
-document.getElementById("productoColor").value.trim();
+    const proveedor =
+        document.getElementById("productoProveedor").value.trim();
 
-const precio=
-Number(document.getElementById("productoPrecio").value);
+    const vencimiento =
+        document.getElementById("productoVencimiento").value;
 
-const stock=
-Number(document.getElementById("productoStock").value);
+    if(!nombre || precio < 0 || stock < 0){
 
-const proveedor=
-document.getElementById("productoProveedor").value.trim();
+        alert("Complete correctamente los datos del producto.");
 
-let imagen=
-document.getElementById("productoImagen").value.trim();
+        return;
+    }
 
+    if(id){
 
-if(!nombre||precio<0||stock<0){
+        const producto =
+            productos.find(p => p.id == id);
 
-alert("Complete correctamente los datos.");
+        producto.nombre = nombre;
+        producto.categoria = categoria;
+        producto.precio = precio;
+        producto.stock = stock;
+        producto.proveedor = proveedor;
+        producto.vencimiento = vencimiento;
 
-return;
+    }else{
 
-}
+        productos.push({
 
+            id:Date.now(),
 
-if(!imagen)
-imagen=imagenesModa[productos.length%imagenesModa.length];
+            nombre,
+            categoria,
+            precio,
+            stock,
+            proveedor,
+            vencimiento,
 
+            icono:
+                categoria === "Vitaminas"
+                ? "🍊"
+                : categoria === "Higiene personal"
+                ? "🧴"
+                : "💊"
+        });
+    }
 
-if(id){
+    guardarTodo();
 
-const p=productos.find(x=>x.id==id);
+    cerrarModal("modalProducto");
 
-p.nombre=nombre;
-p.categoria=categoria;
-p.genero=genero;
-p.talla=talla;
-p.color=color;
-p.precio=precio;
-p.stock=stock;
-p.proveedor=proveedor;
-p.imagen=imagen;
+    renderProductos();
 
-}else{
+    actualizarTodo();
 
-productos.push({
-
-id:Date.now(),
-nombre,
-categoria,
-genero,
-talla,
-color,
-precio,
-stock,
-proveedor,
-imagen
-
-});
-
-}
-
-
-guardarTodo();
-
-cerrarModal("modalProducto");
-
-actualizarTodo();
-
-alert("Prenda guardada correctamente.");
-
+    alert("Producto guardado correctamente.");
 }
 
 
 function editarProducto(id){
 
-const p=productos.find(x=>x.id===id);
+    const p =
+        productos.find(p => p.id === id);
 
-if(!p)return;
+    if(!p) return;
 
-document.getElementById("productoId").value=p.id;
-document.getElementById("productoNombre").value=p.nombre;
-document.getElementById("productoCategoria").value=p.categoria;
-document.getElementById("productoGenero").value=p.genero;
-document.getElementById("productoTalla").value=p.talla;
-document.getElementById("productoColor").value=p.color;
-document.getElementById("productoPrecio").value=p.precio;
-document.getElementById("productoStock").value=p.stock;
-document.getElementById("productoProveedor").value=p.proveedor;
-document.getElementById("productoImagen").value=p.imagen;
+    document.getElementById("productoId").value = p.id;
+    document.getElementById("productoNombre").value = p.nombre;
+    document.getElementById("productoCategoria").value = p.categoria;
+    document.getElementById("productoPrecio").value = p.precio;
+    document.getElementById("productoStock").value = p.stock;
+    document.getElementById("productoProveedor").value = p.proveedor;
+    document.getElementById("productoVencimiento").value = p.vencimiento;
 
-document.getElementById("tituloProducto")
-.textContent="Editar prenda";
+    document.getElementById("tituloModalProducto")
+        .textContent = "Editar producto";
 
-document.getElementById("modalProducto")
-.classList.add("show");
-
+    document.getElementById("modalProducto")
+        .classList.add("show");
 }
 
 
 function eliminarProducto(id){
 
-if(!confirm("¿Eliminar esta prenda?"))
-return;
+    const p =
+        productos.find(p => p.id === id);
 
-productos=
-productos.filter(p=>p.id!==id);
+    if(!p) return;
 
-guardarTodo();
+    if(!confirm(
+        `¿Está seguro de eliminar "${p.nombre}"?`
+    )){
+        return;
+    }
 
-actualizarTodo();
+    productos =
+        productos.filter(p => p.id !== id);
 
+    guardarTodo();
+
+    renderProductos();
+
+    actualizarTodo();
 }
 
 
 /* =====================================================
-CLIENTES
+   CLIENTES
 ===================================================== */
 
 function renderClientes(){
 
-document.getElementById("tablaClientes").innerHTML=
+    const tabla =
+        document.getElementById("tablaClientes");
 
-clientes.map(c=>`
+    tabla.innerHTML = clientes.map(c => `
 
-<tr>
+        <tr>
 
-<td>${c.id}</td>
-<td>${c.nombre}</td>
-<td>${c.dni}</td>
-<td>${c.telefono}</td>
-<td>${c.correo}</td>
-<td>${c.direccion}</td>
+            <td>${c.id}</td>
+            <td>${c.nombre}</td>
+            <td>${c.dni}</td>
+            <td>${c.telefono}</td>
+            <td>${c.correo}</td>
+            <td>${c.direccion}</td>
 
-<td>
+            <td>
 
-<button class="btn btn-warning"
-onclick="editarCliente(${c.id})">
-✏️
-</button>
+                <button class="btn btn-warning"
+                    onclick="editarCliente(${c.id})">
+                    ✏️
+                </button>
 
-<button class="btn btn-danger"
-onclick="eliminarCliente(${c.id})">
-🗑️
-</button>
+                <button class="btn btn-danger"
+                    onclick="eliminarCliente(${c.id})">
+                    🗑️
+                </button>
 
-</td>
+            </td>
 
-</tr>
+        </tr>
 
-`).join("");
-
+    `).join("");
 }
 
 
 function abrirModalCliente(){
 
-document.getElementById("clienteId").value="";
-document.getElementById("clienteNombre").value="";
-document.getElementById("clienteDni").value="";
-document.getElementById("clienteTelefono").value="";
-document.getElementById("clienteCorreo").value="";
-document.getElementById("clienteDireccion").value="";
+    document.getElementById("clienteId").value = "";
+    document.getElementById("clienteNombre").value = "";
+    document.getElementById("clienteDni").value = "";
+    document.getElementById("clienteTelefono").value = "";
+    document.getElementById("clienteCorreo").value = "";
+    document.getElementById("clienteDireccion").value = "";
 
-document.getElementById("modalCliente")
-.classList.add("show");
-
+    document.getElementById("modalCliente")
+        .classList.add("show");
 }
 
 
 function guardarCliente(){
 
-const id=document.getElementById("clienteId").value;
+    const id =
+        document.getElementById("clienteId").value;
 
-const cliente={
+    const nombre =
+        document.getElementById("clienteNombre").value.trim();
 
-nombre:document.getElementById("clienteNombre").value.trim(),
+    const dni =
+        document.getElementById("clienteDni").value.trim();
 
-dni:document.getElementById("clienteDni").value.trim(),
+    const telefono =
+        document.getElementById("clienteTelefono").value.trim();
 
-telefono:document.getElementById("clienteTelefono").value.trim(),
+    const correo =
+        document.getElementById("clienteCorreo").value.trim();
 
-correo:document.getElementById("clienteCorreo").value.trim(),
+    const direccion =
+        document.getElementById("clienteDireccion").value.trim();
 
-direccion:document.getElementById("clienteDireccion").value.trim()
+    if(!nombre || !dni){
 
-};
+        alert("Nombre y DNI son obligatorios.");
 
+        return;
+    }
 
-if(!cliente.nombre||!cliente.dni){
+    if(id){
 
-alert("Nombre y DNI son obligatorios.");
+        const c =
+            clientes.find(c => c.id == id);
 
-return;
+        c.nombre = nombre;
+        c.dni = dni;
+        c.telefono = telefono;
+        c.correo = correo;
+        c.direccion = direccion;
 
-}
+    }else{
 
+        clientes.push({
 
-if(id){
+            id:Date.now(),
+            nombre,
+            dni,
+            telefono,
+            correo,
+            direccion
 
-Object.assign(
-clientes.find(c=>c.id==id),
-cliente
-);
+        });
+    }
 
-}else{
+    guardarTodo();
 
-clientes.push({
-id:Date.now(),
-...cliente
-});
+    cerrarModal("modalCliente");
 
-}
+    renderClientes();
 
+    actualizarTodo();
 
-guardarTodo();
-
-cerrarModal("modalCliente");
-
-actualizarTodo();
-
+    alert("Cliente guardado correctamente.");
 }
 
 
 function editarCliente(id){
 
-const c=clientes.find(x=>x.id===id);
+    const c =
+        clientes.find(c => c.id === id);
 
-if(!c)return;
+    if(!c) return;
 
-document.getElementById("clienteId").value=c.id;
-document.getElementById("clienteNombre").value=c.nombre;
-document.getElementById("clienteDni").value=c.dni;
-document.getElementById("clienteTelefono").value=c.telefono;
-document.getElementById("clienteCorreo").value=c.correo;
-document.getElementById("clienteDireccion").value=c.direccion;
+    document.getElementById("clienteId").value = c.id;
+    document.getElementById("clienteNombre").value = c.nombre;
+    document.getElementById("clienteDni").value = c.dni;
+    document.getElementById("clienteTelefono").value = c.telefono;
+    document.getElementById("clienteCorreo").value = c.correo;
+    document.getElementById("clienteDireccion").value = c.direccion;
 
-document.getElementById("modalCliente")
-.classList.add("show");
-
+    document.getElementById("modalCliente")
+        .classList.add("show");
 }
 
 
 function eliminarCliente(id){
 
-if(!confirm("¿Eliminar cliente?"))
-return;
+    if(!confirm("¿Eliminar este cliente?")){
+        return;
+    }
 
-clientes=clientes.filter(c=>c.id!==id);
+    clientes =
+        clientes.filter(c => c.id !== id);
 
-guardarTodo();
+    guardarTodo();
 
-actualizarTodo();
+    renderClientes();
 
+    actualizarTodo();
 }
 
 
 /* =====================================================
-PROVEEDORES
+   PROVEEDORES
 ===================================================== */
 
 function renderProveedores(){
 
-document.getElementById("tablaProveedores").innerHTML=
+    const tabla =
+        document.getElementById("tablaProveedores");
 
-proveedores.map(p=>`
+    tabla.innerHTML = proveedores.map(p => `
 
-<tr>
+        <tr>
 
-<td>${p.id}</td>
-<td>${p.empresa}</td>
-<td>${p.contacto}</td>
-<td>${p.telefono}</td>
-<td>${p.correo}</td>
-<td>${p.producto}</td>
+            <td>${p.id}</td>
+            <td>${p.empresa}</td>
+            <td>${p.contacto}</td>
+            <td>${p.telefono}</td>
+            <td>${p.correo}</td>
 
-<td>
+            <td>
 
-<button class="btn btn-warning"
-onclick="editarProveedor(${p.id})">
-✏️
-</button>
+                <button class="btn btn-warning"
+                    onclick="editarProveedor(${p.id})">
+                    ✏️
+                </button>
 
-<button class="btn btn-danger"
-onclick="eliminarProveedor(${p.id})">
-🗑️
-</button>
+                <button class="btn btn-danger"
+                    onclick="eliminarProveedor(${p.id})">
+                    🗑️
+                </button>
 
-</td>
+            </td>
 
-</tr>
+        </tr>
 
-`).join("");
-
+    `).join("");
 }
 
 
 function abrirModalProveedor(){
 
-document.getElementById("proveedorId").value="";
-document.getElementById("proveedorEmpresa").value="";
-document.getElementById("proveedorContacto").value="";
-document.getElementById("proveedorTelefono").value="";
-document.getElementById("proveedorCorreo").value="";
-document.getElementById("proveedorProducto").value="";
+    document.getElementById("proveedorId").value = "";
+    document.getElementById("proveedorEmpresa").value = "";
+    document.getElementById("proveedorContacto").value = "";
+    document.getElementById("proveedorTelefono").value = "";
+    document.getElementById("proveedorCorreo").value = "";
 
-document.getElementById("modalProveedor")
-.classList.add("show");
-
+    document.getElementById("modalProveedor")
+        .classList.add("show");
 }
 
 
 function guardarProveedor(){
 
-const id=document.getElementById("proveedorId").value;
+    const id =
+        document.getElementById("proveedorId").value;
 
-const data={
+    const empresa =
+        document.getElementById("proveedorEmpresa").value.trim();
 
-empresa:document.getElementById("proveedorEmpresa").value.trim(),
+    const contacto =
+        document.getElementById("proveedorContacto").value.trim();
 
-contacto:document.getElementById("proveedorContacto").value.trim(),
+    const telefono =
+        document.getElementById("proveedorTelefono").value.trim();
 
-telefono:document.getElementById("proveedorTelefono").value.trim(),
+    const correo =
+        document.getElementById("proveedorCorreo").value.trim();
 
-correo:document.getElementById("proveedorCorreo").value.trim(),
+    if(!empresa){
 
-producto:document.getElementById("proveedorProducto").value.trim()
+        alert("La empresa es obligatoria.");
 
-};
+        return;
+    }
 
+    if(id){
 
-if(!data.empresa){
+        const p =
+            proveedores.find(p => p.id == id);
 
-alert("La empresa es obligatoria.");
+        p.empresa = empresa;
+        p.contacto = contacto;
+        p.telefono = telefono;
+        p.correo = correo;
 
-return;
+    }else{
 
-}
+        proveedores.push({
 
+            id:Date.now(),
+            empresa,
+            contacto,
+            telefono,
+            correo
 
-if(id){
+        });
+    }
 
-Object.assign(
-proveedores.find(p=>p.id==id),
-data
-);
+    guardarTodo();
 
-}else{
+    cerrarModal("modalProveedor");
 
-proveedores.push({
-id:Date.now(),
-...data
-});
+    renderProveedores();
 
-}
+    actualizarTodo();
 
-
-guardarTodo();
-
-cerrarModal("modalProveedor");
-
-actualizarTodo();
-
+    alert("Proveedor guardado correctamente.");
 }
 
 
 function editarProveedor(id){
 
-const p=proveedores.find(x=>x.id===id);
+    const p =
+        proveedores.find(p => p.id === id);
 
-if(!p)return;
+    if(!p) return;
 
-document.getElementById("proveedorId").value=p.id;
-document.getElementById("proveedorEmpresa").value=p.empresa;
-document.getElementById("proveedorContacto").value=p.contacto;
-document.getElementById("proveedorTelefono").value=p.telefono;
-document.getElementById("proveedorCorreo").value=p.correo;
-document.getElementById("proveedorProducto").value=p.producto;
+    document.getElementById("proveedorId").value = p.id;
+    document.getElementById("proveedorEmpresa").value = p.empresa;
+    document.getElementById("proveedorContacto").value = p.contacto;
+    document.getElementById("proveedorTelefono").value = p.telefono;
+    document.getElementById("proveedorCorreo").value = p.correo;
 
-document.getElementById("modalProveedor")
-.classList.add("show");
-
+    document.getElementById("modalProveedor")
+        .classList.add("show");
 }
 
 
 function eliminarProveedor(id){
 
-if(!confirm("¿Eliminar proveedor?"))
-return;
+    if(!confirm("¿Eliminar este proveedor?")){
+        return;
+    }
 
-proveedores=
-proveedores.filter(p=>p.id!==id);
+    proveedores =
+        proveedores.filter(p => p.id !== id);
 
-guardarTodo();
+    guardarTodo();
 
-actualizarTodo();
+    renderProveedores();
 
+    actualizarTodo();
 }
 
 
 /* =====================================================
-EMPLEADOS
+   EMPLEADOS
 ===================================================== */
 
 function renderEmpleados(){
 
-document.getElementById("tablaEmpleados").innerHTML=
+    const tabla =
+        document.getElementById("tablaEmpleados");
 
-empleados.map(e=>`
+    tabla.innerHTML = empleados.map(e => `
 
-<tr>
+        <tr>
 
-<td>${e.id}</td>
-<td>${e.nombre}</td>
-<td>${e.cargo}</td>
-<td>${e.telefono}</td>
-<td>${e.correo}</td>
-<td>${e.estado}</td>
+            <td>${e.id}</td>
+            <td>${e.nombre}</td>
+            <td>${e.cargo}</td>
+            <td>${e.telefono}</td>
+            <td>${e.correo}</td>
+            <td>${e.estado}</td>
 
-<td>
+            <td>
 
-<button class="btn btn-warning"
-onclick="editarEmpleado(${e.id})">
-✏️
-</button>
+                <button class="btn btn-warning"
+                    onclick="editarEmpleado(${e.id})">
+                    ✏️
+                </button>
 
-<button class="btn btn-danger"
-onclick="eliminarEmpleado(${e.id})">
-🗑️
-</button>
+                <button class="btn btn-danger"
+                    onclick="eliminarEmpleado(${e.id})">
+                    🗑️
+                </button>
 
-</td>
+            </td>
 
-</tr>
+        </tr>
 
-`).join("");
-
+    `).join("");
 }
 
 
 function abrirModalEmpleado(){
 
-document.getElementById("empleadoId").value="";
-document.getElementById("empleadoNombre").value="";
-document.getElementById("empleadoCargo").value="";
-document.getElementById("empleadoTelefono").value="";
-document.getElementById("empleadoCorreo").value="";
-document.getElementById("empleadoEstado").value="Activo";
+    document.getElementById("empleadoId").value = "";
+    document.getElementById("empleadoNombre").value = "";
+    document.getElementById("empleadoCargo").value = "";
+    document.getElementById("empleadoTelefono").value = "";
+    document.getElementById("empleadoCorreo").value = "";
+    document.getElementById("empleadoEstado").value = "Activo";
 
-document.getElementById("modalEmpleado")
-.classList.add("show");
-
+    document.getElementById("modalEmpleado")
+        .classList.add("show");
 }
 
 
 function guardarEmpleado(){
 
-const id=document.getElementById("empleadoId").value;
+    const id =
+        document.getElementById("empleadoId").value;
 
-const data={
+    const nombre =
+        document.getElementById("empleadoNombre").value.trim();
 
-nombre:document.getElementById("empleadoNombre").value.trim(),
+    const cargo =
+        document.getElementById("empleadoCargo").value.trim();
 
-cargo:document.getElementById("empleadoCargo").value.trim(),
+    const telefono =
+        document.getElementById("empleadoTelefono").value.trim();
 
-telefono:document.getElementById("empleadoTelefono").value.trim(),
+    const correo =
+        document.getElementById("empleadoCorreo").value.trim();
 
-correo:document.getElementById("empleadoCorreo").value.trim(),
+    const estado =
+        document.getElementById("empleadoEstado").value;
 
-estado:document.getElementById("empleadoEstado").value
+    if(!nombre || !cargo){
 
-};
+        alert("Nombre y cargo son obligatorios.");
 
+        return;
+    }
 
-if(!data.nombre||!data.cargo){
+    if(id){
 
-alert("Nombre y cargo son obligatorios.");
+        const e =
+            empleados.find(e => e.id == id);
 
-return;
+        e.nombre = nombre;
+        e.cargo = cargo;
+        e.telefono = telefono;
+        e.correo = correo;
+        e.estado = estado;
 
-}
+    }else{
 
+        empleados.push({
 
-if(id){
+            id:Date.now(),
+            nombre,
+            cargo,
+            telefono,
+            correo,
+            estado
 
-Object.assign(
-empleados.find(e=>e.id==id),
-data
-);
+        });
+    }
 
-}else{
+    guardarTodo();
 
-empleados.push({
-id:Date.now(),
-...data
-});
+    cerrarModal("modalEmpleado");
 
-}
+    renderEmpleados();
 
+    actualizarTodo();
 
-guardarTodo();
-
-cerrarModal("modalEmpleado");
-
-actualizarTodo();
-
+    alert("Empleado guardado correctamente.");
 }
 
 
 function editarEmpleado(id){
 
-const e=empleados.find(x=>x.id===id);
+    const e =
+        empleados.find(e => e.id === id);
 
-if(!e)return;
+    if(!e) return;
 
-document.getElementById("empleadoId").value=e.id;
-document.getElementById("empleadoNombre").value=e.nombre;
-document.getElementById("empleadoCargo").value=e.cargo;
-document.getElementById("empleadoTelefono").value=e.telefono;
-document.getElementById("empleadoCorreo").value=e.correo;
-document.getElementById("empleadoEstado").value=e.estado;
+    document.getElementById("empleadoId").value = e.id;
+    document.getElementById("empleadoNombre").value = e.nombre;
+    document.getElementById("empleadoCargo").value = e.cargo;
+    document.getElementById("empleadoTelefono").value = e.telefono;
+    document.getElementById("empleadoCorreo").value = e.correo;
+    document.getElementById("empleadoEstado").value = e.estado;
 
-document.getElementById("modalEmpleado")
-.classList.add("show");
-
+    document.getElementById("modalEmpleado")
+        .classList.add("show");
 }
 
 
 function eliminarEmpleado(id){
 
-if(!confirm("¿Eliminar empleado?"))
-return;
+    if(!confirm("¿Eliminar este empleado?")){
+        return;
+    }
 
-empleados=
-empleados.filter(e=>e.id!==id);
+    empleados =
+        empleados.filter(e => e.id !== id);
 
-guardarTodo();
+    guardarTodo();
 
-actualizarTodo();
+    renderEmpleados();
 
+    actualizarTodo();
 }
 
 
 /* =====================================================
-CARRITO / FACTURA
+   CARRITO
 ===================================================== */
 
 function agregarAlCarrito(id){
 
-mostrarSeccionPorNombre("facturacion");
+    const producto =
+        productos.find(p => p.id === id);
 
-agregarProductoFactura(id);
+    if(!producto) return;
 
+    if(producto.stock <= 0){
+
+        alert("Este producto no tiene existencia.");
+
+        return;
+    }
+
+    mostrarSeccionPorNombre("facturacion");
+
+    agregarProductoFactura(id);
 }
 
 
-function agregarProductoFactura(idProducto=null){
+function agregarProductoFactura(idProducto = null){
 
-if(productos.length===0)
-return;
+    if(!idProducto){
 
-if(!idProducto)
-idProducto=productos[0].id;
+        if(productos.length === 0){
 
-const p=productos.find(x=>x.id==idProducto);
+            alert("No existen productos.");
 
-if(!p)return;
+            return;
+        }
 
-if(p.stock<=0){
+        idProducto = productos[0].id;
+    }
 
-alert("Esta prenda está agotada.");
+    const producto =
+        productos.find(p => p.id == idProducto);
 
-return;
+    if(!producto) return;
 
-}
+    const existente =
+        detalleActual.find(d => d.productoId === producto.id);
 
+    if(existente){
 
-const existente=
-detalleActual.find(x=>x.productoId===p.id);
+        if(existente.cantidad >= producto.stock){
 
+            alert("No hay suficiente stock.");
 
-if(existente){
+            return;
+        }
 
-if(existente.cantidad>=p.stock){
+        existente.cantidad++;
 
-alert("No hay suficiente inventario.");
+    }else{
 
-return;
+        detalleActual.push({
 
-}
+            productoId:producto.id,
+            cantidad:1
 
-existente.cantidad++;
+        });
+    }
 
-}else{
-
-detalleActual.push({
-productoId:p.id,
-cantidad:1
-});
-
-}
-
-
-renderDetalleFactura();
-
-}
-
-
-function renderDetalleFactura(){
-
-const tabla=
-document.getElementById("detalleFactura");
-
-
-if(detalleActual.length===0){
-
-tabla.innerHTML=`
-
-<tr>
-<td colspan="6"
-style="text-align:center;">
-No hay prendas agregadas.
-</td>
-</tr>`;
-
-calcularFactura();
-
-return;
-
-}
-
-
-tabla.innerHTML=
-detalleActual.map((item,index)=>{
-
-const p=
-productos.find(x=>x.id===item.productoId);
-
-return `
-
-<tr>
-
-<td>
-
-<select
-onchange="cambiarProductoFactura(${index},this.value)">
-
-${productos.map(x=>`
-
-<option value="${x.id}"
-${x.id===p.id?"selected":""}>
-
-${x.nombre}
-
-</option>
-
-`).join("")}
-
-</select>
-
-</td>
-
-<td>${p.talla}</td>
-
-<td>
-
-<input
-type="number"
-min="1"
-max="${p.stock}"
-value="${item.cantidad}"
-onchange="cambiarCantidad(${index},this.value)"
-style="width:75px;">
-
-</td>
-
-<td>
-L ${Number(p.precio).toFixed(2)}
-</td>
-
-<td>
-L ${(p.precio*item.cantidad).toFixed(2)}
-</td>
-
-<td>
-
-<button
-class="btn btn-danger"
-onclick="eliminarProductoFactura(${index})">
-
-🗑️
-
-</button>
-
-</td>
-
-</tr>
-
-`;
-
-}).join("");
-
-calcularFactura();
-
-}
-
-
-function cambiarProductoFactura(index,id){
-
-const p=productos.find(x=>x.id==id);
-
-if(!p)return;
-
-detalleActual[index].productoId=p.id;
-detalleActual[index].cantidad=1;
-
-renderDetalleFactura();
-
-}
-
-
-function cambiarCantidad(index,cantidad){
-
-cantidad=Number(cantidad);
-
-const item=detalleActual[index];
-
-const p=
-productos.find(x=>x.id===item.productoId);
-
-if(cantidad<1)
-cantidad=1;
-
-if(cantidad>p.stock)
-cantidad=p.stock;
-
-item.cantidad=cantidad;
-
-renderDetalleFactura();
-
+    renderDetalleFactura();
 }
 
 
 function eliminarProductoFactura(index){
 
-detalleActual.splice(index,1);
+    detalleActual.splice(index,1);
 
-renderDetalleFactura();
+    renderDetalleFactura();
+}
 
+
+function cambiarCantidad(index, cantidad){
+
+    cantidad = Number(cantidad);
+
+    const item =
+        detalleActual[index];
+
+    const producto =
+        productos.find(p => p.id === item.productoId);
+
+    if(cantidad < 1){
+
+        item.cantidad = 1;
+
+    }else if(cantidad > producto.stock){
+
+        alert("Cantidad superior al stock disponible.");
+
+        item.cantidad = producto.stock;
+
+    }else{
+
+        item.cantidad = cantidad;
+    }
+
+    renderDetalleFactura();
 }
 
 
 /* =====================================================
-CALCULO
+   DETALLE DE FACTURA
+===================================================== */
+
+function renderDetalleFactura(){
+
+    const tabla =
+        document.getElementById("detalleFactura");
+
+    if(detalleActual.length === 0){
+
+        tabla.innerHTML = `
+        <tr>
+            <td colspan="5"
+                style="text-align:center;">
+                No hay productos agregados.
+            </td>
+        </tr>`;
+
+        calcularFactura();
+
+        return;
+    }
+
+    tabla.innerHTML =
+        detalleActual.map((item,index) => {
+
+            const p =
+                productos.find(
+                    p => p.id === item.productoId
+                );
+
+            const subtotal =
+                item.cantidad * Number(p.precio);
+
+            return `
+
+            <tr>
+
+                <td>
+                    <select
+                        onchange="cambiarProductoFactura(${index},this.value)">
+
+                        ${productos.map(x => `
+                            <option
+                                value="${x.id}"
+                                ${x.id === p.id ? "selected" : ""}>
+                                ${x.nombre}
+                            </option>
+                        `).join("")}
+
+                    </select>
+                </td>
+
+                <td>
+                    <input
+                        type="number"
+                        min="1"
+                        max="${p.stock}"
+                        value="${item.cantidad}"
+                        onchange="cambiarCantidad(${index},this.value)"
+                        style="width:80px;">
+                </td>
+
+                <td>
+                    L ${Number(p.precio).toFixed(2)}
+                </td>
+
+                <td>
+                    L ${subtotal.toFixed(2)}
+                </td>
+
+                <td>
+
+                    <button class="btn btn-danger"
+                        onclick="eliminarProductoFactura(${index})">
+                        🗑️
+                    </button>
+
+                </td>
+
+            </tr>`;
+        }).join("");
+
+    calcularFactura();
+}
+
+
+function cambiarProductoFactura(index,id){
+
+    const producto =
+        productos.find(p => p.id == id);
+
+    if(!producto) return;
+
+    detalleActual[index].productoId =
+        producto.id;
+
+    detalleActual[index].cantidad = 1;
+
+    renderDetalleFactura();
+}
+
+
+/* =====================================================
+   CÁLCULO DE FACTURA
 ===================================================== */
 
 function calcularFactura(){
 
-let subtotal=0;
+    let subtotal = 0;
 
-detalleActual.forEach(item=>{
+    detalleActual.forEach(item => {
 
-const p=
-productos.find(x=>x.id===item.productoId);
+        const p =
+            productos.find(
+                p => p.id === item.productoId
+            );
 
-if(p)
-subtotal+=p.precio*item.cantidad;
+        if(p){
+            subtotal +=
+                Number(p.precio) * item.cantidad;
+        }
+    });
 
-});
+    const descuento = 0;
 
+    const impuesto =
+        (subtotal - descuento) * 0.15;
 
-const porcentaje=
-Number(document.getElementById("descuentoPorcentaje").value)||0;
+    const total =
+        subtotal - descuento + impuesto;
 
-const descuento=
-subtotal*(porcentaje/100);
+    document.getElementById("factSubtotal")
+        .textContent = "L " + subtotal.toFixed(2);
 
-const base=
-subtotal-descuento;
+    document.getElementById("factDescuento")
+        .textContent = "L " + descuento.toFixed(2);
 
-const impuesto=
-base*.15;
+    document.getElementById("factISV")
+        .textContent = "L " + impuesto.toFixed(2);
 
-const total=
-base+impuesto;
+    document.getElementById("factTotal")
+        .textContent = "L " + total.toFixed(2);
 
-
-document.getElementById("factSubtotal")
-.textContent="L "+subtotal.toFixed(2);
-
-document.getElementById("factDescuento")
-.textContent="L "+descuento.toFixed(2);
-
-document.getElementById("factISV")
-.textContent="L "+impuesto.toFixed(2);
-
-document.getElementById("factTotal")
-.textContent="L "+total.toFixed(2);
-
-
-return {
-subtotal,
-descuento,
-impuesto,
-total,
-porcentaje
-};
-
+    return {
+        subtotal,
+        descuento,
+        impuesto,
+        total
+    };
 }
 
 
 /* =====================================================
-CLIENTE FACTURA
+   CLIENTE DE FACTURA
 ===================================================== */
 
 function cargarClientesFactura(){
 
-const select=
-document.getElementById("factCliente");
+    const select =
+        document.getElementById("factCliente");
 
-select.innerHTML=
-`<option value="">
-Seleccione cliente
-</option>`+
-clientes.map(c=>`
-
-<option value="${c.id}">
-${c.nombre}
-</option>
-
-`).join("");
-
+    select.innerHTML =
+        `<option value="">Seleccione un cliente</option>` +
+        clientes.map(c => `
+            <option value="${c.id}">
+                ${c.nombre}
+            </option>
+        `).join("");
 }
 
 
 function mostrarDatosCliente(){
 
-const id=
-Number(document.getElementById("factCliente").value);
+    const id =
+        Number(document.getElementById("factCliente").value);
 
-const c=
-clientes.find(x=>x.id===id);
+    const cliente =
+        clientes.find(c => c.id === id);
 
-document.getElementById("factDni")
-.value=c?c.dni:"";
-
+    document.getElementById("factDni").value =
+        cliente ? cliente.dni : "";
 }
 
 
 /* =====================================================
-NUEVA FACTURA
+   FACTURACIÓN
 ===================================================== */
 
 function generarNumeroFactura(){
 
-return "ISB-"+
-String(facturas.length+1)
-.padStart(5,"0");
-
+    return "FAC-" +
+        String(facturas.length + 1)
+        .padStart(5,"0");
 }
 
 
 function prepararNuevaFactura(){
 
-document.getElementById("factNumero")
-.value=generarNumeroFactura();
+    document.getElementById("factNumero").value =
+        generarNumeroFactura();
 
-document.getElementById("factFecha")
-.value=new Date()
-.toISOString()
-.split("T")[0];
+    document.getElementById("factFecha").value =
+        new Date().toISOString().split("T")[0];
 
-cargarClientesFactura();
+    cargarClientesFactura();
 
-document.getElementById("factCliente")
-.value="";
+    detalleActual = [];
 
-document.getElementById("factDni")
-.value="";
+    renderDetalleFactura();
 
-document.getElementById("descuentoPorcentaje")
-.value=0;
+    document.getElementById("factCliente").value = "";
 
-detalleActual=[];
-
-renderDetalleFactura();
-
+    document.getElementById("factDni").value = "";
 }
 
 
 function nuevaFactura(){
 
-prepararNuevaFactura();
+    prepararNuevaFactura();
 
-mostrarSeccionPorNombre("facturacion");
-
+    mostrarSeccionPorNombre("facturacion");
 }
 
-
-/* =====================================================
-GUARDAR FACTURA
-===================================================== */
 
 function guardarFactura(){
 
-const clienteId=
-Number(document.getElementById("factCliente").value);
+    const clienteId =
+        Number(document.getElementById("factCliente").value);
 
-const cliente=
-clientes.find(c=>c.id===clienteId);
+    const cliente =
+        clientes.find(c => c.id === clienteId);
 
+    if(!cliente){
 
-if(!cliente){
+        alert("Debe seleccionar un cliente.");
 
-alert("Seleccione un cliente.");
+        return;
+    }
 
-return;
+    if(detalleActual.length === 0){
 
-}
+        alert("Debe agregar al menos un producto.");
 
+        return;
+    }
 
-if(detalleActual.length===0){
+    /* Verificar stock */
 
-alert("Agregue al menos una prenda.");
+    for(const item of detalleActual){
 
-return;
+        const producto =
+            productos.find(
+                p => p.id === item.productoId
+            );
 
-}
+        if(!producto ||
+           item.cantidad > producto.stock){
 
+            alert(
+                "Stock insuficiente para: " +
+                (producto ? producto.nombre : "")
+            );
 
-/* verificar stock */
+            return;
+        }
+    }
 
-for(const item of detalleActual){
+    const calculo =
+        calcularFactura();
 
-const p=
-productos.find(x=>x.id===item.productoId);
+    const factura = {
 
-if(!p||item.cantidad>p.stock){
+        id:Date.now(),
 
-alert(
-"Stock insuficiente: "+
-(p?p.nombre:"")
-);
+        numero:
+            document.getElementById("factNumero").value,
 
-return;
+        fecha:
+            document.getElementById("factFecha").value,
 
-}
+        clienteId:cliente.id,
 
-}
+        cliente:cliente.nombre,
 
+        dni:cliente.dni,
 
-const calculo=calcularFactura();
+        productos:
+            detalleActual.map(item => {
 
+                const p =
+                    productos.find(
+                        p => p.id === item.productoId
+                    );
 
-const factura={
+                return {
 
-id:Date.now(),
+                    productoId:p.id,
 
-numero:
-document.getElementById("factNumero").value,
+                    nombre:p.nombre,
 
-fecha:
-document.getElementById("factFecha").value,
+                    cantidad:item.cantidad,
 
-clienteId:cliente.id,
+                    precio:Number(p.precio),
 
-cliente:cliente.nombre,
+                    subtotal:
+                        Number(p.precio) *
+                        item.cantidad
+                };
 
-dni:cliente.dni,
+            }),
 
-productos:
-detalleActual.map(item=>{
+        subtotal:calculo.subtotal,
 
-const p=
-productos.find(x=>x.id===item.productoId);
+        descuento:calculo.descuento,
 
-return {
+        impuesto:calculo.impuesto,
 
-productoId:p.id,
+        total:calculo.total
 
-nombre:p.nombre,
-
-talla:p.talla,
-
-cantidad:item.cantidad,
-
-precio:p.precio,
-
-subtotal:p.precio*item.cantidad
-
-};
-
-}),
-
-subtotal:calculo.subtotal,
-
-descuento:calculo.descuento,
-
-impuesto:calculo.impuesto,
-
-total:calculo.total
-
-};
+    };
 
 
-/* descontar inventario */
+    /* Descontar inventario */
 
-factura.productos.forEach(item=>{
+    factura.productos.forEach(item => {
 
-const p=
-productos.find(x=>x.id===item.productoId);
+        const producto =
+            productos.find(
+                p => p.id === item.productoId
+            );
 
-p.stock-=item.cantidad;
+        producto.stock -= item.cantidad;
+    });
 
-});
 
+    facturas.push(factura);
 
-facturas.push(factura);
+    guardarTodo();
 
-guardarTodo();
+    renderHistorial();
 
-prepararVistaFactura(factura);
+    actualizarTodo();
 
-alert(
-"Factura guardada correctamente.\n\n"+
-factura.numero
-);
+    prepararVistaFactura(factura);
 
-detalleActual=[];
+    alert(
+        "Factura guardada correctamente.\n\n" +
+        "Número: " + factura.numero
+    );
 
-prepararNuevaFactura();
+    detalleActual = [];
 
-actualizarTodo();
-
+    renderDetalleFactura();
 }
 
 
 /* =====================================================
-HISTORIAL
+   HISTORIAL DE FACTURAS
 ===================================================== */
 
 function renderHistorial(){
 
-const tabla=
-document.getElementById("tablaFacturas");
+    const tabla =
+        document.getElementById("tablaFacturas");
 
+    if(facturas.length === 0){
 
-if(facturas.length===0){
+        tabla.innerHTML = `
+        <tr>
+            <td colspan="5"
+                style="text-align:center;">
+                No existen facturas.
+            </td>
+        </tr>`;
 
-tabla.innerHTML=`
+        return;
+    }
 
-<tr>
-<td colspan="5"
-style="text-align:center;">
-No existen facturas.
-</td>
-</tr>`;
+    tabla.innerHTML =
+        [...facturas].reverse().map(f => `
 
-return;
+        <tr>
 
-}
+            <td>${f.numero}</td>
 
+            <td>${f.fecha}</td>
 
-tabla.innerHTML=
-[...facturas]
-.reverse()
-.map(f=>`
+            <td>${f.cliente}</td>
 
-<tr>
+            <td>
+                L ${Number(f.total).toFixed(2)}
+            </td>
 
-<td>${f.numero}</td>
+            <td>
 
-<td>${f.fecha}</td>
+                <button class="btn btn-blue"
+                    onclick="verFactura(${f.id})">
+                    👁️ Ver
+                </button>
 
-<td>${f.cliente}</td>
+                <button class="btn btn-danger"
+                    onclick="eliminarFactura(${f.id})">
+                    🗑️
+                </button>
 
-<td>
-L ${Number(f.total).toFixed(2)}
-</td>
+            </td>
 
-<td>
+        </tr>
 
-<button class="btn btn-blue"
-onclick="verFactura(${f.id})">
-
-👁️ Ver
-
-</button>
-
-<button class="btn btn-danger"
-onclick="eliminarFactura(${f.id})">
-
-🗑️
-
-</button>
-
-</td>
-
-</tr>
-
-`).join("");
-
+    `).join("");
 }
 
 
 function verFactura(id){
 
-const f=
-facturas.find(x=>x.id===id);
+    const factura =
+        facturas.find(f => f.id === id);
 
-if(!f)return;
+    if(!factura) return;
 
-prepararVistaFactura(f);
+    prepararVistaFactura(factura);
 
-mostrarSeccion("facturaVista",null);
+    mostrarSeccion("facturaVista",null);
 
-setTimeout(()=>{
+    setTimeout(() => {
 
-window.print();
+        window.print();
 
-mostrarSeccionPorNombre("historial");
+        mostrarSeccionPorNombre("historial");
 
-},300);
-
+    },300);
 }
 
 
 function eliminarFactura(id){
 
-if(!confirm("¿Eliminar esta factura?"))
-return;
+    if(!confirm(
+        "¿Está seguro de eliminar esta factura del historial?"
+    )){
+        return;
+    }
 
-facturas=
-facturas.filter(f=>f.id!==id);
+    facturas =
+        facturas.filter(f => f.id !== id);
 
-guardarTodo();
+    guardarTodo();
 
-actualizarTodo();
+    renderHistorial();
 
+    actualizarTodo();
 }
 
 
 /* =====================================================
-VISTA FACTURA
+   VISTA DE FACTURA
 ===================================================== */
 
-function prepararVistaFactura(f){
+function prepararVistaFactura(factura){
 
-document.getElementById("vistaNumero")
-.textContent="No. "+f.numero;
+    document.getElementById("vistaNumero")
+        .textContent =
+        "No. " + factura.numero;
 
-document.getElementById("vistaFecha")
-.textContent="Fecha: "+f.fecha;
+    document.getElementById("vistaFecha")
+        .textContent =
+        "Fecha: " + factura.fecha;
 
-document.getElementById("vistaCliente")
-.textContent=f.cliente;
+    document.getElementById("vistaCliente")
+        .textContent =
+        factura.cliente;
 
-document.getElementById("vistaDni")
-.textContent=f.dni;
+    document.getElementById("vistaDni")
+        .textContent =
+        factura.dni;
 
+    document.getElementById("vistaDetalle")
+        .innerHTML =
+        factura.productos.map(p => `
 
-document.getElementById("vistaDetalle")
-.innerHTML=
-f.productos.map(p=>`
+        <tr>
 
-<tr>
+            <td>${p.nombre}</td>
 
-<td>${p.nombre}</td>
+            <td>${p.cantidad}</td>
 
-<td>${p.cantidad}</td>
+            <td>
+                L ${Number(p.precio).toFixed(2)}
+            </td>
 
-<td>
-L ${Number(p.precio).toFixed(2)}
-</td>
+            <td>
+                L ${Number(p.subtotal).toFixed(2)}
+            </td>
 
-<td>
-L ${Number(p.subtotal).toFixed(2)}
-</td>
+        </tr>
 
-</tr>
+    `).join("");
 
-`).join("");
+    document.getElementById("vistaSubtotal")
+        .textContent =
+        "L " + Number(factura.subtotal).toFixed(2);
 
+    document.getElementById("vistaISV")
+        .textContent =
+        "L " + Number(factura.impuesto).toFixed(2);
 
-document.getElementById("vistaSubtotal")
-.textContent="L "+Number(f.subtotal).toFixed(2);
-
-document.getElementById("vistaDescuento")
-.textContent="L "+Number(f.descuento).toFixed(2);
-
-document.getElementById("vistaISV")
-.textContent="L "+Number(f.impuesto).toFixed(2);
-
-document.getElementById("vistaTotal")
-.textContent="L "+Number(f.total).toFixed(2);
-
+    document.getElementById("vistaTotal")
+        .textContent =
+        "L " + Number(factura.total).toFixed(2);
 }
 
-
-/* =====================================================
-IMPRIMIR FACTURA ACTUAL
-===================================================== */
 
 function prepararImpresion(){
 
-if(detalleActual.length===0){
+    if(detalleActual.length === 0){
 
-alert("No hay prendas.");
+        alert("No hay productos en la factura.");
 
-return;
+        return;
+    }
 
-}
+    const clienteId =
+        Number(document.getElementById("factCliente").value);
 
+    const cliente =
+        clientes.find(c => c.id === clienteId);
 
-const clienteId=
-Number(document.getElementById("factCliente").value);
+    if(!cliente){
 
-const cliente=
-clientes.find(c=>c.id===clienteId);
+        alert("Seleccione un cliente.");
 
+        return;
+    }
 
-if(!cliente){
+    const calculo =
+        calcularFactura();
 
-alert("Seleccione un cliente.");
+    const facturaTemporal = {
 
-return;
+        numero:
+            document.getElementById("factNumero").value,
 
-}
+        fecha:
+            document.getElementById("factFecha").value,
 
+        cliente:cliente.nombre,
 
-const calculo=calcularFactura();
+        dni:cliente.dni,
 
+        productos:
+            detalleActual.map(item => {
 
-const factura={
+                const p =
+                    productos.find(
+                        p => p.id === item.productoId
+                    );
 
-numero:
-document.getElementById("factNumero").value,
+                return {
 
-fecha:
-document.getElementById("factFecha").value,
+                    nombre:p.nombre,
 
-cliente:cliente.nombre,
+                    cantidad:item.cantidad,
 
-dni:cliente.dni,
+                    precio:p.precio,
 
-productos:
-detalleActual.map(item=>{
+                    subtotal:
+                        p.precio * item.cantidad
+                };
+            }),
 
-const p=
-productos.find(x=>x.id===item.productoId);
+        subtotal:calculo.subtotal,
 
-return {
+        impuesto:calculo.impuesto,
 
-nombre:p.nombre,
+        total:calculo.total
+    };
 
-cantidad:item.cantidad,
+    prepararVistaFactura(facturaTemporal);
 
-precio:p.precio,
+    mostrarSeccion("facturaVista",null);
 
-subtotal:p.precio*item.cantidad
-
-};
-
-}),
-
-subtotal:calculo.subtotal,
-
-descuento:calculo.descuento,
-
-impuesto:calculo.impuesto,
-
-total:calculo.total
-
-};
-
-
-prepararVistaFactura(factura);
-
-mostrarSeccion("facturaVista",null);
-
-setTimeout(()=>{
-
-window.print();
-
-mostrarSeccionPorNombre("facturacion");
-
-},300);
-
+    setTimeout(() => {
+        window.print();
+        mostrarSeccionPorNombre("facturacion");
+    },300);
 }
 
 
 /* =====================================================
-REPORTES
+   REPORTES
 ===================================================== */
 
 function renderReportes(){
 
-const ventas=
-facturas.reduce(
-(s,f)=>s+Number(f.total),0
-);
+    const ventas =
+        facturas.reduce(
+            (sum,f) => sum + Number(f.total),
+            0
+        );
+
+    document.getElementById("repProductos")
+        .textContent = productos.length;
+
+    document.getElementById("repClientes")
+        .textContent = clientes.length;
+
+    document.getElementById("repProveedores")
+        .textContent = proveedores.length;
+
+    document.getElementById("repEmpleados")
+        .textContent = empleados.length;
+
+    document.getElementById("repFacturas")
+        .textContent = facturas.length;
+
+    document.getElementById("repVentas")
+        .textContent =
+        "L " + ventas.toFixed(2);
 
 
-document.getElementById("repProductos")
-.textContent=productos.length;
+    const bajos =
+        productos.filter(p => p.stock <= 10);
 
-document.getElementById("repClientes")
-.textContent=clientes.length;
+    const contenedor =
+        document.getElementById("productosBajoStock");
 
-document.getElementById("repProveedores")
-.textContent=proveedores.length;
+    if(bajos.length === 0){
 
-document.getElementById("repEmpleados")
-.textContent=empleados.length;
+        contenedor.innerHTML =
+            `<div class="alert alert-success">
+                ✓ No existen productos con stock bajo.
+             </div>`;
 
-document.getElementById("repFacturas")
-.textContent=facturas.length;
+    }else{
 
-document.getElementById("repVentas")
-.textContent="L "+ventas.toFixed(2);
+        contenedor.innerHTML =
+            bajos.map(p => `
 
+            <div class="alert alert-warning">
 
-const bajos=
-productos.filter(p=>p.stock<=5);
+                ⚠️ <strong>${p.nombre}</strong>
 
+                — Stock disponible:
+                ${p.stock}
 
-document.getElementById("bajoStock")
-.innerHTML=
+            </div>
 
-bajos.length===0
-
-?`
-
-<div class="alert alert-success">
-✓ No hay prendas con inventario bajo.
-</div>
-
-`
-
-:
-
-bajos.map(p=>`
-
-<div class="alert alert-warning">
-
-⚠️ <strong>${p.nombre}</strong>
-
-— Solo quedan ${p.stock} unidades.
-
-</div>
-
-`).join("");
-
+        `).join("");
+    }
 }
 
 
 /* =====================================================
-DESTACADOS
-===================================================== */
-
-function renderDestacados(){
-
-document.getElementById("destacados")
-.innerHTML=
-
-productos.slice(0,4)
-.map(p=>`
-
-<div class="product-card">
-
-<img
-class="product-image"
-src="${p.imagen}"
-alt="${p.nombre}">
-
-<div class="product-info">
-
-<h3>${p.nombre}</h3>
-
-<p class="product-meta">
-${p.categoria} · ${p.talla}
-</p>
-
-<div class="price">
-L ${Number(p.precio).toFixed(2)}
-</div>
-
-<button
-class="btn btn-primary"
-onclick="agregarAlCarrito(${p.id})">
-
-🛍️ Comprar
-
-</button>
-
-</div>
-
-</div>
-
-`).join("");
-
-}
-
-
-/* =====================================================
-ESTADISTICAS
+   ESTADÍSTICAS
 ===================================================== */
 
 function actualizarEstadisticas(){
 
-const ventas=
-facturas.reduce(
-(s,f)=>s+Number(f.total),0
-);
+    const ventas =
+        facturas.reduce(
+            (sum,f) => sum + Number(f.total),
+            0
+        );
 
-document.getElementById("statProductos")
-.textContent=productos.length;
+    document.getElementById("statProductos")
+        .textContent = productos.length;
 
-document.getElementById("statClientes")
-.textContent=clientes.length;
+    document.getElementById("statClientes")
+        .textContent = clientes.length;
 
-document.getElementById("statFacturas")
-.textContent=facturas.length;
+    document.getElementById("statFacturas")
+        .textContent = facturas.length;
 
-document.getElementById("statVentas")
-.textContent="L "+ventas.toFixed(2);
-
+    document.getElementById("statVentas")
+        .textContent =
+        "L " + ventas.toFixed(2);
 }
 
 
 /* =====================================================
-ACTUALIZAR TODO
+   PRODUCTOS DESTACADOS
 ===================================================== */
 
-function actualizarTodo(){
+function renderDestacados(){
 
-renderCatalogo();
+    const contenedor =
+        document.getElementById("productosDestacados");
 
-renderProductos();
+    const destacados =
+        productos.slice(0,4);
 
-renderClientes();
+    contenedor.innerHTML =
+        destacados.map(p => `
 
-renderProveedores();
+        <div class="product-card">
 
-renderEmpleados();
+            <div class="product-image">
+                ${p.icono || "💊"}
+            </div>
 
-renderHistorial();
+            <div class="product-info">
 
-renderReportes();
+                <h3>${p.nombre}</h3>
 
-renderDestacados();
+                <p>${p.categoria}</p>
 
-actualizarEstadisticas();
+                <div class="price">
+                    L ${Number(p.precio).toFixed(2)}
+                </div>
 
-cargarClientesFactura();
+                <button class="btn btn-primary"
+                    onclick="agregarAlCarrito(${p.id})">
+                    🛒 Comprar
+                </button>
 
+            </div>
+
+        </div>
+
+    `).join("");
 }
 
 
 /* =====================================================
-MODALES
+   MODALES
 ===================================================== */
 
 function cerrarModal(id){
 
-document.getElementById(id)
-.classList.remove("show");
-
+    document.getElementById(id)
+        .classList.remove("show");
 }
 
 
-window.addEventListener("click",function(e){
+/* =====================================================
+   ACTUALIZAR TODO
+===================================================== */
 
-document.querySelectorAll(".modal")
-.forEach(m=>{
+function actualizarTodo(){
 
-if(e.target===m)
-m.classList.remove("show");
+    renderProductos();
 
-});
+    renderClientes();
+
+    renderProveedores();
+
+    renderEmpleados();
+
+    renderHistorial();
+
+    renderReportes();
+
+    renderDestacados();
+
+    actualizarEstadisticas();
+
+    cargarClientesFactura();
+}
+
+
+/* =====================================================
+   INICIO DEL SISTEMA
+===================================================== */
+
+document.addEventListener("DOMContentLoaded",function(){
+
+    cargarDatosIniciales();
+
+    actualizarTodo();
+
+    prepararNuevaFactura();
 
 });
 
 
 /* =====================================================
-INICIAR
+   CERRAR MODALES AL HACER CLICK AFUERA
 ===================================================== */
 
-document.addEventListener(
-"DOMContentLoaded",
-function(){
+window.addEventListener("click",function(event){
 
-cargarDatosIniciales();
+    document.querySelectorAll(".modal")
+        .forEach(modal => {
 
-actualizarTodo();
+            if(event.target === modal){
 
-prepararNuevaFactura();
+                modal.classList.remove("show");
 
-}
-);
+            }
+
+        });
+
+});
 
 </script>
 
