@@ -1,2280 +1,3949 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISABEL | Tienda de Moda</title>
 
-    <title> OmniMarket | Supermercado</title>
+<style>
 
-    <!-- ==================================================
-        FUENTES
-    ================================================== -->
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+:root{
+    --rosa:#b76e79;
+    --rosa-claro:#f7e7e9;
+    --vino:#6d2737;
+    --crema:#faf7f2;
+    --negro:#242124;
+    --gris:#777;
+    --blanco:#fff;
+    --verde:#198754;
+    --rojo:#dc3545;
+    --azul:#3567a8;
+    --amarillo:#d99a00;
+}
 
-    <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--crema);
+    color:var(--negro);
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+/* =========================
+   HEADER
+========================= */
 
+header{
+    background:linear-gradient(135deg,#6d2737,#b76e79);
+    color:white;
+    padding:16px 25px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 5px 20px rgba(0,0,0,.18);
+}
 
-    <!-- ==================================================
-        ICONOS
-    ================================================== -->
+.header-content{
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
 
+.logo-icon{
+    width:52px;
+    height:52px;
+    background:white;
+    color:var(--vino);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:Georgia,serif;
+    font-size:27px;
+    font-weight:bold;
+}
 
+.logo h1{
+    font-family:Georgia,serif;
+    letter-spacing:2px;
+}
+
+.logo p{
+    font-size:11px;
+    opacity:.9;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:6px;
+}
+
+nav button{
+    border:0;
+    background:rgba(255,255,255,.13);
+    color:white;
+    padding:10px 12px;
+    border-radius:9px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+nav button:hover,
+nav button.active{
+    background:white;
+    color:var(--vino);
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.container{
+    max-width:1400px;
+    margin:auto;
+    padding:25px;
+}
+
+.section{
+    display:none;
+}
+
+.section.active{
+    display:block;
+}
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.section-title h2{
+    color:var(--vino);
+    font-family:Georgia,serif;
+}
+
+.btn{
+    border:0;
+    padding:10px 15px;
+    border-radius:9px;
+    cursor:pointer;
+    font-weight:bold;
+    margin:3px;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn-primary{
+    background:var(--vino);
+    color:white;
+}
+
+.btn-rosa{
+    background:var(--rosa);
+    color:white;
+}
+
+.btn-blue{
+    background:var(--azul);
+    color:white;
+}
+
+.btn-danger{
+    background:var(--rojo);
+    color:white;
+}
+
+.btn-warning{
+    background:var(--amarillo);
+    color:white;
+}
+
+.btn-success{
+    background:var(--verde);
+    color:white;
+}
+
+.btn-secondary{
+    background:#6c757d;
+    color:white;
+}
+
+.btn-light{
+    background:white;
+    color:var(--vino);
+    border:1px solid #ddd;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:430px;
+    border-radius:22px;
+    padding:55px;
+    margin-bottom:25px;
+    background:
+      linear-gradient(rgba(40,20,25,.55),rgba(40,20,25,.55)),
+      url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600&q=85")
+      center/cover;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.hero h2{
+    font-family:Georgia,serif;
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:650px;
+    font-size:19px;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:18px;
+    margin:20px 0;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.stat-card{
+    text-align:center;
+    border-top:4px solid var(--rosa);
+}
+
+.stat-number{
+    color:var(--vino);
+    font-size:30px;
+    font-weight:bold;
+    margin:8px;
+}
+
+/* =========================
+   CATALOGO
+========================= */
+
+.search-box{
+    background:white;
+    padding:15px;
+    border-radius:14px;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:10px;
+    margin-bottom:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.07);
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:11px;
+    border:1px solid #d8d0d0;
+    border-radius:8px;
+    outline:none;
+    background:white;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:var(--rosa);
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+    gap:22px;
+}
+
+.product-card{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 22px rgba(0,0,0,.09);
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-5px);
+}
+
+.product-image{
+    width:100%;
+    height:290px;
+    object-fit:cover;
+    display:block;
+}
+
+.product-info{
+    padding:16px;
+}
+
+.product-info h3{
+    color:var(--vino);
+    margin-bottom:7px;
+}
+
+.product-meta{
+    color:var(--gris);
+    font-size:13px;
+    line-height:1.7;
+}
+
+.price{
+    color:var(--vino);
+    font-size:22px;
+    font-weight:bold;
+    margin:8px 0;
+}
+
+.stock-ok{
+    color:var(--verde);
+    font-weight:bold;
+}
+
+.stock-low{
+    color:var(--rojo);
+    font-weight:bold;
+}
+
+/* =========================
+   FORMULARIOS
+========================= */
+
+.form-card{
+    background:white;
+    border-radius:15px;
+    padding:22px;
+    margin-bottom:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:15px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.form-group label{
+    font-weight:bold;
+    font-size:14px;
+}
+
+/* =========================
+   TABLAS
+========================= */
+
+.table-container{
+    overflow-x:auto;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:800px;
+}
+
+th{
+    background:var(--vino);
+    color:white;
+    padding:12px;
+    text-align:left;
+}
+
+td{
+    padding:11px;
+    border-bottom:1px solid #eee;
+}
+
+tr:hover{
+    background:#fff7f8;
+}
+
+/* =========================
+   ALERTAS
+========================= */
+
+.alert{
+    padding:13px;
+    border-radius:9px;
+    margin:10px 0;
+    font-weight:bold;
+}
+
+.alert-warning{
+    background:#fff3cd;
+    color:#664d03;
+}
+
+.alert-success{
+    background:#d1e7dd;
+    color:#0f5132;
+}
+
+.alert-danger{
+    background:#f8d7da;
+    color:#842029;
+}
+
+/* =========================
+   CARRITO
+========================= */
+
+.cart-summary{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    max-width:400px;
+    margin:20px 0 20px auto;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.total-line{
+    display:flex;
+    justify-content:space-between;
+    padding:7px 0;
+}
+
+.grand-total{
+    border-top:2px solid var(--vino);
+    padding-top:12px;
+    color:var(--vino);
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    z-index:3000;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-content{
+    background:white;
+    width:100%;
+    max-width:700px;
+    max-height:90vh;
+    overflow:auto;
+    border-radius:18px;
+    padding:25px;
+}
+
+.modal-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.close{
+    border:0;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+/* =========================
+   FACTURA
+========================= */
+
+.invoice{
+    background:white;
+    max-width:900px;
+    margin:auto;
+    padding:30px;
+    border-radius:12px;
+}
+
+.invoice-header{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    border-bottom:3px solid var(--vino);
+    padding-bottom:15px;
+    margin-bottom:20px;
+}
+
+.invoice-title{
+    font-family:Georgia,serif;
+    font-size:30px;
+    color:var(--vino);
+}
+
+.invoice-total{
+    max-width:320px;
+    margin-left:auto;
+    margin-top:20px;
+}
+
+.invoice-total div{
+    display:flex;
+    justify-content:space-between;
+    padding:7px;
+}
+
+.invoice-total .total{
+    border-top:2px solid var(--vino);
+    color:var(--vino);
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#241b1e;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:40px;
+}
+
+footer h3{
+    font-family:Georgia,serif;
+    color:#f4c6cd;
+    font-size:25px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .header-content{
+        flex-direction:column;
+    }
+
+    nav{
+        width:100%;
+    }
+
+    .hero{
+        padding:35px 25px;
+    }
+
+    .hero h2{
+        font-size:34px;
+    }
+
+    .search-box{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .container{
+        padding:15px;
+    }
+
+    .hero{
+        min-height:400px;
+    }
+
+    .hero h2{
+        font-size:29px;
+    }
+
+    .product-image{
+        height:350px;
+    }
+
+}
+
+/* =========================
+   PRINT
+========================= */
+
+@media print{
+
+    body{
+        background:white;
+    }
+
+    header,
+    footer,
+    nav,
+    .no-print,
+    .btn{
+        display:none!important;
+    }
+
+    .section{
+        display:none!important;
+    }
+
+    #facturaVista{
+        display:block!important;
+    }
+
+    .invoice{
+        box-shadow:none;
+        max-width:none;
+    }
+
+}
+
+</style>
 </head>
-
 
 <body>
 
-
-<!-- =========================================================
-    PANTALLA DE CARGA
-========================================================= -->
-
-<div id="loader">
-
-    <div class="loader-content">
-
-        <div class="loader-logo">
-
-            <i class="fa-solid fa-cart-shopping"></i>
-
-        </div>
-
-        <h1>
-            OmniMarket
-        </h1>
-
-        <p>
-            Preparando tu supermercado...
-        </p>
-
-        <div class="loader-bar">
-
-            <div class="loader-progress"></div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-    BARRA SUPERIOR
-========================================================= -->
-
-<div class="topbar">
-
-    <div>
-
-        <i class="fa-solid fa-location-dot"></i>
-
-        Compra local, recibe en casa
-
-    </div>
-
-    <div class="topbar-right">
-
-        <span>
-            <i class="fa-solid fa-phone"></i>
-            +504 2222-7890
-        </span>
-
-        <span>
-            <i class="fa-solid fa-clock"></i>
-            Atención 7:00 AM - 9:00 PM
-        </span>
-
-        <span>
-            <i class="fa-solid fa-truck"></i>
-            Entregas
-        </span>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-    NAVBAR
-========================================================= -->
-
 <header>
 
-<nav class="navbar">
+<div class="header-content">
 
+<div class="logo">
 
-    <a href="#inicio" class="logo">
+<div class="logo-icon">
+I
+</div>
 
-        <div class="logo-icon">
+<div>
+<h1>ISABEL</h1>
+<p>TIENDA DE MODA & ESTILO</p>
+</div>
 
-            <i class="fa-solid fa-basket-shopping"></i>
+</div>
 
-        </div>
+<nav>
 
-        <div>
+<button class="active"
+onclick="mostrarSeccion('inicio',this)">
+Inicio
+</button>
 
-            Onmi<span>Market</span>
+<button onclick="mostrarSeccion('catalogo',this)">
+Catálogo
+</button>
 
-        </div>
+<button onclick="mostrarSeccion('productos',this)">
+Prendas
+</button>
 
-    </a>
+<button onclick="mostrarSeccion('clientes',this)">
+Clientes
+</button>
 
+<button onclick="mostrarSeccion('proveedores',this)">
+Proveedores
+</button>
 
-    <ul class="nav-menu">
+<button onclick="mostrarSeccion('empleados',this)">
+Empleados
+</button>
 
+<button onclick="mostrarSeccion('facturacion',this)">
+Facturación
+</button>
 
-        <li>
+<button onclick="mostrarSeccion('historial',this)">
+Facturas
+</button>
 
-            <a href="#inicio">
-                Inicio
-            </a>
-
-        </li>
-
-
-        <!-- PRODUCTOS -->
-
-        <li class="dropdown">
-
-            <a href="#productos">
-
-                Productos
-
-                <i class="fa-solid fa-chevron-down"></i>
-
-            </a>
-
-
-            <div class="dropdown-menu">
-
-                <a href="#categorias">
-
-                    <i class="fa-solid fa-boxes-stacked"></i>
-
-                    Todas las categorías
-
-                </a>
-
-                <a href="#productos">
-
-                    <i class="fa-solid fa-apple-whole"></i>
-
-                    Frutas y verduras
-
-                </a>
-
-                <a href="#productos">
-
-                    <i class="fa-solid fa-drumstick-bite"></i>
-
-                    Carnes
-
-                </a>
-
-                <a href="#productos">
-
-                    <i class="fa-solid fa-cheese"></i>
-
-                    Lácteos
-
-                </a>
-
-                <a href="#productos">
-
-                    <i class="fa-solid fa-bread-slice"></i>
-
-                    Panadería
-
-                </a>
-
-                <a href="#productos">
-
-                    <i class="fa-solid fa-soap"></i>
-
-                    Limpieza
-
-                </a>
-
-            </div>
-
-        </li>
-
-
-        <!-- OFERTAS -->
-
-        <li class="dropdown">
-
-            <a href="#ofertas">
-
-                Ofertas
-
-                <i class="fa-solid fa-chevron-down"></i>
-
-            </a>
-
-
-            <div class="dropdown-menu">
-
-                <a href="#ofertas">
-
-                    <i class="fa-solid fa-percent"></i>
-
-                    Descuentos del día
-
-                </a>
-
-                <a href="#ofertas">
-
-                    <i class="fa-solid fa-fire"></i>
-
-                    Ofertas especiales
-
-                </a>
-
-                <a href="#ofertas">
-
-                    <i class="fa-solid fa-star"></i>
-
-                    Productos destacados
-
-                </a>
-
-            </div>
-
-        </li>
-
-
-        <!-- PRECIOS -->
-
-        <li>
-
-            <a href="#precios">
-                Precios regionales
-            </a>
-
-        </li>
-
-
-        <!-- PLANES -->
-
-        <li>
-
-            <a href="#planes">
-                Planes alimenticios
-            </a>
-
-        </li>
-
-
-        <!-- FACTURAS -->
-
-        <li>
-
-            <a href="#facturas">
-                Facturas
-            </a>
-
-        </li>
-
-
-        <!-- CARRITO -->
-
-        <li>
-
-            <a href="#carrito"
-            class="cart-button">
-
-                <i class="fa-solid fa-cart-shopping"></i>
-
-                Carrito
-
-                <span id="cartCount">
-                    0
-                </span>
-
-            </a>
-
-        </li>
-
-    </ul>
+<button onclick="mostrarSeccion('reportes',this)">
+Reportes
+</button>
 
 </nav>
+
+</div>
 
 </header>
 
 
-<!-- =========================================================
-    HERO
-========================================================= -->
+<main class="container">
 
-<section class="hero" id="inicio">
+<!-- =========================
+INICIO
+========================= -->
 
-    <div class="hero-content">
+<section id="inicio" class="section active">
 
-        <div class="hero-text">
+<div class="hero">
 
+<h2>Elegancia que habla por ti.</h2>
 
-            <div class="hero-label">
+<p>
+Descubre nuestra colección de moda para mujer y hombre.
+Prendas seleccionadas para crear un estilo moderno,
+elegante y auténticamente tuyo.
+</p>
 
-                <i class="fa-solid fa-star"></i>
+<div class="hero-buttons">
 
-                Calidad, ahorro y comodidad
+<button class="btn btn-rosa"
+onclick="mostrarSeccionPorNombre('catalogo')">
+Ver colección
+</button>
 
-            </div>
+<button class="btn btn-light"
+onclick="mostrarSeccionPorNombre('facturacion')">
+Nueva venta
+</button>
 
-
-            <h1>
-
-                Todo tu súper,
-
-                <br>
-
-                <span>en un solo lugar.</span>
-
-            </h1>
-
-
-            <p>
-
-                Descubre productos frescos, promociones,
-                precios regionales y opciones para organizar
-                tus compras de una manera rápida y sencilla.
-
-            </p>
-
-
-            <div class="hero-buttons">
-
-                <a href="#productos"
-                class="btn btn-primary">
-
-                    <i class="fa-solid fa-cart-shopping"></i>
-
-                    Comprar ahora
-
-                </a>
-
-
-                <a href="#ofertas"
-                class="btn btn-light">
-
-                    <i class="fa-solid fa-tag"></i>
-
-                    Ver ofertas
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-    ACCIONES RÁPIDAS
-========================================================= -->
-
-<div class="quick-actions">
-
-
-    <a href="#productos"
-    class="quick-card">
-
-        <i class="fa-solid fa-cart-shopping"></i>
-
-        <h3>
-            Comprar en línea
-        </h3>
-
-        <p>
-            Agrega productos a tu carrito
-        </p>
-
-    </a>
-
-
-    <a href="#ofertas"
-    class="quick-card">
-
-        <i class="fa-solid fa-percent"></i>
-
-        <h3>
-            Ofertas
-        </h3>
-
-        <p>
-            Descubre descuentos especiales
-        </p>
-
-    </a>
-
-
-    <a href="#precios"
-    class="quick-card">
-
-        <i class="fa-solid fa-location-dot"></i>
-
-        <h3>
-            Precios regionales
-        </h3>
-
-        <p>
-            Selecciona tu ciudad
-        </p>
-
-    </a>
-
-
-    <a href="#facturas"
-       class="quick-card">
-
-        <i class="fa-solid fa-file-invoice"></i>
-
-        <h3>
-            Mi factura
-        </h3>
-
-        <p>
-            Consulta tus comprobantes
-        </p>
-
-    </a>
-
+</div>
 
 </div>
 
 
-<!-- =========================================================
-    CATEGORÍAS
-========================================================= -->
-
-<section class="section categories"
-        id="categorias">
-
-
-    <div class="section-title">
-
-        <small>
-            Explora
-        </small>
-
-        <h2>
-            Categorías populares
-        </h2>
-
-        <p>
-            Encuentra rápidamente lo que necesitas para
-            tu hogar y tus compras semanales.
-        </p>
-
-    </div>
-
-
-    <div class="category-grid">
-
-
-        <div class="category">
-
-            <div class="category-icon">
-
-                <i class="fa-solid fa-apple-whole"></i>
-
-            </div>
-
-            <h3>
-                Frutas y verduras
-            </h3>
-
-        </div>
-
-
-        <div class="category">
-
-            <div class="category-icon">
-
-                <i class="fa-solid fa-drumstick-bite"></i>
-
-            </div>
-
-            <h3>
-                Carnes
-            </h3>
-
-        </div>
-
-
-        <div class="category">
-
-            <div class="category-icon">
-
-                <i class="fa-solid fa-cheese"></i>
-
-            </div>
-
-            <h3>
-                Lácteos
-            </h3>
-
-        </div>
-
-
-        <div class="category">
-
-            <div class="category-icon">
-
-                <i class="fa-solid fa-bread-slice"></i>
-
-            </div>
-
-            <h3>
-                Panadería
-            </h3>
-
-        </div>
-
-
-        <div class="category">
-
-            <div class="category-icon">
-
-                <i class="fa-solid fa-bottle-water"></i>
-
-            </div>
-
-            <h3>
-                Bebidas
-            </h3>
-
-        </div>
-
-
-        <div class="category">
-
-            <div class="category-icon">
-
-                <i class="fa-solid fa-soap"></i>
-
-            </div>
-
-            <h3>
-                Limpieza
-            </h3>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-    PRODUCTOS
-========================================================= -->
-
-<section class="section products"
-        id="productos">
-
-
-    <div class="section-title">
-
-        <small>
-            Compra inteligente
-        </small>
-
-        <h2>
-            Productos destacados
-        </h2>
-
-        <p>
-            Selecciona tus productos favoritos y agrégalos
-            al carrito de compras.
-        </p>
-
-    </div>
-
-
-    <div class="product-grid">
-
-
-        <!-- PRODUCTO 1 -->
-
-        <div class="product-card">
-
-            <span class="discount">
-                -20%
-            </span>
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=700&q=80"
-                alt="Arroz">
-
-            <div class="product-info">
-
-                <span class="product-category">
-                    Abarrotes
-                </span>
-
-                <h3>
-                    Arroz Premium
-                </h3>
-
-                <p>
-                    Presentación familiar.
-                </p>
-
-                <div class="product-price">
-
-                    <div>
-
-                        <span class="price">
-                            L 42.00
-                        </span>
-
-                        <span class="old-price">
-                            L 52.00
-                        </span>
-
-                    </div>
-
-                    <button
-                        class="add-button"
-                        onclick="agregarCarrito('Arroz Premium',42)">
-
-                        <i class="fa-solid fa-plus"></i>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- PRODUCTO 2 -->
-
-        <div class="product-card">
-
-            <span class="discount">
-                -15%
-            </span>
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=700&q=80"
-                alt="Verduras">
-
-            <div class="product-info">
-
-                <span class="product-category">
-                    Frescos
-                </span>
-
-                <h3>
-                    Canasta de verduras
-                </h3>
-
-                <p>
-                    Selección de vegetales frescos.
-                </p>
-
-                <div class="product-price">
-
-                    <div>
-
-                        <span class="price">
-                            L 89.00
-                        </span>
-
-                        <span class="old-price">
-                            L 105.00
-                        </span>
-
-                    </div>
-
-                    <button
-                        class="add-button"
-                        onclick="agregarCarrito('Canasta de verduras',89)">
-
-                        <i class="fa-solid fa-plus"></i>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- PRODUCTO 3 -->
-
-        <div class="product-card">
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=700&q=80"
-                alt="Leche">
-
-            <div class="product-info">
-
-                <span class="product-category">
-                    Lácteos
-                </span>
-
-                <h3>
-                    Leche Familiar
-                </h3>
-
-                <p>
-                    Producto de consumo familiar.
-                </p>
-
-                <div class="product-price">
-
-                    <div>
-
-                        <span class="price">
-                            L 38.00
-                        </span>
-
-                    </div>
-
-                    <button
-                        class="add-button"
-                        onclick="agregarCarrito('Leche Familiar',38)">
-
-                        <i class="fa-solid fa-plus"></i>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- PRODUCTO 4 -->
-
-        <div class="product-card">
-
-            <span class="discount">
-                -10%
-            </span>
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80"
-                alt="Pan">
-
-            <div class="product-info">
-
-                <span class="product-category">
-                    Panadería
-                </span>
-
-                <h3>
-                    Pan Familiar
-                </h3>
-
-                <p>
-                    Pan fresco para compartir.
-                </p>
-
-                <div class="product-price">
-
-                    <div>
-
-                        <span class="price">
-                            L 55.00
-                        </span>
-
-                        <span class="old-price">
-                            L 61.00
-                        </span>
-
-                    </div>
-
-                    <button
-                        class="add-button"
-                        onclick="agregarCarrito('Pan Familiar',55)">
-
-                        <i class="fa-solid fa-plus"></i>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-    OFERTAS
-========================================================= -->
-
-<section class="section offers"
-        id="ofertas">
-
-
-    <div class="section-title">
-
-        <small>
-            Ahorra más
-        </small>
-
-        <h2>
-            Ofertas y descuentos
-        </h2>
-
-        <p>
-            Promociones demostrativas para organizar una
-            sección de ofertas en tu supermercado.
-        </p>
-
-    </div>
-
-
-    <div class="offer-grid">
-
-
-        <div class="offer-card"
-            style="
-            background-image:
-            url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80');
-            ">
-
-            <div class="offer-content">
-
-                <span>
-                    OFERTA
-                </span>
-
-                <h3>
-                    Frescos de la semana
-                </h3>
-
-                <p>
-                    Selección de frutas y verduras.
-                </p>
-
-                <button
-                    class="btn btn-orange"
-                    onclick="mostrarMensaje('Oferta de frescos seleccionada')">
-
-                    Ver productos
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="offer-card"
-            style="
-            background-image:
-            url('https://images.unsplash.com/photo-1556761223-4c4282c73f77?auto=format&fit=crop&w=900&q=80');
-            ">
-
-            <div class="offer-content">
-
-                <span>
-                    AHORRO
-                </span>
-
-                <h3>
-                    Compra familiar
-                </h3>
-
-                <p>
-                    Combos para compras del hogar.
-                </p>
-
-                <button
-                    class="btn btn-orange"
-                    onclick="mostrarMensaje('Combo familiar seleccionado')">
-
-                    Ver combo
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="offer-card"
-            style="
-            background-image:
-            url('https://images.unsplash.com/photo-1601598851547-4302969d99d1?auto=format&fit=crop&w=900&q=80');
-            ">
-
-            <div class="offer-content">
-
-                <span>
-                    ESPECIAL
-                </span>
-
-                <h3>
-                    Ahorro del día
-                </h3>
-
-                <p>
-                    Productos seleccionados con descuento.
-                </p>
-
-                <button
-                    class="btn btn-orange"
-                    onclick="mostrarMensaje('Oferta del día seleccionada')">
-
-                    Aprovechar
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-    PRECIOS REGIONALES
-========================================================= -->
-
-<section class="section regional"
-        id="precios">
-
-
-    <div class="regional-content">
-
-
-        <div>
-
-            <small>
-                PRECIOS REGIONALES
-            </small>
-
-            <h2>
-                Compra según tu región
-            </h2>
-
-            <p>
-                Selecciona una ciudad para consultar precios
-                demostrativos y disponibilidad regional.
-                En una tienda real, los precios y existencias
-                pueden variar según la ubicación.
-            </p>
-
-            <button
-                class="btn btn-light"
-                onclick="actualizarRegion()">
-
-                <i class="fa-solid fa-location-crosshairs"></i>
-
-                Actualizar región
-
-            </button>
-
-        </div>
-
-
-        <div class="region-box">
-
-            <h3>
-                Selecciona tu ciudad
-            </h3>
-
-            <select id="region"
-                    onchange="cambiarRegion()">
-
-                <option value="tegucigalpa">
-                    Tegucigalpa
-                </option>
-
-                <option value="sps">
-                    San Pedro Sula
-                </option>
-
-                <option value="laCeiba">
-                    La Ceiba
-                </option>
-
-                <option value="choluteca">
-                    Choluteca
-                </option>
-
-            </select>
-
-
-            <div class="region-price">
-
-                <span>
-                    Arroz Premium
-                </span>
-
-                <strong id="precioArroz">
-                    L 42.00
-                </strong>
-
-            </div>
-
-
-            <div class="region-price">
-
-                <span>
-                    Leche Familiar
-                </span>
-
-                <strong id="precioLeche">
-                    L 38.00
-                </strong>
-
-            </div>
-
-
-            <div class="region-price">
-
-                <span>
-                    Canasta de verduras
-                </span>
-
-                <strong id="precioVerduras">
-                    L 89.00
-                </strong>
-
-            </div>
-
-
-            <div class="region-price">
-
-                <span>
-                    Pan Familiar
-                </span>
-
-                <strong id="precioPan">
-                    L 55.00
-                </strong>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-    PLANES ALIMENTICIOS
-========================================================= -->
-
-<section class="section plans"
-        id="planes">
-
-
-    <div class="section-title">
-
-        <small>
-            Organización familiar
-        </small>
-
-        <h2>
-            Planes alimenticios
-        </h2>
-
-        <p>
-            Ideas de planificación de compras. No sustituyen
-            la orientación personalizada de un profesional.
-        </p>
-
-    </div>
-
-
-    <div class="plan-grid">
-
-
-        <div class="plan-card">
-
-            <div class="plan-icon">
-
-                <i class="fa-solid fa-seedling"></i>
-
-            </div>
-
-            <h3>
-                Plan Familiar
-            </h3>
-
-            <p>
-                Una lista general para organizar compras
-                de alimentos básicos del hogar.
-            </p>
-
-            <ul>
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Frutas y verduras
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Granos y cereales
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Lácteos
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Productos básicos
-                </li>
-
-            </ul>
-
-            <button
-                class="btn btn-primary"
-                onclick="mostrarMensaje('Plan Familiar seleccionado')">
-
-                Ver lista
-
-            </button>
-
-        </div>
-
-
-        <div class="plan-card">
-
-            <div class="plan-icon">
-
-                <i class="fa-solid fa-carrot"></i>
-
-            </div>
-
-            <h3>
-                Plan Frescos
-            </h3>
-
-            <p>
-                Orientado a organizar una compra variada
-                de productos frescos.
-            </p>
-
-            <ul>
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Frutas
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Vegetales
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Hierbas
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Productos de temporada
-                </li>
-
-            </ul>
-
-            <button
-                class="btn btn-primary"
-                onclick="mostrarMensaje('Plan Frescos seleccionado')">
-
-                Ver lista
-
-            </button>
-
-        </div>
-
-
-        <div class="plan-card">
-
-            <div class="plan-icon">
-
-                <i class="fa-solid fa-basket-shopping"></i>
-
-            </div>
-
-            <h3>
-                Plan Ahorro
-            </h3>
-
-            <p>
-                Ayuda a organizar una lista de compras
-                buscando promociones y productos básicos.
-            </p>
-
-            <ul>
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Productos en oferta
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Abarrotes
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Productos familiares
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Comparación regional
-                </li>
-
-            </ul>
-
-            <button
-                class="btn btn-primary"
-                onclick="mostrarMensaje('Plan Ahorro seleccionado')">
-
-                Ver lista
-
-            </button>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-    FACTURAS
-========================================================= -->
-
-<section class="section invoices"
-        id="facturas">
-
-
-    <div class="section-title">
-
-        <small>
-            Compras
-        </small>
-
-        <h2>
-            Consulta tus facturas
-        </h2>
-
-        <p>
-            Introduce los datos de una compra para consultar
-            una factura demostrativa.
-        </p>
-
-    </div>
-
-
-    <div class="invoice-box">
-
-
-        <div class="invoice-info">
-
-            <h2>
-                Tus compras organizadas
-            </h2>
-
-            <p>
-                Esta sección puede conectarse posteriormente
-                a una base de datos para generar y consultar
-                facturas reales.
-            </p>
-
-            <ul class="invoice-list">
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Historial de compras
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Número de factura
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Fecha de compra
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Total pagado
-                </li>
-
-            </ul>
-
-        </div>
-
-
-        <div class="invoice-form">
-
-
-            <div class="form-group">
-
-                <label>
-                    Número de factura
-                </label>
-
-                <input
-                    id="numeroFactura"
-                    type="text"
-                    placeholder="Ej. NC-2026-000125">
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    Correo electrónico
-                </label>
-
-                <input
-                    id="correoFactura"
-                    type="email"
-                    placeholder="cliente@correo.com">
-
-            </div>
-
-
-            <button
-                class="btn btn-primary"
-                style="width:100%;"
-                onclick="consultarFactura()">
-
-                <i class="fa-solid fa-file-invoice"></i>
-
-                Consultar factura
-
-            </button>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-    CARRITO
-========================================================= -->
-
-<section class="section cart-section"
-        id="carrito">
-
-
-    <div class="section-title">
-
-        <small>
-            Tu compra
-        </small>
-
-        <h2>
-            Carrito de compras
-        </h2>
-
-        <p>
-            Los productos agregados aparecerán aquí.
-        </p>
-
-    </div>
-
-
-    <div class="cart-box">
-
-
-        <div id="cartItems">
-
-            <p style="
-                text-align:center;
-                color:#89938e;
-                padding:30px;
-            ">
-
-                Tu carrito está vacío.
-
-            </p>
-
-        </div>
-
-
-        <div class="cart-total">
-
-            <span>
-                Total:
-            </span>
-
-            <span id="cartTotal">
-                L 0.00
-            </span>
-
-        </div>
-
-
-        <button
-            class="btn btn-primary"
-            style="
-                width:100%;
-                margin-top:20px;
-            "
-            onclick="finalizarCompra()">
-
-            <i class="fa-solid fa-credit-card"></i>
-
-            Continuar al pago
-
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-    ENTREGA
-========================================================= -->
-
-<section class="section delivery">
-
-
-    <div class="section-title">
-
-        <small>
-            Compra flexible
-        </small>
-
-        <h2>
-            Recibe tu pedido como prefieras
-        </h2>
-
-        <p>
-            Una estructura inspirada en opciones habituales
-            de supermercados digitales.
-        </p>
-
-    </div>
-
-
-    <div class="delivery-grid">
-
-
-        <div class="delivery-card">
-
-            <i class="fa-solid fa-truck-fast"></i>
-
-            <h3>
-                Delivery
-            </h3>
-
-            <p>
-                Recibe tus productos en la dirección indicada.
-            </p>
-
-        </div>
-
-
-        <div class="delivery-card">
-
-            <i class="fa-solid fa-store"></i>
-
-            <h3>
-                Pick-up
-            </h3>
-
-            <p>
-                Realiza tu pedido y recógelo en tienda.
-            </p>
-
-        </div>
-
-
-        <div class="delivery-card">
-
-            <i class="fa-solid fa-calendar-check"></i>
-
-            <h3>
-                Entrega programada
-            </h3>
-
-            <p>
-                Selecciona un horario disponible.
-            </p>
-
-        </div>
-
-
-        <div class="delivery-card">
-
-            <i class="fa-solid fa-headset"></i>
-
-            <h3>
-                Atención
-            </h3>
-
-            <p>
-                Nuestro equipo puede ayudarte con tu pedido.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-    NEWSLETTER
-========================================================= -->
-
-<div class="newsletter">
-
-
-    <div>
-
-        <h2>
-            Recibe nuestras ofertas
-        </h2>
-
-        <p>
-            Suscríbete para conocer promociones y novedades.
-        </p>
-
-    </div>
-
-
-    <form
-        class="newsletter-form"
-        onsubmit="suscribirse(event)">
-
-        <input
-            id="email"
-            type="email"
-            placeholder="Tu correo electrónico"
-            required>
-
-        <button class="btn btn-light">
-
-            Suscribirme
-
-        </button>
-
-    </form>
-
+<div class="cards">
+
+<div class="card stat-card">
+<h3>Prendas</h3>
+<div class="stat-number" id="statProductos">0</div>
+<p>Registradas</p>
+</div>
+
+<div class="card stat-card">
+<h3>Clientes</h3>
+<div class="stat-number" id="statClientes">0</div>
+<p>Registrados</p>
+</div>
+
+<div class="card stat-card">
+<h3>Facturas</h3>
+<div class="stat-number" id="statFacturas">0</div>
+<p>Realizadas</p>
+</div>
+
+<div class="card stat-card">
+<h3>Ventas</h3>
+<div class="stat-number" id="statVentas">
+L 0.00
+</div>
+<p>Acumuladas</p>
+</div>
 
 </div>
 
 
-<!-- =========================================================
-    FOOTER
-========================================================= -->
+<div class="card">
 
-<footer>
+<h2 style="color:#6d2737;margin-bottom:15px;">
+✨ Colección destacada
+</h2>
 
+<div id="destacados"
+class="product-grid">
+</div>
 
-<div class="footer-grid">
+</div>
 
-
-    <div class="footer-brand">
-
-
-        <a href="#inicio"
-        class="logo"
-        style="color:white;">
-
-            <div class="logo-icon">
-
-                <i class="fa-solid fa-basket-shopping"></i>
-
-            </div>
-
-            <div>
-
-                Onmi<span>Market</span>
-
-            </div>
-
-        </a>
+</section>
 
 
-        <p>
+<!-- =========================
+CATALOGO
+========================= -->
 
-            Supermercado OmniMarket es un proyecto web
-            educativo y demostrativo creado para practicar
-            HTML, CSS en Visual Studio Code.
+<section id="catalogo" class="section">
 
-        </p>
+<div class="section-title">
 
+<h2>✨ Catálogo Isabel</h2>
 
-        <div class="socials">
+<button class="btn btn-primary"
+onclick="mostrarSeccionPorNombre('facturacion')">
 
-            <a href="#">
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
+🛍️ Ir a facturación
 
-            <a href="#">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="#">
-                <i class="fa-brands fa-tiktok"></i>
-            </a>
-
-            <a href="#">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-
-        </div>
-
-
-    </div>
-
-
-    <div>
-
-        <h3>
-            Categorías
-        </h3>
-
-        <ul>
-
-            <li>
-                <a href="#productos">
-                    Abarrotes
-                </a>
-            </li>
-
-            <li>
-                <a href="#productos">
-                    Frutas y verduras
-                </a>
-            </li>
-
-            <li>
-                <a href="#productos">
-                    Lácteos
-                </a>
-            </li>
-
-            <li>
-                <a href="#productos">
-                    Panadería
-                </a>
-            </li>
-
-            <li>
-                <a href="#productos">
-                    Limpieza
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <div>
-
-        <h3>
-            Servicios
-        </h3>
-
-        <ul>
-
-            <li>
-                <a href="#ofertas">
-                    Ofertas
-                </a>
-            </li>
-
-            <li>
-                <a href="#precios">
-                    Precios regionales
-                </a>
-            </li>
-
-            <li>
-                <a href="#planes">
-                    Planes alimenticios
-                </a>
-            </li>
-
-            <li>
-                <a href="#facturas">
-                    Facturas
-                </a>
-            </li>
-
-            <li>
-                <a href="#carrito">
-                    Carrito
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <div>
-
-        <h3>
-            Contacto
-        </h3>
-
-        <ul>
-
-            <li>
-                <i class="fa-solid fa-phone"></i>
-                +504 2222-7890
-            </li>
-
-            <li>
-                <i class="fa-solid fa-envelope"></i>
-                contacto@OmniMarket.demo
-            </li>
-
-            <li>
-                <i class="fa-solid fa-location-dot"></i>
-                Honduras
-            </li>
-
-            <li>
-                <i class="fa-solid fa-clock"></i>
-                7:00 AM - 9:00 PM
-            </li>
-
-        </ul>
-
-    </div>
-
+</button>
 
 </div>
 
 
-<div class="copyright">
+<div class="search-box">
 
-    <p>
-        © 2026 Supermercado OmniMarket.
-        Proyecto académico y demostrativo.
-    </p>
+<input
+id="buscarCatalogo"
+placeholder="🔎 Buscar vestido, blusa, jeans..."
+oninput="renderCatalogo()">
 
-    <p>
+<select id="filtroCategoria"
+onchange="renderCatalogo()">
 
-        <strong>
-            Creador: Davi Alexander Munguia Rodriguez
-        </strong>
+<option value="">Todas las categorías</option>
+<option>Vestidos</option>
+<option>Blusas</option>
+<option>Jeans</option>
+<option>Pantalones</option>
+<option>Camisas</option>
+<option>Conjuntos</option>
+<option>Chaquetas</option>
+<option>Accesorios</option>
 
-        <br>
+</select>
 
-        HTML + CSS + |
-        Visual Studio Code
+<select id="filtroGenero"
+onchange="renderCatalogo()">
 
-    </p>
+<option value="">Todos</option>
+<option>Mujer</option>
+<option>Hombre</option>
+<option>Unisex</option>
 
-    <p style="margin-top:8px;">
-
-        Teléfono ficticio:
-        +504 2222-7890 |
-        Correo:
-        contacto@OmniMarket.demo
-
-    </p>
+</select>
 
 </div>
 
 
-</footer>
+<div id="catalogoGrid"
+class="product-grid">
+</div>
+
+</section>
 
 
-<!-- =========================================================
-    BOTÓN VOLVER ARRIBA
-========================================================= -->
+<!-- =========================
+PRODUCTOS
+========================= -->
 
-<button id="topButton"
-        onclick="window.scrollTo(0,0)">
+<section id="productos" class="section">
 
-    <i class="fa-solid fa-arrow-up"></i>
+<div class="section-title">
+
+<h2>👗 Gestión de Prendas</h2>
+
+<button class="btn btn-primary"
+onclick="abrirModalProducto()">
+
++ Agregar prenda
+
+</button>
+
+</div>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Prenda</th>
+<th>Categoría</th>
+<th>Género</th>
+<th>Talla</th>
+<th>Color</th>
+<th>Precio</th>
+<th>Stock</th>
+<th>Proveedor</th>
+<th>Acciones</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tablaProductos">
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+CLIENTES
+========================= -->
+
+<section id="clientes" class="section">
+
+<div class="section-title">
+
+<h2>👥 Clientes</h2>
+
+<button class="btn btn-primary"
+onclick="abrirModalCliente()">
+
++ Agregar cliente
+
+</button>
+
+</div>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Nombre</th>
+<th>DNI</th>
+<th>Teléfono</th>
+<th>Correo</th>
+<th>Dirección</th>
+<th>Acciones</th>
+</tr>
+
+</thead>
+
+<tbody id="tablaClientes">
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+PROVEEDORES
+========================= -->
+
+<section id="proveedores" class="section">
+
+<div class="section-title">
+
+<h2>🚚 Proveedores</h2>
+
+<button class="btn btn-primary"
+onclick="abrirModalProveedor()">
+
++ Agregar proveedor
+
+</button>
+
+</div>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Empresa</th>
+<th>Contacto</th>
+<th>Teléfono</th>
+<th>Correo</th>
+<th>Producto suministrado</th>
+<th>Acciones</th>
+</tr>
+
+</thead>
+
+<tbody id="tablaProveedores">
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+EMPLEADOS
+========================= -->
+
+<section id="empleados" class="section">
+
+<div class="section-title">
+
+<h2>👩‍💼 Empleados</h2>
+
+<button class="btn btn-primary"
+onclick="abrirModalEmpleado()">
+
++ Agregar empleado
+
+</button>
+
+</div>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Nombre</th>
+<th>Cargo</th>
+<th>Teléfono</th>
+<th>Correo</th>
+<th>Estado</th>
+<th>Acciones</th>
+</tr>
+
+</thead>
+
+<tbody id="tablaEmpleados">
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+FACTURACION
+========================= -->
+
+<section id="facturacion" class="section">
+
+<div class="section-title">
+
+<h2>🧾 Facturación</h2>
+
+<button class="btn btn-secondary"
+onclick="nuevaFactura()">
+
+Nueva factura
+
+</button>
+
+</div>
+
+
+<div class="form-card">
+
+<h3 style="color:#6d2737;margin-bottom:15px;">
+Datos de la venta
+</h3>
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>Cliente</label>
+
+<select id="factCliente"
+onchange="mostrarDatosCliente()">
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>DNI</label>
+
+<input id="factDni" readonly>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Fecha</label>
+
+<input type="date"
+id="factFecha">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Número de factura</label>
+
+<input id="factNumero" readonly>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="form-card">
+
+<div class="section-title">
+
+<h3 style="color:#6d2737;">
+Prendas de la venta
+</h3>
+
+<button class="btn btn-primary"
+onclick="agregarProductoFactura()">
+
++ Agregar prenda
+
+</button>
+
+</div>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Prenda</th>
+<th>Talla</th>
+<th>Cantidad</th>
+<th>Precio</th>
+<th>Subtotal</th>
+<th>Acción</th>
+</tr>
+
+</thead>
+
+<tbody id="detalleFactura">
+</tbody>
+
+</table>
+
+</div>
+
+
+<div class="cart-summary">
+
+<div class="total-line">
+
+<span>Subtotal</span>
+
+<strong id="factSubtotal">
+L 0.00
+</strong>
+
+</div>
+
+
+<div class="total-line">
+
+<span>Descuento</span>
+
+<strong id="factDescuento">
+L 0.00
+</strong>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Descuento (%)</label>
+
+<input
+type="number"
+id="descuentoPorcentaje"
+value="0"
+min="0"
+max="100"
+oninput="calcularFactura()">
+
+</div>
+
+
+<div class="total-line">
+
+<span>ISV (15%)</span>
+
+<strong id="factISV">
+L 0.00
+</strong>
+
+</div>
+
+
+<div class="total-line grand-total">
+
+<span>TOTAL</span>
+
+<strong id="factTotal">
+L 0.00
+</strong>
+
+</div>
+
+</div>
+
+
+<button class="btn btn-success"
+onclick="guardarFactura()">
+
+💾 Guardar factura
 
 </button>
 
 
-<!-- =========================================================
-    JAVASCRIPT
-========================================================= -->
+<button class="btn btn-blue"
+onclick="prepararImpresion()">
+
+🖨️ Imprimir
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+HISTORIAL
+========================= -->
+
+<section id="historial" class="section">
+
+<div class="section-title">
+
+<h2>📋 Historial de Facturas</h2>
+
+</div>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Factura</th>
+<th>Fecha</th>
+<th>Cliente</th>
+<th>Total</th>
+<th>Acciones</th>
+</tr>
+
+</thead>
+
+<tbody id="tablaFacturas">
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+REPORTES
+========================= -->
+
+<section id="reportes" class="section">
+
+<div class="section-title">
+
+<h2>📊 Reportes</h2>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card stat-card">
+<h3>Prendas</h3>
+<div class="stat-number"
+id="repProductos">0</div>
+</div>
+
+<div class="card stat-card">
+<h3>Clientes</h3>
+<div class="stat-number"
+id="repClientes">0</div>
+</div>
+
+<div class="card stat-card">
+<h3>Proveedores</h3>
+<div class="stat-number"
+id="repProveedores">0</div>
+</div>
+
+<div class="card stat-card">
+<h3>Empleados</h3>
+<div class="stat-number"
+id="repEmpleados">0</div>
+</div>
+
+<div class="card stat-card">
+<h3>Facturas</h3>
+<div class="stat-number"
+id="repFacturas">0</div>
+</div>
+
+<div class="card stat-card">
+<h3>Ventas</h3>
+<div class="stat-number"
+id="repVentas">L 0.00</div>
+</div>
+
+</div>
+
+
+<div class="form-card">
+
+<h3 style="color:#6d2737;">
+⚠️ Prendas con poco inventario
+</h3>
+
+<div id="bajoStock"></div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+VISTA FACTURA
+========================= -->
+
+<section id="facturaVista" class="section">
+
+<div class="invoice"
+id="contenidoFactura">
+
+<div class="invoice-header">
+
+<div>
+
+<div class="invoice-title">
+ISABEL
+</div>
+
+<p>TIENDA DE MODA & ESTILO</p>
+<p>📞 9999-8888</p>
+<p>📧 ventas@isabelmoda.com</p>
+
+</div>
+
+
+<div>
+
+<h2>FACTURA</h2>
+
+<p id="vistaNumero"></p>
+
+<p id="vistaFecha"></p>
+
+</div>
+
+</div>
+
+
+<p>
+
+<strong>Cliente:</strong>
+
+<span id="vistaCliente"></span>
+
+</p>
+
+<p>
+
+<strong>DNI:</strong>
+
+<span id="vistaDni"></span>
+
+</p>
+
+
+<table style="margin-top:20px;">
+
+<thead>
+
+<tr>
+
+<th>Prenda</th>
+<th>Cantidad</th>
+<th>Precio</th>
+<th>Subtotal</th>
+
+</tr>
+
+</thead>
+
+<tbody id="vistaDetalle">
+</tbody>
+
+</table>
+
+
+<div class="invoice-total">
+
+<div>
+
+<span>Subtotal</span>
+
+<strong id="vistaSubtotal"></strong>
+
+</div>
+
+<div>
+
+<span>Descuento</span>
+
+<strong id="vistaDescuento"></strong>
+
+</div>
+
+<div>
+
+<span>ISV 15%</span>
+
+<strong id="vistaISV"></strong>
+
+</div>
+
+<div class="total">
+
+<span>TOTAL</span>
+
+<strong id="vistaTotal"></strong>
+
+</div>
+
+</div>
+
+
+<p style="text-align:center;margin-top:40px;">
+
+Gracias por comprar en <strong>ISABEL</strong>.
+
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<h3>ISABEL</h3>
+
+<p>
+Tienda de Moda & Estilo
+</p>
+
+<p>
+📞 9999-8888 |
+📧 ventas@isabelmoda.com
+</p>
+
+<p>
+© 2026 Isabel — Sistema de gestión de tienda
+</p>
+
+</footer>
+
+
+<!-- =====================================================
+MODAL PRODUCTO
+===================================================== -->
+
+<div id="modalProducto" class="modal">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h2 id="tituloProducto">
+Agregar prenda
+</h2>
+
+<button class="close"
+onclick="cerrarModal('modalProducto')">
+×
+</button>
+
+</div>
+
+
+<input type="hidden"
+id="productoId">
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>Nombre</label>
+
+<input id="productoNombre">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Categoría</label>
+
+<select id="productoCategoria">
+
+<option>Vestidos</option>
+<option>Blusas</option>
+<option>Jeans</option>
+<option>Pantalones</option>
+<option>Camisas</option>
+<option>Conjuntos</option>
+<option>Chaquetas</option>
+<option>Accesorios</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Género</label>
+
+<select id="productoGenero">
+
+<option>Mujer</option>
+<option>Hombre</option>
+<option>Unisex</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Talla</label>
+
+<select id="productoTalla">
+
+<option>XS</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>XXL</option>
+<option>Única</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Color</label>
+
+<input id="productoColor">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Precio</label>
+
+<input type="number"
+id="productoPrecio"
+min="0"
+step=".01">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Stock</label>
+
+<input type="number"
+id="productoStock"
+min="0">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Proveedor</label>
+
+<input id="productoProveedor">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Imagen URL</label>
+
+<input id="productoImagen">
+
+</div>
+
+</div>
+
+
+<br>
+
+<button class="btn btn-primary"
+onclick="guardarProducto()">
+
+💾 Guardar
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+MODAL CLIENTE
+===================================================== -->
+
+<div id="modalCliente" class="modal">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h2>Agregar cliente</h2>
+
+<button class="close"
+onclick="cerrarModal('modalCliente')">
+×
+</button>
+
+</div>
+
+
+<input type="hidden"
+id="clienteId">
+
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Nombre completo</label>
+<input id="clienteNombre">
+</div>
+
+<div class="form-group">
+<label>DNI</label>
+<input id="clienteDni">
+</div>
+
+<div class="form-group">
+<label>Teléfono</label>
+<input id="clienteTelefono">
+</div>
+
+<div class="form-group">
+<label>Correo</label>
+<input id="clienteCorreo">
+</div>
+
+<div class="form-group">
+<label>Dirección</label>
+<input id="clienteDireccion">
+</div>
+
+</div>
+
+
+<br>
+
+<button class="btn btn-primary"
+onclick="guardarCliente()">
+
+💾 Guardar
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+MODAL PROVEEDOR
+===================================================== -->
+
+<div id="modalProveedor" class="modal">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h2>Agregar proveedor</h2>
+
+<button class="close"
+onclick="cerrarModal('modalProveedor')">
+×
+</button>
+
+</div>
+
+
+<input type="hidden"
+id="proveedorId">
+
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Empresa</label>
+<input id="proveedorEmpresa">
+</div>
+
+<div class="form-group">
+<label>Contacto</label>
+<input id="proveedorContacto">
+</div>
+
+<div class="form-group">
+<label>Teléfono</label>
+<input id="proveedorTelefono">
+</div>
+
+<div class="form-group">
+<label>Correo</label>
+<input id="proveedorCorreo">
+</div>
+
+<div class="form-group">
+<label>Producto suministrado</label>
+<input id="proveedorProducto">
+</div>
+
+</div>
+
+
+<br>
+
+<button class="btn btn-primary"
+onclick="guardarProveedor()">
+
+💾 Guardar
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+MODAL EMPLEADO
+===================================================== -->
+
+<div id="modalEmpleado" class="modal">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h2>Agregar empleado</h2>
+
+<button class="close"
+onclick="cerrarModal('modalEmpleado')">
+×
+</button>
+
+</div>
+
+
+<input type="hidden"
+id="empleadoId">
+
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Nombre</label>
+<input id="empleadoNombre">
+</div>
+
+<div class="form-group">
+<label>Cargo</label>
+<input id="empleadoCargo">
+</div>
+
+<div class="form-group">
+<label>Teléfono</label>
+<input id="empleadoTelefono">
+</div>
+
+<div class="form-group">
+<label>Correo</label>
+<input id="empleadoCorreo">
+</div>
+
+<div class="form-group">
+
+<label>Estado</label>
+
+<select id="empleadoEstado">
+
+<option>Activo</option>
+<option>Inactivo</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<br>
+
+<button class="btn btn-primary"
+onclick="guardarEmpleado()">
+
+💾 Guardar
+
+</button>
+
+</div>
+
+</div>
+
 
 <script>
 
+/* =====================================================
+BASE DE DATOS
+===================================================== */
 
-/* =========================================================
-PANTALLA DE CARGA
-========================================================= */
+let productos =
+JSON.parse(localStorage.getItem("isabel_productos")) || [];
 
-window.addEventListener("load", function() {
+let clientes =
+JSON.parse(localStorage.getItem("isabel_clientes")) || [];
 
-    setTimeout(function() {
+let proveedores =
+JSON.parse(localStorage.getItem("isabel_proveedores")) || [];
 
-        document
-            .getElementById("loader")
-            .classList
-            .add("hidden");
+let empleados =
+JSON.parse(localStorage.getItem("isabel_empleados")) || [];
 
-    }, 2200);
+let facturas =
+JSON.parse(localStorage.getItem("isabel_facturas")) || [];
+
+let detalleActual=[];
+
+
+/* =====================================================
+IMÁGENES REALES
+===================================================== */
+
+const imagenesModa=[
+
+"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=85",
+
+"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=85",
+
+"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=85",
+
+"https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=700&q=85",
+
+"https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=700&q=85",
+
+"https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=700&q=85",
+
+"https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=85",
+
+"https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=700&q=85"
+
+];
+
+
+/* =====================================================
+DATOS FICTICIOS
+===================================================== */
+
+function cargarDatosIniciales(){
+
+if(localStorage.getItem("isabel_inicializada"))
+return;
+
+
+productos=[
+
+{
+id:1,
+nombre:"Vestido Elegance",
+categoria:"Vestidos",
+genero:"Mujer",
+talla:"M",
+color:"Beige",
+precio:1250,
+stock:8,
+proveedor:"Moda Internacional",
+imagen:imagenesModa[0]
+},
+
+{
+id:2,
+nombre:"Blusa Satinada",
+categoria:"Blusas",
+genero:"Mujer",
+talla:"L",
+color:"Rosa",
+precio:650,
+stock:12,
+proveedor:"Textiles Centroamericanos",
+imagen:imagenesModa[1]
+},
+
+{
+id:3,
+nombre:"Jeans Classic",
+categoria:"Jeans",
+genero:"Mujer",
+talla:"M",
+color:"Azul",
+precio:950,
+stock:15,
+proveedor:"Distribuidora Fashion",
+imagen:imagenesModa[2]
+},
+
+{
+id:4,
+nombre:"Camisa Premium",
+categoria:"Camisas",
+genero:"Hombre",
+talla:"L",
+color:"Blanco",
+precio:780,
+stock:10,
+proveedor:"Importadora Isabel",
+imagen:imagenesModa[3]
+},
+
+{
+id:5,
+nombre:"Conjunto Casual",
+categoria:"Conjuntos",
+genero:"Mujer",
+talla:"S",
+color:"Negro",
+precio:1450,
+stock:7,
+proveedor:"Moda Internacional",
+imagen:imagenesModa[4]
+},
+
+{
+id:6,
+nombre:"Chaqueta Urbana",
+categoria:"Chaquetas",
+genero:"Unisex",
+talla:"L",
+color:"Negro",
+precio:1750,
+stock:5,
+proveedor:"Distribuidora Fashion",
+imagen:imagenesModa[5]
+},
+
+{
+id:7,
+nombre:"Pantalón Ejecutivo",
+categoria:"Pantalones",
+genero:"Hombre",
+talla:"M",
+color:"Gris",
+precio:990,
+stock:9,
+proveedor:"Importadora Isabel",
+imagen:imagenesModa[6]
+},
+
+{
+id:8,
+nombre:"Look Boutique",
+categoria:"Vestidos",
+genero:"Mujer",
+talla:"S",
+color:"Rojo",
+precio:1350,
+stock:6,
+proveedor:"Moda Internacional",
+imagen:imagenesModa[7]
+}
+
+];
+
+
+clientes=[
+
+{
+id:1,
+nombre:"María Hernández",
+dni:"0801-1992-12345",
+telefono:"9999-1111",
+correo:"maria@email.com",
+direccion:"El Progreso"
+},
+
+{
+id:2,
+nombre:"Ana López",
+dni:"0501-1990-23456",
+telefono:"9999-2222",
+correo:"ana@email.com",
+direccion:"San Pedro Sula"
+},
+
+{
+id:3,
+nombre:"Carlos Martínez",
+dni:"0801-1988-34567",
+telefono:"9999-3333",
+correo:"carlos@email.com",
+direccion:"La Lima"
+},
+
+{
+id:4,
+nombre:"Sofía Gómez",
+dni:"0501-1998-45678",
+telefono:"9999-4444",
+correo:"sofia@email.com",
+direccion:"El Progreso"
+}
+
+];
+
+
+proveedores=[
+
+{
+id:1,
+empresa:"Moda Internacional",
+contacto:"Laura Pérez",
+telefono:"2222-1111",
+correo:"modaint@email.com",
+producto:"Vestidos y conjuntos"
+},
+
+{
+id:2,
+empresa:"Textiles Centroamericanos",
+contacto:"Roberto Díaz",
+telefono:"2222-2222",
+correo:"textiles@email.com",
+producto:"Blusas y camisas"
+},
+
+{
+id:3,
+empresa:"Distribuidora Fashion",
+contacto:"Pedro López",
+telefono:"2222-3333",
+correo:"fashion@email.com",
+producto:"Jeans y chaquetas"
+},
+
+{
+id:4,
+empresa:"Importadora Isabel",
+contacto:"Daniela Rivera",
+telefono:"2222-4444",
+correo:"importadora@email.com",
+producto:"Ropa y accesorios"
+}
+
+];
+
+
+empleados=[
+
+{
+id:1,
+nombre:"Isabel Martínez",
+cargo:"Administradora",
+telefono:"9888-1111",
+correo:"isabel@isabelmoda.com",
+estado:"Activo"
+},
+
+{
+id:2,
+nombre:"Laura Pérez",
+cargo:"Vendedora",
+telefono:"9888-2222",
+correo:"laura@isabelmoda.com",
+estado:"Activo"
+},
+
+{
+id:3,
+nombre:"Sofía López",
+cargo:"Cajera",
+telefono:"9888-3333",
+correo:"sofia@isabelmoda.com",
+estado:"Activo"
+},
+
+{
+id:4,
+nombre:"Daniela Hernández",
+cargo:"Encargada de inventario",
+telefono:"9888-4444",
+correo:"daniela@isabelmoda.com",
+estado:"Activo"
+}
+
+];
+
+
+guardarTodo();
+
+localStorage.setItem(
+"isabel_inicializada",
+"true"
+);
+
+}
+
+
+/* =====================================================
+GUARDAR
+===================================================== */
+
+function guardarTodo(){
+
+localStorage.setItem(
+"isabel_productos",
+JSON.stringify(productos)
+);
+
+localStorage.setItem(
+"isabel_clientes",
+JSON.stringify(clientes)
+);
+
+localStorage.setItem(
+"isabel_proveedores",
+JSON.stringify(proveedores)
+);
+
+localStorage.setItem(
+"isabel_empleados",
+JSON.stringify(empleados)
+);
+
+localStorage.setItem(
+"isabel_facturas",
+JSON.stringify(facturas)
+);
+
+}
+
+
+/* =====================================================
+NAVEGACION
+===================================================== */
+
+function mostrarSeccion(nombre,boton){
+
+document.querySelectorAll(".section")
+.forEach(s=>s.classList.remove("active"));
+
+const sec=document.getElementById(nombre);
+
+if(sec)
+sec.classList.add("active");
+
+
+document.querySelectorAll("nav button")
+.forEach(b=>b.classList.remove("active"));
+
+if(boton)
+boton.classList.add("active");
+
+actualizarTodo();
+
+}
+
+
+function mostrarSeccionPorNombre(nombre){
+
+const mapa={
+inicio:"Inicio",
+catalogo:"Catálogo",
+productos:"Prendas",
+clientes:"Clientes",
+proveedores:"Proveedores",
+empleados:"Empleados",
+facturacion:"Facturación",
+historial:"Facturas",
+reportes:"Reportes"
+};
+
+const boton=
+[...document.querySelectorAll("nav button")]
+.find(b=>b.textContent.includes(mapa[nombre]));
+
+mostrarSeccion(nombre,boton);
+
+}
+
+
+/* =====================================================
+CATALOGO
+===================================================== */
+
+function renderCatalogo(){
+
+const grid=
+document.getElementById("catalogoGrid");
+
+const busqueda=
+document.getElementById("buscarCatalogo")
+.value.toLowerCase();
+
+const categoria=
+document.getElementById("filtroCategoria").value;
+
+const genero=
+document.getElementById("filtroGenero").value;
+
+
+const lista=productos.filter(p=>
+
+p.nombre.toLowerCase().includes(busqueda)
+&&
+(!categoria||p.categoria===categoria)
+&&
+(!genero||p.genero===genero)
+
+);
+
+
+grid.innerHTML=lista.map(p=>`
+
+<div class="product-card">
+
+<img
+class="product-image"
+src="${p.imagen}"
+alt="${p.nombre}">
+
+<div class="product-info">
+
+<h3>${p.nombre}</h3>
+
+<div class="product-meta">
+
+Categoría: ${p.categoria}<br>
+
+Género: ${p.genero}<br>
+
+Talla: ${p.talla}<br>
+
+Color: ${p.color}
+
+</div>
+
+<div class="price">
+L ${Number(p.precio).toFixed(2)}
+</div>
+
+<p class="${p.stock<=5?'stock-low':'stock-ok'}">
+
+Stock: ${p.stock}
+
+</p>
+
+<button
+class="btn btn-primary"
+onclick="agregarAlCarrito(${p.id})">
+
+🛍️ Agregar
+
+</button>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+
+/* =====================================================
+TABLA PRODUCTOS
+===================================================== */
+
+function renderProductos(){
+
+document.getElementById("tablaProductos").innerHTML=
+
+productos.map(p=>`
+
+<tr>
+
+<td>${p.id}</td>
+
+<td>${p.nombre}</td>
+
+<td>${p.categoria}</td>
+
+<td>${p.genero}</td>
+
+<td>${p.talla}</td>
+
+<td>${p.color}</td>
+
+<td>L ${Number(p.precio).toFixed(2)}</td>
+
+<td>${p.stock}</td>
+
+<td>${p.proveedor}</td>
+
+<td>
+
+<button class="btn btn-warning"
+onclick="editarProducto(${p.id})">
+✏️
+</button>
+
+<button class="btn btn-danger"
+onclick="eliminarProducto(${p.id})">
+🗑️
+</button>
+
+</td>
+
+</tr>
+
+`).join("");
+
+}
+
+
+/* =====================================================
+PRODUCTOS CRUD
+===================================================== */
+
+function abrirModalProducto(){
+
+document.getElementById("productoId").value="";
+document.getElementById("productoNombre").value="";
+document.getElementById("productoPrecio").value="";
+document.getElementById("productoStock").value="";
+document.getElementById("productoColor").value="";
+document.getElementById("productoProveedor").value="";
+document.getElementById("productoImagen").value="";
+
+document.getElementById("tituloProducto")
+.textContent="Agregar prenda";
+
+document.getElementById("modalProducto")
+.classList.add("show");
+
+}
+
+
+function guardarProducto(){
+
+const id=
+document.getElementById("productoId").value;
+
+const nombre=
+document.getElementById("productoNombre")
+.value.trim();
+
+const categoria=
+document.getElementById("productoCategoria").value;
+
+const genero=
+document.getElementById("productoGenero").value;
+
+const talla=
+document.getElementById("productoTalla").value;
+
+const color=
+document.getElementById("productoColor").value.trim();
+
+const precio=
+Number(document.getElementById("productoPrecio").value);
+
+const stock=
+Number(document.getElementById("productoStock").value);
+
+const proveedor=
+document.getElementById("productoProveedor").value.trim();
+
+let imagen=
+document.getElementById("productoImagen").value.trim();
+
+
+if(!nombre||precio<0||stock<0){
+
+alert("Complete correctamente los datos.");
+
+return;
+
+}
+
+
+if(!imagen)
+imagen=imagenesModa[productos.length%imagenesModa.length];
+
+
+if(id){
+
+const p=productos.find(x=>x.id==id);
+
+p.nombre=nombre;
+p.categoria=categoria;
+p.genero=genero;
+p.talla=talla;
+p.color=color;
+p.precio=precio;
+p.stock=stock;
+p.proveedor=proveedor;
+p.imagen=imagen;
+
+}else{
+
+productos.push({
+
+id:Date.now(),
+nombre,
+categoria,
+genero,
+talla,
+color,
+precio,
+stock,
+proveedor,
+imagen
+
+});
+
+}
+
+
+guardarTodo();
+
+cerrarModal("modalProducto");
+
+actualizarTodo();
+
+alert("Prenda guardada correctamente.");
+
+}
+
+
+function editarProducto(id){
+
+const p=productos.find(x=>x.id===id);
+
+if(!p)return;
+
+document.getElementById("productoId").value=p.id;
+document.getElementById("productoNombre").value=p.nombre;
+document.getElementById("productoCategoria").value=p.categoria;
+document.getElementById("productoGenero").value=p.genero;
+document.getElementById("productoTalla").value=p.talla;
+document.getElementById("productoColor").value=p.color;
+document.getElementById("productoPrecio").value=p.precio;
+document.getElementById("productoStock").value=p.stock;
+document.getElementById("productoProveedor").value=p.proveedor;
+document.getElementById("productoImagen").value=p.imagen;
+
+document.getElementById("tituloProducto")
+.textContent="Editar prenda";
+
+document.getElementById("modalProducto")
+.classList.add("show");
+
+}
+
+
+function eliminarProducto(id){
+
+if(!confirm("¿Eliminar esta prenda?"))
+return;
+
+productos=
+productos.filter(p=>p.id!==id);
+
+guardarTodo();
+
+actualizarTodo();
+
+}
+
+
+/* =====================================================
+CLIENTES
+===================================================== */
+
+function renderClientes(){
+
+document.getElementById("tablaClientes").innerHTML=
+
+clientes.map(c=>`
+
+<tr>
+
+<td>${c.id}</td>
+<td>${c.nombre}</td>
+<td>${c.dni}</td>
+<td>${c.telefono}</td>
+<td>${c.correo}</td>
+<td>${c.direccion}</td>
+
+<td>
+
+<button class="btn btn-warning"
+onclick="editarCliente(${c.id})">
+✏️
+</button>
+
+<button class="btn btn-danger"
+onclick="eliminarCliente(${c.id})">
+🗑️
+</button>
+
+</td>
+
+</tr>
+
+`).join("");
+
+}
+
+
+function abrirModalCliente(){
+
+document.getElementById("clienteId").value="";
+document.getElementById("clienteNombre").value="";
+document.getElementById("clienteDni").value="";
+document.getElementById("clienteTelefono").value="";
+document.getElementById("clienteCorreo").value="";
+document.getElementById("clienteDireccion").value="";
+
+document.getElementById("modalCliente")
+.classList.add("show");
+
+}
+
+
+function guardarCliente(){
+
+const id=document.getElementById("clienteId").value;
+
+const cliente={
+
+nombre:document.getElementById("clienteNombre").value.trim(),
+
+dni:document.getElementById("clienteDni").value.trim(),
+
+telefono:document.getElementById("clienteTelefono").value.trim(),
+
+correo:document.getElementById("clienteCorreo").value.trim(),
+
+direccion:document.getElementById("clienteDireccion").value.trim()
+
+};
+
+
+if(!cliente.nombre||!cliente.dni){
+
+alert("Nombre y DNI son obligatorios.");
+
+return;
+
+}
+
+
+if(id){
+
+Object.assign(
+clientes.find(c=>c.id==id),
+cliente
+);
+
+}else{
+
+clientes.push({
+id:Date.now(),
+...cliente
+});
+
+}
+
+
+guardarTodo();
+
+cerrarModal("modalCliente");
+
+actualizarTodo();
+
+}
+
+
+function editarCliente(id){
+
+const c=clientes.find(x=>x.id===id);
+
+if(!c)return;
+
+document.getElementById("clienteId").value=c.id;
+document.getElementById("clienteNombre").value=c.nombre;
+document.getElementById("clienteDni").value=c.dni;
+document.getElementById("clienteTelefono").value=c.telefono;
+document.getElementById("clienteCorreo").value=c.correo;
+document.getElementById("clienteDireccion").value=c.direccion;
+
+document.getElementById("modalCliente")
+.classList.add("show");
+
+}
+
+
+function eliminarCliente(id){
+
+if(!confirm("¿Eliminar cliente?"))
+return;
+
+clientes=clientes.filter(c=>c.id!==id);
+
+guardarTodo();
+
+actualizarTodo();
+
+}
+
+
+/* =====================================================
+PROVEEDORES
+===================================================== */
+
+function renderProveedores(){
+
+document.getElementById("tablaProveedores").innerHTML=
+
+proveedores.map(p=>`
+
+<tr>
+
+<td>${p.id}</td>
+<td>${p.empresa}</td>
+<td>${p.contacto}</td>
+<td>${p.telefono}</td>
+<td>${p.correo}</td>
+<td>${p.producto}</td>
+
+<td>
+
+<button class="btn btn-warning"
+onclick="editarProveedor(${p.id})">
+✏️
+</button>
+
+<button class="btn btn-danger"
+onclick="eliminarProveedor(${p.id})">
+🗑️
+</button>
+
+</td>
+
+</tr>
+
+`).join("");
+
+}
+
+
+function abrirModalProveedor(){
+
+document.getElementById("proveedorId").value="";
+document.getElementById("proveedorEmpresa").value="";
+document.getElementById("proveedorContacto").value="";
+document.getElementById("proveedorTelefono").value="";
+document.getElementById("proveedorCorreo").value="";
+document.getElementById("proveedorProducto").value="";
+
+document.getElementById("modalProveedor")
+.classList.add("show");
+
+}
+
+
+function guardarProveedor(){
+
+const id=document.getElementById("proveedorId").value;
+
+const data={
+
+empresa:document.getElementById("proveedorEmpresa").value.trim(),
+
+contacto:document.getElementById("proveedorContacto").value.trim(),
+
+telefono:document.getElementById("proveedorTelefono").value.trim(),
+
+correo:document.getElementById("proveedorCorreo").value.trim(),
+
+producto:document.getElementById("proveedorProducto").value.trim()
+
+};
+
+
+if(!data.empresa){
+
+alert("La empresa es obligatoria.");
+
+return;
+
+}
+
+
+if(id){
+
+Object.assign(
+proveedores.find(p=>p.id==id),
+data
+);
+
+}else{
+
+proveedores.push({
+id:Date.now(),
+...data
+});
+
+}
+
+
+guardarTodo();
+
+cerrarModal("modalProveedor");
+
+actualizarTodo();
+
+}
+
+
+function editarProveedor(id){
+
+const p=proveedores.find(x=>x.id===id);
+
+if(!p)return;
+
+document.getElementById("proveedorId").value=p.id;
+document.getElementById("proveedorEmpresa").value=p.empresa;
+document.getElementById("proveedorContacto").value=p.contacto;
+document.getElementById("proveedorTelefono").value=p.telefono;
+document.getElementById("proveedorCorreo").value=p.correo;
+document.getElementById("proveedorProducto").value=p.producto;
+
+document.getElementById("modalProveedor")
+.classList.add("show");
+
+}
+
+
+function eliminarProveedor(id){
+
+if(!confirm("¿Eliminar proveedor?"))
+return;
+
+proveedores=
+proveedores.filter(p=>p.id!==id);
+
+guardarTodo();
+
+actualizarTodo();
+
+}
+
+
+/* =====================================================
+EMPLEADOS
+===================================================== */
+
+function renderEmpleados(){
+
+document.getElementById("tablaEmpleados").innerHTML=
+
+empleados.map(e=>`
+
+<tr>
+
+<td>${e.id}</td>
+<td>${e.nombre}</td>
+<td>${e.cargo}</td>
+<td>${e.telefono}</td>
+<td>${e.correo}</td>
+<td>${e.estado}</td>
+
+<td>
+
+<button class="btn btn-warning"
+onclick="editarEmpleado(${e.id})">
+✏️
+</button>
+
+<button class="btn btn-danger"
+onclick="eliminarEmpleado(${e.id})">
+🗑️
+</button>
+
+</td>
+
+</tr>
+
+`).join("");
+
+}
+
+
+function abrirModalEmpleado(){
+
+document.getElementById("empleadoId").value="";
+document.getElementById("empleadoNombre").value="";
+document.getElementById("empleadoCargo").value="";
+document.getElementById("empleadoTelefono").value="";
+document.getElementById("empleadoCorreo").value="";
+document.getElementById("empleadoEstado").value="Activo";
+
+document.getElementById("modalEmpleado")
+.classList.add("show");
+
+}
+
+
+function guardarEmpleado(){
+
+const id=document.getElementById("empleadoId").value;
+
+const data={
+
+nombre:document.getElementById("empleadoNombre").value.trim(),
+
+cargo:document.getElementById("empleadoCargo").value.trim(),
+
+telefono:document.getElementById("empleadoTelefono").value.trim(),
+
+correo:document.getElementById("empleadoCorreo").value.trim(),
+
+estado:document.getElementById("empleadoEstado").value
+
+};
+
+
+if(!data.nombre||!data.cargo){
+
+alert("Nombre y cargo son obligatorios.");
+
+return;
+
+}
+
+
+if(id){
+
+Object.assign(
+empleados.find(e=>e.id==id),
+data
+);
+
+}else{
+
+empleados.push({
+id:Date.now(),
+...data
+});
+
+}
+
+
+guardarTodo();
+
+cerrarModal("modalEmpleado");
+
+actualizarTodo();
+
+}
+
+
+function editarEmpleado(id){
+
+const e=empleados.find(x=>x.id===id);
+
+if(!e)return;
+
+document.getElementById("empleadoId").value=e.id;
+document.getElementById("empleadoNombre").value=e.nombre;
+document.getElementById("empleadoCargo").value=e.cargo;
+document.getElementById("empleadoTelefono").value=e.telefono;
+document.getElementById("empleadoCorreo").value=e.correo;
+document.getElementById("empleadoEstado").value=e.estado;
+
+document.getElementById("modalEmpleado")
+.classList.add("show");
+
+}
+
+
+function eliminarEmpleado(id){
+
+if(!confirm("¿Eliminar empleado?"))
+return;
+
+empleados=
+empleados.filter(e=>e.id!==id);
+
+guardarTodo();
+
+actualizarTodo();
+
+}
+
+
+/* =====================================================
+CARRITO / FACTURA
+===================================================== */
+
+function agregarAlCarrito(id){
+
+mostrarSeccionPorNombre("facturacion");
+
+agregarProductoFactura(id);
+
+}
+
+
+function agregarProductoFactura(idProducto=null){
+
+if(productos.length===0)
+return;
+
+if(!idProducto)
+idProducto=productos[0].id;
+
+const p=productos.find(x=>x.id==idProducto);
+
+if(!p)return;
+
+if(p.stock<=0){
+
+alert("Esta prenda está agotada.");
+
+return;
+
+}
+
+
+const existente=
+detalleActual.find(x=>x.productoId===p.id);
+
+
+if(existente){
+
+if(existente.cantidad>=p.stock){
+
+alert("No hay suficiente inventario.");
+
+return;
+
+}
+
+existente.cantidad++;
+
+}else{
+
+detalleActual.push({
+productoId:p.id,
+cantidad:1
+});
+
+}
+
+
+renderDetalleFactura();
+
+}
+
+
+function renderDetalleFactura(){
+
+const tabla=
+document.getElementById("detalleFactura");
+
+
+if(detalleActual.length===0){
+
+tabla.innerHTML=`
+
+<tr>
+<td colspan="6"
+style="text-align:center;">
+No hay prendas agregadas.
+</td>
+</tr>`;
+
+calcularFactura();
+
+return;
+
+}
+
+
+tabla.innerHTML=
+detalleActual.map((item,index)=>{
+
+const p=
+productos.find(x=>x.id===item.productoId);
+
+return `
+
+<tr>
+
+<td>
+
+<select
+onchange="cambiarProductoFactura(${index},this.value)">
+
+${productos.map(x=>`
+
+<option value="${x.id}"
+${x.id===p.id?"selected":""}>
+
+${x.nombre}
+
+</option>
+
+`).join("")}
+
+</select>
+
+</td>
+
+<td>${p.talla}</td>
+
+<td>
+
+<input
+type="number"
+min="1"
+max="${p.stock}"
+value="${item.cantidad}"
+onchange="cambiarCantidad(${index},this.value)"
+style="width:75px;">
+
+</td>
+
+<td>
+L ${Number(p.precio).toFixed(2)}
+</td>
+
+<td>
+L ${(p.precio*item.cantidad).toFixed(2)}
+</td>
+
+<td>
+
+<button
+class="btn btn-danger"
+onclick="eliminarProductoFactura(${index})">
+
+🗑️
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+}).join("");
+
+calcularFactura();
+
+}
+
+
+function cambiarProductoFactura(index,id){
+
+const p=productos.find(x=>x.id==id);
+
+if(!p)return;
+
+detalleActual[index].productoId=p.id;
+detalleActual[index].cantidad=1;
+
+renderDetalleFactura();
+
+}
+
+
+function cambiarCantidad(index,cantidad){
+
+cantidad=Number(cantidad);
+
+const item=detalleActual[index];
+
+const p=
+productos.find(x=>x.id===item.productoId);
+
+if(cantidad<1)
+cantidad=1;
+
+if(cantidad>p.stock)
+cantidad=p.stock;
+
+item.cantidad=cantidad;
+
+renderDetalleFactura();
+
+}
+
+
+function eliminarProductoFactura(index){
+
+detalleActual.splice(index,1);
+
+renderDetalleFactura();
+
+}
+
+
+/* =====================================================
+CALCULO
+===================================================== */
+
+function calcularFactura(){
+
+let subtotal=0;
+
+detalleActual.forEach(item=>{
+
+const p=
+productos.find(x=>x.id===item.productoId);
+
+if(p)
+subtotal+=p.precio*item.cantidad;
 
 });
 
 
-/* =========================================================
-CARRITO
-========================================================= */
+const porcentaje=
+Number(document.getElementById("descuentoPorcentaje").value)||0;
 
-let carrito = [];
+const descuento=
+subtotal*(porcentaje/100);
 
-let total = 0;
+const base=
+subtotal-descuento;
 
+const impuesto=
+base*.15;
 
-function agregarCarrito(nombre, precio) {
-
-    carrito.push({
-        nombre: nombre,
-        precio: precio
-    });
-
-    total += precio;
-
-    actualizarCarrito();
-
-    alert(
-        nombre +
-        " fue agregado al carrito."
-    );
-}
+const total=
+base+impuesto;
 
 
-function actualizarCarrito() {
+document.getElementById("factSubtotal")
+.textContent="L "+subtotal.toFixed(2);
 
-    const container =
-        document.getElementById("cartItems");
+document.getElementById("factDescuento")
+.textContent="L "+descuento.toFixed(2);
 
-    const contador =
-        document.getElementById("cartCount");
+document.getElementById("factISV")
+.textContent="L "+impuesto.toFixed(2);
 
-    const totalElement =
-        document.getElementById("cartTotal");
-
-
-    contador.textContent =
-        carrito.length;
+document.getElementById("factTotal")
+.textContent="L "+total.toFixed(2);
 
 
-    if (carrito.length === 0) {
-
-        container.innerHTML = `
-
-            <p style="
-                text-align:center;
-                color:#89938e;
-                padding:30px;
-            ">
-
-                Tu carrito está vacío.
-
-            </p>
-
-        `;
-
-    } else {
-
-        container.innerHTML = "";
-
-        carrito.forEach(function(producto, index) {
-
-            const item =
-                document.createElement("div");
-
-            item.className =
-                "cart-item";
-
-            item.innerHTML = `
-
-                <div>
-
-                    <strong>
-                        ${producto.nombre}
-                    </strong>
-
-                    <br>
-
-                    <small>
-                        Producto ${index + 1}
-                    </small>
-
-                </div>
-
-                <strong>
-                    L ${producto.precio.toFixed(2)}
-                </strong>
-
-            `;
-
-            container.appendChild(item);
-
-        });
-
-    }
-
-
-    totalElement.textContent =
-        "L " + total.toFixed(2);
-}
-
-
-/* =========================================================
-FINALIZAR COMPRA
-========================================================= */
-
-function finalizarCompra() {
-
-    if (carrito.length === 0) {
-
-        alert(
-            "Tu carrito está vacío."
-        );
-
-        return;
-    }
-
-
-    alert(
-        "Compra preparada.\n\n" +
-        "Total: L " +
-        total.toFixed(2) +
-        "\n\n" +
-        "Esta página es una demostración."
-    );
+return {
+subtotal,
+descuento,
+impuesto,
+total,
+porcentaje
+};
 
 }
 
 
-/* =========================================================
-CAMBIAR REGIÓN
-========================================================= */
+/* =====================================================
+CLIENTE FACTURA
+===================================================== */
 
-function cambiarRegion() {
+function cargarClientesFactura(){
 
-    const region =
-        document.getElementById("region").value;
+const select=
+document.getElementById("factCliente");
 
+select.innerHTML=
+`<option value="">
+Seleccione cliente
+</option>`+
+clientes.map(c=>`
 
-    let arroz;
-    let leche;
-    let verduras;
-    let pan;
+<option value="${c.id}">
+${c.nombre}
+</option>
 
-
-    if (region === "tegucigalpa") {
-
-        arroz = 42;
-        leche = 38;
-        verduras = 89;
-        pan = 55;
-
-    }
-
-
-    else if (region === "sps") {
-
-        arroz = 44;
-        leche = 39;
-        verduras = 92;
-        pan = 56;
-
-    }
-
-
-    else if (region === "laCeiba") {
-
-        arroz = 45;
-        leche = 40;
-        verduras = 95;
-        pan = 57;
-
-    }
-
-
-    else {
-
-        arroz = 43;
-        leche = 38;
-        verduras = 90;
-        pan = 55;
-
-    }
-
-
-    document.getElementById("precioArroz")
-        .textContent =
-        "L " + arroz.toFixed(2);
-
-
-    document.getElementById("precioLeche")
-        .textContent =
-        "L " + leche.toFixed(2);
-
-
-    document.getElementById("precioVerduras")
-        .textContent =
-        "L " + verduras.toFixed(2);
-
-
-    document.getElementById("precioPan")
-        .textContent =
-        "L " + pan.toFixed(2);
+`).join("");
 
 }
 
 
-function actualizarRegion() {
+function mostrarDatosCliente(){
 
-    cambiarRegion();
+const id=
+Number(document.getElementById("factCliente").value);
 
-    alert(
-        "Región actualizada correctamente."
-    );
+const c=
+clientes.find(x=>x.id===id);
 
-}
-
-
-/* =========================================================
-FACTURAS
-========================================================= */
-
-function consultarFactura() {
-
-    const numero =
-        document
-        .getElementById("numeroFactura")
-        .value;
-
-    const correo =
-        document
-        .getElementById("correoFactura")
-        .value;
-
-
-    if (
-        numero === "" ||
-        correo === ""
-    ) {
-
-        alert(
-            "Completa todos los campos."
-        );
-
-        return;
-    }
-
-
-    alert(
-        "Factura consultada.\n\n" +
-        "Número: " +
-        numero +
-        "\n" +
-        "Correo: " +
-        correo +
-        "\n\n" +
-        "Esta es una demostración."
-    );
+document.getElementById("factDni")
+.value=c?c.dni:"";
 
 }
 
 
-/* =========================================================
-NEWSLETTER
-========================================================= */
+/* =====================================================
+NUEVA FACTURA
+===================================================== */
 
-function suscribirse(event) {
+function generarNumeroFactura(){
 
-    event.preventDefault();
-
-
-    const email =
-        document
-        .getElementById("email")
-        .value;
-
-
-    alert(
-        "¡Suscripción realizada!\n\n" +
-        email +
-        "\n\n" +
-        "Esta función es demostrativa."
-    );
-
-
-    document
-        .getElementById("email")
-        .value = "";
+return "ISB-"+
+String(facturas.length+1)
+.padStart(5,"0");
 
 }
 
 
-/* =========================================================
-MENSAJES GENERALES
-========================================================= */
+function prepararNuevaFactura(){
 
-function mostrarMensaje(mensaje) {
+document.getElementById("factNumero")
+.value=generarNumeroFactura();
 
-    alert(
-        "NovaCompra\n\n" +
-        mensaje +
-        "\n\n" +
-        "Función demostrativa."
-    );
+document.getElementById("factFecha")
+.value=new Date()
+.toISOString()
+.split("T")[0];
+
+cargarClientesFactura();
+
+document.getElementById("factCliente")
+.value="";
+
+document.getElementById("factDni")
+.value="";
+
+document.getElementById("descuentoPorcentaje")
+.value=0;
+
+detalleActual=[];
+
+renderDetalleFactura();
 
 }
 
 
-/* =========================================================
-BOTÓN VOLVER ARRIBA
-========================================================= */
+function nuevaFactura(){
 
-window.addEventListener(
-    "scroll",
-    function() {
+prepararNuevaFactura();
 
-        const button =
-            document.getElementById(
-                "topButton"
-            );
+mostrarSeccionPorNombre("facturacion");
+
+}
 
 
-        if (
-            window.scrollY > 400
-        ) {
+/* =====================================================
+GUARDAR FACTURA
+===================================================== */
 
-            button.style.display =
-                "block";
+function guardarFactura(){
 
-        } else {
+const clienteId=
+Number(document.getElementById("factCliente").value);
 
-            button.style.display =
-                "none";
+const cliente=
+clientes.find(c=>c.id===clienteId);
 
-        }
 
-    }
+if(!cliente){
+
+alert("Seleccione un cliente.");
+
+return;
+
+}
+
+
+if(detalleActual.length===0){
+
+alert("Agregue al menos una prenda.");
+
+return;
+
+}
+
+
+/* verificar stock */
+
+for(const item of detalleActual){
+
+const p=
+productos.find(x=>x.id===item.productoId);
+
+if(!p||item.cantidad>p.stock){
+
+alert(
+"Stock insuficiente: "+
+(p?p.nombre:"")
+);
+
+return;
+
+}
+
+}
+
+
+const calculo=calcularFactura();
+
+
+const factura={
+
+id:Date.now(),
+
+numero:
+document.getElementById("factNumero").value,
+
+fecha:
+document.getElementById("factFecha").value,
+
+clienteId:cliente.id,
+
+cliente:cliente.nombre,
+
+dni:cliente.dni,
+
+productos:
+detalleActual.map(item=>{
+
+const p=
+productos.find(x=>x.id===item.productoId);
+
+return {
+
+productoId:p.id,
+
+nombre:p.nombre,
+
+talla:p.talla,
+
+cantidad:item.cantidad,
+
+precio:p.precio,
+
+subtotal:p.precio*item.cantidad
+
+};
+
+}),
+
+subtotal:calculo.subtotal,
+
+descuento:calculo.descuento,
+
+impuesto:calculo.impuesto,
+
+total:calculo.total
+
+};
+
+
+/* descontar inventario */
+
+factura.productos.forEach(item=>{
+
+const p=
+productos.find(x=>x.id===item.productoId);
+
+p.stock-=item.cantidad;
+
+});
+
+
+facturas.push(factura);
+
+guardarTodo();
+
+prepararVistaFactura(factura);
+
+alert(
+"Factura guardada correctamente.\n\n"+
+factura.numero
+);
+
+detalleActual=[];
+
+prepararNuevaFactura();
+
+actualizarTodo();
+
+}
+
+
+/* =====================================================
+HISTORIAL
+===================================================== */
+
+function renderHistorial(){
+
+const tabla=
+document.getElementById("tablaFacturas");
+
+
+if(facturas.length===0){
+
+tabla.innerHTML=`
+
+<tr>
+<td colspan="5"
+style="text-align:center;">
+No existen facturas.
+</td>
+</tr>`;
+
+return;
+
+}
+
+
+tabla.innerHTML=
+[...facturas]
+.reverse()
+.map(f=>`
+
+<tr>
+
+<td>${f.numero}</td>
+
+<td>${f.fecha}</td>
+
+<td>${f.cliente}</td>
+
+<td>
+L ${Number(f.total).toFixed(2)}
+</td>
+
+<td>
+
+<button class="btn btn-blue"
+onclick="verFactura(${f.id})">
+
+👁️ Ver
+
+</button>
+
+<button class="btn btn-danger"
+onclick="eliminarFactura(${f.id})">
+
+🗑️
+
+</button>
+
+</td>
+
+</tr>
+
+`).join("");
+
+}
+
+
+function verFactura(id){
+
+const f=
+facturas.find(x=>x.id===id);
+
+if(!f)return;
+
+prepararVistaFactura(f);
+
+mostrarSeccion("facturaVista",null);
+
+setTimeout(()=>{
+
+window.print();
+
+mostrarSeccionPorNombre("historial");
+
+},300);
+
+}
+
+
+function eliminarFactura(id){
+
+if(!confirm("¿Eliminar esta factura?"))
+return;
+
+facturas=
+facturas.filter(f=>f.id!==id);
+
+guardarTodo();
+
+actualizarTodo();
+
+}
+
+
+/* =====================================================
+VISTA FACTURA
+===================================================== */
+
+function prepararVistaFactura(f){
+
+document.getElementById("vistaNumero")
+.textContent="No. "+f.numero;
+
+document.getElementById("vistaFecha")
+.textContent="Fecha: "+f.fecha;
+
+document.getElementById("vistaCliente")
+.textContent=f.cliente;
+
+document.getElementById("vistaDni")
+.textContent=f.dni;
+
+
+document.getElementById("vistaDetalle")
+.innerHTML=
+f.productos.map(p=>`
+
+<tr>
+
+<td>${p.nombre}</td>
+
+<td>${p.cantidad}</td>
+
+<td>
+L ${Number(p.precio).toFixed(2)}
+</td>
+
+<td>
+L ${Number(p.subtotal).toFixed(2)}
+</td>
+
+</tr>
+
+`).join("");
+
+
+document.getElementById("vistaSubtotal")
+.textContent="L "+Number(f.subtotal).toFixed(2);
+
+document.getElementById("vistaDescuento")
+.textContent="L "+Number(f.descuento).toFixed(2);
+
+document.getElementById("vistaISV")
+.textContent="L "+Number(f.impuesto).toFixed(2);
+
+document.getElementById("vistaTotal")
+.textContent="L "+Number(f.total).toFixed(2);
+
+}
+
+
+/* =====================================================
+IMPRIMIR FACTURA ACTUAL
+===================================================== */
+
+function prepararImpresion(){
+
+if(detalleActual.length===0){
+
+alert("No hay prendas.");
+
+return;
+
+}
+
+
+const clienteId=
+Number(document.getElementById("factCliente").value);
+
+const cliente=
+clientes.find(c=>c.id===clienteId);
+
+
+if(!cliente){
+
+alert("Seleccione un cliente.");
+
+return;
+
+}
+
+
+const calculo=calcularFactura();
+
+
+const factura={
+
+numero:
+document.getElementById("factNumero").value,
+
+fecha:
+document.getElementById("factFecha").value,
+
+cliente:cliente.nombre,
+
+dni:cliente.dni,
+
+productos:
+detalleActual.map(item=>{
+
+const p=
+productos.find(x=>x.id===item.productoId);
+
+return {
+
+nombre:p.nombre,
+
+cantidad:item.cantidad,
+
+precio:p.precio,
+
+subtotal:p.precio*item.cantidad
+
+};
+
+}),
+
+subtotal:calculo.subtotal,
+
+descuento:calculo.descuento,
+
+impuesto:calculo.impuesto,
+
+total:calculo.total
+
+};
+
+
+prepararVistaFactura(factura);
+
+mostrarSeccion("facturaVista",null);
+
+setTimeout(()=>{
+
+window.print();
+
+mostrarSeccionPorNombre("facturacion");
+
+},300);
+
+}
+
+
+/* =====================================================
+REPORTES
+===================================================== */
+
+function renderReportes(){
+
+const ventas=
+facturas.reduce(
+(s,f)=>s+Number(f.total),0
 );
 
 
-/* =========================================================
-ANIMACIONES
-========================================================= */
+document.getElementById("repProductos")
+.textContent=productos.length;
 
-const observer =
-    new IntersectionObserver(
-        function(entries) {
+document.getElementById("repClientes")
+.textContent=clientes.length;
 
-            entries.forEach(
-                function(entry) {
+document.getElementById("repProveedores")
+.textContent=proveedores.length;
 
-                    if (
-                        entry.isIntersecting
-                    ) {
+document.getElementById("repEmpleados")
+.textContent=empleados.length;
 
-                        entry.target.style.opacity =
-                            "1";
+document.getElementById("repFacturas")
+.textContent=facturas.length;
 
-                        entry.target.style.transform =
-                            "translateY(0)";
-
-                    }
-
-                }
-            );
-
-        },
-        {
-            threshold: .12
-        }
-    );
+document.getElementById("repVentas")
+.textContent="L "+ventas.toFixed(2);
 
 
-document
-.querySelectorAll(
-    ".product-card, " +
-    ".category, " +
-    ".offer-card, " +
-    ".plan-card, " +
-    ".delivery-card"
-)
-.forEach(
-    function(element) {
+const bajos=
+productos.filter(p=>p.stock<=5);
 
-        element.style.opacity =
-            "0";
 
-        element.style.transform =
-            "translateY(30px)";
+document.getElementById("bajoStock")
+.innerHTML=
 
-        element.style.transition =
-            "opacity .6s ease, transform .6s ease";
+bajos.length===0
 
-        observer.observe(element);
+?`
 
-    }
+<div class="alert alert-success">
+✓ No hay prendas con inventario bajo.
+</div>
+
+`
+
+:
+
+bajos.map(p=>`
+
+<div class="alert alert-warning">
+
+⚠️ <strong>${p.nombre}</strong>
+
+— Solo quedan ${p.stock} unidades.
+
+</div>
+
+`).join("");
+
+}
+
+
+/* =====================================================
+DESTACADOS
+===================================================== */
+
+function renderDestacados(){
+
+document.getElementById("destacados")
+.innerHTML=
+
+productos.slice(0,4)
+.map(p=>`
+
+<div class="product-card">
+
+<img
+class="product-image"
+src="${p.imagen}"
+alt="${p.nombre}">
+
+<div class="product-info">
+
+<h3>${p.nombre}</h3>
+
+<p class="product-meta">
+${p.categoria} · ${p.talla}
+</p>
+
+<div class="price">
+L ${Number(p.precio).toFixed(2)}
+</div>
+
+<button
+class="btn btn-primary"
+onclick="agregarAlCarrito(${p.id})">
+
+🛍️ Comprar
+
+</button>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+
+/* =====================================================
+ESTADISTICAS
+===================================================== */
+
+function actualizarEstadisticas(){
+
+const ventas=
+facturas.reduce(
+(s,f)=>s+Number(f.total),0
 );
 
+document.getElementById("statProductos")
+.textContent=productos.length;
+
+document.getElementById("statClientes")
+.textContent=clientes.length;
+
+document.getElementById("statFacturas")
+.textContent=facturas.length;
+
+document.getElementById("statVentas")
+.textContent="L "+ventas.toFixed(2);
+
+}
+
+
+/* =====================================================
+ACTUALIZAR TODO
+===================================================== */
+
+function actualizarTodo(){
+
+renderCatalogo();
+
+renderProductos();
+
+renderClientes();
+
+renderProveedores();
+
+renderEmpleados();
+
+renderHistorial();
+
+renderReportes();
+
+renderDestacados();
+
+actualizarEstadisticas();
+
+cargarClientesFactura();
+
+}
+
+
+/* =====================================================
+MODALES
+===================================================== */
+
+function cerrarModal(id){
+
+document.getElementById(id)
+.classList.remove("show");
+
+}
+
+
+window.addEventListener("click",function(e){
+
+document.querySelectorAll(".modal")
+.forEach(m=>{
+
+if(e.target===m)
+m.classList.remove("show");
+
+});
+
+});
+
+
+/* =====================================================
+INICIAR
+===================================================== */
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+cargarDatosIniciales();
+
+actualizarTodo();
+
+prepararNuevaFactura();
+
+}
+);
 
 </script>
 
-
 </body>
 </html>
-```
